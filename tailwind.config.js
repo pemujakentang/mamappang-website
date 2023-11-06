@@ -6,7 +6,17 @@ module.exports = {
     "./resources/**/*.vue",
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        averialibrebold: ['Averia Libre Bold'],
+        averialibrebolditalic: ['Averia Libre Bold Italic'],
+        averialibreitalic: ['Averia Libre Italic'],
+        averialibrelight: ['Averia Libre Light'],
+        averialibrelightitalic: ['Averia Libre Light Italic'],
+        averialibre: ['Averia Libre'],
+        lazydog: ['Lazy Dog']
+      },
+    },
   },
   plugins: [],
 }
