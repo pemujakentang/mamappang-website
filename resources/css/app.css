@@ -1,32 +1,3 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-@font-face {
-    font-family: 'Averia Libre Bold';
-    src: url("fonts/AveriaLibre-Bold.ttf") format('truetype');
-}
-@font-face {
-    font-family: 'Averia Libre Bold Italic';
-    src: url("fonts/AveriaLibre-BoldItalic.ttf") format('truetype');
-}
-@font-face {
-    font-family: 'Averia Libre Italic';
-    src: url("fonts/AveriaLibre-Italic.ttf") format('truetype');
-}
-@font-face {
-    font-family: 'Averia Libre Light';
-    src: url("fonts/AveriaLibre-Light.ttf") format('truetype');
-}
-@font-face {
-    font-family: 'Averia Libre Light Italic';
-    src: url("fonts/AveriaLibre-LightItalic.ttf") format('truetype');
-}
-@font-face {
-    font-family: 'Averia Libre';
-    src: url("fonts/AveriaLibre-Regular.ttf") format('truetype');
-}
-@font-face {
-    font-family: 'Lazy Dog';
-    src: url("fonts/lazy_dog.ttf") format('truetype');
-}
