@@ -17,3 +17,6 @@ Route::get('/', function () {
     return view('home.index');
 });
 
+Route::get('/bulk-order', function () {
+    return view('bulk.bulk');
+});
