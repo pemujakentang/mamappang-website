@@ -7,6 +7,9 @@ module.exports = {
   ],
   theme: {
     extend: {
+      animation: {
+        'spin-slow': 'spin 5s linear infinite',
+      },
       fontFamily: {
         averialibrebold: ['Averia Libre Bold'],
         averialibrebolditalic: ['Averia Libre Bold Italic'],
