@@ -12,7 +12,7 @@
 </head>
 
 <body>
-<div class="overflow-y-scroll flex flex-col items-center bg-[#FF6400] overflow-x-hidden relative ">
+<div class="overflow-y-scroll flex flex-col items-center bg-[#FF6400] overflow-x-hidden relative">
     <!-- section - home -->
     <div class="h-screen relative">
 
@@ -25,8 +25,8 @@
 
         <!-- navbar -->
         <div id="navbar" class="flex justify-between w-screen h-16 pt-3 pr-5 items-center z-10 mt-2">
-            <div class="w-[10%]flex items-center justify-center z-10">
-                <img class="object-cover h-16" src="/images/logo.webp" alt="Logo">
+            <div class="w-[10%] flex items-center justify-center z-10">
+                <img class="object-cover h-16 " src="/images/logo.webp" alt="Logo">
             </div>
             <div class="w-[75%] flex h-full px-10 rounded-full border-2 border-yellow-800 bg-orange-300 items-center justify-between z-10">
                 <a href="" class="text-orange-800 font-averialibre hover:font-averialibrebold text-2xl">Home</a>
@@ -44,25 +44,25 @@
         </div>
 
         <!-- home -->
-        <div class="flex flex-col items-center relative z-10">
+        <div class="flex flex-col items-center relative z-10 mt-20">
 
             <div class="flex flex-row w-[90%] mt-2 justify-center">
                 <div class="w-[50%]">
-                    <div class="w-[80%] flex items-center justify-center mx-auto mb-4">
+                    <div class="w-[90%] flex items-center justify-center mx-auto mb-4">
                         <img class="object-cover" src="/images/logo3.webp" alt="Logo">
                     </div>
                 </div>
-                <div class="w-[50%] flex flex-col justify-center">
+                <div class="w-[50%] flex flex-col justify-center pr-5">
                     <!-- SERIES #1 -->
                     <p class="text-orange-800 font-averialibrebold text-5xl mx-auto mb-6" style="text-shadow: 4px 4px 4px #FFFFFF, -4px -4px 4px #FFFFFF, 4px -4px 4px #FFFFFF, -4px 4px 4px #FFFFFF;">COKLAT SERIES</p>
-                    <p class="text-orange-800 font-averialibrebold text-2xl mx-auto">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ab, cupiditate adipisci, inventore et necessitatibus nemo nesciunt repellat debitis, officia laborum temporibus tempore soluta ut dolore. Ullam quidem magni nisi. Ab!</p>
+                    <p class="text-orange-800 font-averialibrebold text-2xl text-justify mx-auto " style="text-shadow: 4px 4px 4px #FFFFFF, -4px -4px 4px #FFFFFF, 4px -4px 4px #FFFFFF, -4px 4px 4px #FFFFFF;">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ab, cupiditate adipisci, inventore et necessitatibus nemo nesciunt repellat debitis, officia laborum temporibus tempore soluta ut dolore. Ullam quidem magni nisi. Ab!</p>
                 </div>
             </div>
 
         </div>
 
         <div class="flex bottom-10 absolute z-10 w-full items-center justify-center pb-5">
-            <button href="" class="flex h-14 w-72 rounded-full border-2 border-yellow-800 bg-orange-300 items-center justify-center mx-4 hover:scale-[1.2] duration-75">
+            <button href="" class="flex h-16 rounded-full border-2 border-yellow-800 bg-orange-300 items-center justify-center px-6 hover:scale-[1.2] duration-75">
                 <p class="text-orange-800 font-averialibre text-2xl mr-2 ml-3">Lihat Penawaran</p>
                 <div class="w-8 flex items-center justify-center">
                     <img class="object-cover h-1" src="/images/arrow.webp" alt="Logo">
@@ -79,118 +79,22 @@
     </div>
 
     <!-- section - menu -->
-    <div class="w-full flex flex-col items-center z-10" style="background-image: url('/images/background-menu.webp');">
-        <p class="text-orange-800 font-averialibre text-5xl mx-auto my-5" style="text-shadow: 4px 4px 4px #FFFFFF, -4px -4px 4px #FFFFFF, 4px -4px 4px #FFFFFF, -4px 4px 4px #FFFFFF;">Our Menu</p>
-        <div class="flex flex-row w-[90%] mt-2">
+    <div class="w-full flex flex-col items-center z-10 bg-[#F1A03C]">
+        <div class="flex flex-row w-[90%] mt-16">
             <div class="w-[50%]">
                 <div class="w-[80%] flex items-center justify-center mx-auto mb-4">
                     <img class="object-cover" src="/images/logo3.webp" alt="Logo">
                 </div>
-                <div class="">
-                    <p class="w-[80%] text-orange-800 font-averialibre text-2xl text-justify mx-auto">bungeoppang is Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+
+                <div class="flex rounded-full border-2 border-yellow-800 bg-orange-300 items-center justify-center mx-4 hover:scale-[1.2] duration-75">
+                    <p class="text-orange-800 font-averialibre text-2xl">See Our Menu</p>
+                    <div class="w-70 flex items-center justify-center ml-1">
+                        <img class="object-cover" src="/images/play.webp" alt="Logo">
+                    </div>
                 </div>
             </div>
-            <div class="w-[50%] flex flex-col">
-                <!-- SERIES #1 -->
-                <p class="text-orange-800 font-averialibre text-4xl mx-auto" style="text-shadow: 4px 4px 4px #FFFFFF, -4px -4px 4px #FFFFFF, 4px -4px 4px #FFFFFF, -4px 4px 4px #FFFFFF;">COKLAT SERIES</p>
-                <div class="grid grid-cols-2 w-[80%] mx-auto mt-3">
-                    <!-- RASA -->
-                    <div class="flex">
-                        <div class="w-8 flex items-center justify-center mr-2">
-                            <img class="object-cover h-14 transform scale-x-[-1] -translate-y-2" src="/images/ikan.webp" alt="Logo">
-                        </div>
-                        <p class="text-orange-800 font-averialibre text-3xl">Coklat</p>
-                    </div>
-
-                    <div class="flex">
-                        <div class="w-8 flex items-center justify-center mr-2">
-                            <img class="object-cover h-14 transform scale-x-[-1] -translate-y-2" src="/images/ikan.webp" alt="Logo">
-                        </div>
-                        <p class="text-orange-800 font-averialibre text-3xl">Coklat keju</p>
-                    </div>
-
-                    <div class="flex">
-                        <div class="w-8 flex items-center justify-center mr-2">
-                            <img class="object-cover h-14 transform scale-x-[-1] -translate-y-2" src="/images/ikan.webp" alt="Logo">
-                        </div>
-                        <p class="text-orange-800 font-averialibre text-3xl">Coklat vanilla</p>
-                    </div>
-
-                    <div class="flex">
-                        <div class="w-8 flex items-center justify-center mr-2">
-                            <img class="object-cover h-14 transform scale-x-[-1] -translate-y-2" src="/images/ikan.webp" alt="Logo">
-                        </div>
-                        <p class="text-orange-800 font-averialibre text-3xl">Coklat Oreo</p>
-                    </div>
-
-                    <div class="flex">
-                        <div class="w-8 flex items-center justify-center mr-2">
-                            <img class="object-cover h-14 transform scale-x-[-1] -translate-y-2" src="/images/ikan.webp" alt="Logo">
-                        </div>
-                        <p class="text-orange-800 font-averialibre text-3xl">Coklat caramel</p>
-                    </div>
-                    
-                </div>
-
-                <!-- SERIES #2 -->
-                <p class="text-orange-800 font-averialibre text-4xl mx-auto" style="text-shadow: 4px 4px 4px #FFFFFF, -4px -4px 4px #FFFFFF, 4px -4px 4px #FFFFFF, -4px 4px 4px #FFFFFF;">VANILLA SERIES</p>
-                <div class="grid grid-cols-2 w-[80%] mx-auto mt-3">
-                    <!-- RASA -->
-                    <div class="flex">
-                        <div class="w-8 flex items-center justify-center mr-2">
-                            <img class="object-cover h-14 transform scale-x-[-1] -translate-y-2" src="/images/ikan.webp" alt="Logo">
-                        </div>
-                        <p class="text-orange-800 font-averialibre text-3xl">Vanilla</p>
-                    </div>
-
-                    <div class="flex">
-                        <div class="w-8 flex items-center justify-center mr-2">
-                            <img class="object-cover h-14 transform scale-x-[-1] -translate-y-2" src="/images/ikan.webp" alt="Logo">
-                        </div>
-                        <p class="text-orange-800 font-averialibre text-3xl">Vanilla Keju</p>
-                    </div>
-
-                    <div class="flex">
-                        <div class="w-8 flex items-center justify-center mr-2">
-                            <img class="object-cover h-14 transform scale-x-[-1] -translate-y-2" src="/images/ikan.webp" alt="Logo">
-                        </div>
-                        <p class="text-orange-800 font-averialibre text-3xl">Vanilla Oreo</p>
-                    </div>
-
-                    <div class="flex">
-                        <div class="w-8 flex items-center justify-center mr-2">
-                            <img class="object-cover h-14 transform scale-x-[-1] -translate-y-2" src="/images/ikan.webp" alt="Logo">
-                        </div>
-                        <p class="text-orange-800 font-averialibre text-3xl">Vanilla Caramel</p>
-                    </div>      
-                </div>
-
-                <!-- SERIES #3 -->
-                <p class="text-orange-800 font-averialibre text-4xl mx-auto" style="text-shadow: 4px 4px 4px #FFFFFF, -4px -4px 4px #FFFFFF, 4px -4px 4px #FFFFFF, -4px 4px 4px #FFFFFF;">OTHER SERIES</p>
-                <div class="grid grid-cols-2 w-[80%] mx-auto mt-3">
-                    <!-- RASA -->
-                    <div class="flex">
-                        <div class="w-8 flex items-center justify-center mr-2">
-                            <img class="object-cover h-14 transform scale-x-[-1] -translate-y-2" src="/images/ikan.webp" alt="Logo">
-                        </div>
-                        <p class="text-orange-800 font-averialibre text-3xl">Strawberry</p>
-                    </div>
-
-                    <div class="flex">
-                        <div class="w-8 flex items-center justify-center mr-2">
-                            <img class="object-cover h-14 transform scale-x-[-1] -translate-y-2" src="/images/ikan.webp" alt="Logo">
-                        </div>
-                        <p class="text-orange-800 font-averialibre text-3xl">Blueberry</p>
-                    </div>
-
-                    <div class="flex">
-                        <div class="w-8 flex items-center justify-center mr-2">
-                            <img class="object-cover h-14 transform scale-x-[-1] -translate-y-2" src="/images/ikan.webp" alt="Logo">
-                        </div>
-                        <p class="text-orange-800 font-averialibre text-3xl">Kacang merah</p>
-                    </div>
-
-                </div>
+            <div class="w-[50%] flex flex-col border">
+                
             </div>
         </div>
         <button href="" class="flex h-28 w-[50%] rounded-full border-2 border-yellow-800 bg-[#FF6400] items-center justify-center mx-4 mt-12 mb-16">
@@ -198,29 +102,7 @@
         </button>
     </div>
 
-    <!-- section - franchise -->
-    <div class="w-full flex flex-col relative items-center bg-[#F1A03C]">
 
-        <img class="absolute h-96 z-0 -left-64 mt-5 animate-wiggle" src="/images/awan.webp" alt="Logo">
-        <img class="absolute h-96 z-0 -right-64 bottom-0 mt-5 animate-wiggle" src="/images/awan.webp" alt="Logo">
-
-        <div class="flex flex-row w-[80%] mt-10 z-10 ">
-            <div class="w-[50%]">
-                <div class="w-full flex items-center justify-center mx-auto mb-16">
-                    <img class="object-cover" src="/images/booth.webp" alt="Logo">
-                </div>
-            </div>
-            <div class="w-[50%] flex flex-col z-10 ">
-                <!-- SERIES #1 -->
-                <p class="text-orange-800 font-averialibre text-5xl mx-auto my-10" style="text-shadow: 4px 4px 4px #FFFFFF, -4px -4px 4px #FFFFFF, 4px -4px 4px #FFFFFF, -4px 4px 4px #FFFFFF;">INFO FRANCHISE</p>
-                <p class="text-orange-800 font-averialibre text-4xl mx-auto text-justify">(bergabung dengan kami untuk menjadi franchisee mulai dari Rp. xxxxxxx)</p>
-                <button href="" class="flex h-24 w-[90%] rounded-full border-2 border-yellow-800 bg-[#FF6400] items-center justify-center my-16 mx-auto hover:scale-[1.2] duration-75">
-                    <p class="text-white font-averialibre text-4xl ">Lihat Paket Lainnya</p>
-                </button>
-            </div>
-        </div>
-        
-    </div>
 
     <!-- footer -->
     <div class="w-full flex flex-col z-10 pl-7 py-7" style="background-image: url('/images/background-menu.webp');">
