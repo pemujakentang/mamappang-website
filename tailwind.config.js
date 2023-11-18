@@ -25,8 +25,10 @@ module.exports = {
       animation: {
         'move-x': 'moveX 14s ease-in-out infinite',
         'move-y': 'moveY 10s ease-in-out infinite',
+        'move-x-fast': 'moveX 1s ease-in-out infinite',
+        'move-y-fast': 'moveY 1s ease-in-out infinite',
         'wiggle': 'wiggle 6s ease-in-out infinite',
-        'spin-slow': 'spin 7s linear infinite',
+        'spin-slow': 'spin 15s linear infinite',
         'bounce-slow': 'bounce 3s infinite',
       },
       fontFamily: {
