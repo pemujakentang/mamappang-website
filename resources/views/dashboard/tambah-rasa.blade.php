@@ -12,9 +12,9 @@
 
 <body>
 
-<div id="header" x-data="{ isOpen: false }" class="fixed rounded-b-2xl border-x-2 border-b-2 border-orange-300  bg-orange-700  justify-center z-40 w-[97%] md:hidden flex items-center flex-col">
+<div id="header" x-data="{ isOpen: false }" class="fixed rounded-b-2xl border-x-2 border-b-2 border-orange-300  bg-orange-700  justify-center z-40 w-[100%] md:hidden flex items-center flex-col">
 
-<button @click="isOpen = !isOpen" type="submit" class="w-full">
+<button @click="isOpen = !isOpen" type="submit" class="w-full ">
     <svg xmlns="http://www.w3.org/2000/svg" class="w-12 h-12 my-2 text-orange-300 lg:hidden mx-auto" fill="none"
         viewBox="0 0 24 24" stroke="currentColor">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
@@ -32,11 +32,11 @@
         @click.away=" isOpen = false">
         <div class="flex flex-col space-y-4 w-full items-center">
             <a class="text-orange-700 font-averialibre cursor-pointer text-2xl" href="/">SIGN IN</a>
-            <a class="text-orange-700 font-averialibre cursor-pointer text-2xl" href="/">HOME</a>
-            <a class="text-orange-700 font-averialibre cursor-pointer text-2xl" href="/bulk-order">BULK ORDER</a>
-            <a class="text-orange-700 font-averialibre cursor-pointer text-2xl" href="/">FRANCHISE</a>
-            <a class="text-orange-700 font-averialibre cursor-pointer text-2xl" href="/">ABOUT US</a>
-            <a class="text-orange-700 font-averialibre cursor-pointer text-2xl" href="/">MY DASHBOARD</a>
+            <a class="text-orange-700 font-averialibre cursor-pointer text-2xl" href="{{ route('order-status') }}">Order Status</a>
+            <a class="text-orange-700 font-averialibre cursor-pointer text-2xl" href="{{ route('franchise-status') }}">Franchise Status</a>
+            <a class="text-orange-700 font-averialibre cursor-pointer text-2xl" href="{{ route('menu-edit') }}">Menu Edit</a>
+            <a class="text-orange-700 font-averialibre cursor-pointer text-2xl" href="{{ route('franchise-edit') }}">Franchise Edit</a>
+            <a class="text-orange-700 font-averialibre cursor-pointer text-2xl" href="/">Log Out</a>
         </div>
     </div>
 

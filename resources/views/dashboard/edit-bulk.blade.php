@@ -12,11 +12,10 @@
 
 <body>
 
-    <div id="header" x-data="{ isOpen: false }" class="fixed rounded-b-2xl border-x-2 border-b-2 border-orange-300  bg-orange-700  justify-center z-40 w-[97%] md:hidden flex items-center flex-col">
+    <div id="header" x-data="{ isOpen: false }" class="fixed rounded-b-2xl border-x-2 border-b-2 border-orange-300  bg-orange-700  justify-center z-40 w-[100%] md:hidden flex items-center flex-col">
 
         <button @click="isOpen = !isOpen" type="submit" class="w-full">
-            <svg xmlns="http://www.w3.org/2000/svg" class="w-12 h-12 my-2 text-orange-300 lg:hidden mx-auto" fill="none"
-                viewBox="0 0 24 24" stroke="currentColor">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-12 h-12 my-2 text-orange-300 lg:hidden mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
             </svg>
         </button>
@@ -24,19 +23,17 @@
 
         <div class="w-full">
 
-            <div class="w-full h-2 bg-gradient-to-t from-orange-300" x-show="isOpen"
-                @click.away=" isOpen = false">
+            <div class="w-full h-2 bg-gradient-to-t from-orange-300" x-show="isOpen" @click.away=" isOpen = false">
             </div>
 
-            <div class="flex left-0 w-full px-3 pt-4 pb-6 bg-orange-300 rounded-b-xl" x-show="isOpen"
-                @click.away=" isOpen = false">
+            <div class="flex left-0 w-full px-3 pt-4 pb-6 bg-orange-300 rounded-b-xl" x-show="isOpen" @click.away=" isOpen = false">
                 <div class="flex flex-col space-y-4 w-full items-center">
                     <a class="text-orange-700 font-averialibre cursor-pointer text-2xl" href="/">SIGN IN</a>
-                    <a class="text-orange-700 font-averialibre cursor-pointer text-2xl" href="/">HOME</a>
-                    <a class="text-orange-700 font-averialibre cursor-pointer text-2xl" href="/bulk-order">BULK ORDER</a>
-                    <a class="text-orange-700 font-averialibre cursor-pointer text-2xl" href="/">FRANCHISE</a>
-                    <a class="text-orange-700 font-averialibre cursor-pointer text-2xl" href="/">ABOUT US</a>
-                    <a class="text-orange-700 font-averialibre cursor-pointer text-2xl" href="/">MY DASHBOARD</a>
+                    <a class="text-orange-700 font-averialibre cursor-pointer text-2xl" href="{{ route('order-status') }}">Order Status</a>
+                    <a class="text-orange-700 font-averialibre cursor-pointer text-2xl" href="{{ route('franchise-status') }}">Franchise Status</a>
+                    <a class="text-orange-700 font-averialibre cursor-pointer text-2xl" href="{{ route('menu-edit') }}">Menu Edit</a>
+                    <a class="text-orange-700 font-averialibre cursor-pointer text-2xl" href="{{ route('franchise-edit') }}">Franchise Edit</a>
+                    <a class="text-orange-700 font-averialibre cursor-pointer text-2xl" href="/">Log Out</a>
                 </div>
             </div>
 
@@ -123,7 +120,7 @@
                 </ul>
             </div>
         </div>
-        
+
         <div class="flex-auto min-h-screen bg-[#FFDBA3] pt-20 md:pt-0">
             <!-- Dummy Content on the Right Sidebar -->
             <div class="ml-0 md:ml-64 p-3 md:p-8">
@@ -146,25 +143,25 @@
                         <!-- Dummy data, replace with dynamic data in a real application -->
                         <li class="flex justify-between items-center bg-[#FAC774] border-solid border-4 border-[#F1A03C] py-3 md:px-5 rounded-2xl md:w-full md:flex-row md:justify-between flex-col">
 
-                                <div class="flex flex-row items-center justify-center">
-                                    <img class="object-cover h-16 transform scale-x-[-1] -translate-y-2 mt-2" src="/images/ikan.webp" alt="Logo">
-                                    <div class= "">
-                                        <div class="flex h-16">
-                                            <input type="text" id="title" name="title" class="p-2 w-[200px] bg-[#FDED87] rounded-2xl border-solid border-2 border-[#945E3D] ml-2 font-averialibre placeholder-orange-700" placeholder="20-50pcs">
-                                        </div>
+                            <div class="flex flex-row items-center justify-center">
+                                <img class="object-cover h-16 transform scale-x-[-1] -translate-y-2 mt-2" src="/images/ikan.webp" alt="Logo">
+                                <div class="">
+                                    <div class="flex h-16">
+                                        <input type="text" id="title" name="title" class="p-2 w-[200px] bg-[#FDED87] rounded-2xl border-solid border-2 border-[#945E3D] ml-2 font-averialibre placeholder-orange-700" placeholder="20-50pcs">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="flex flex-row items-center justify-center gap-2 mt-2">
+                                <div class="">
+                                    <div class="flex h-16">
+                                        <input type="text" id="title" name="title" class="p-2 w-[200px] bg-[#FDED87] rounded-2xl border-solid border-2 border-[#945E3D] ml-2 font-averialibre placeholder-orange-700" placeholder="20-50pcs">
                                     </div>
                                 </div>
 
-                                <div class="flex flex-row items-center justify-center gap-2 mt-2">
-                                    <div class= "">
-                                        <div class="flex h-16">
-                                            <input type="text" id="title" name="title" class="p-2 w-[200px] bg-[#FDED87] rounded-2xl border-solid border-2 border-[#945E3D] ml-2 font-averialibre placeholder-orange-700" placeholder="20-50pcs">
-                                        </div>
-                                    </div>
-                                    
-                                    <span class="md:ml-[20px] font-averialibre text-orange-800 text-center text-xl md:text-4xl md:w-[180px] bg-[#FFDBA3] rounded-[10px] border-solid border-2 border-[#945E3D] h-16 items-center justify-center flex px-2">Per Pcs</span>
-                                    <!-- <span class="ml-2 font-averialibre text-orange-800 text-4xl">Item 1</span> -->
-                                </div>
+                                <span class="md:ml-[20px] font-averialibre text-orange-800 text-center text-xl md:text-4xl md:w-[180px] bg-[#FFDBA3] rounded-[10px] border-solid border-2 border-[#945E3D] h-16 items-center justify-center flex px-2">Per Pcs</span>
+                                <!-- <span class="ml-2 font-averialibre text-orange-800 text-4xl">Item 1</span> -->
+                            </div>
                             <!-- <div class="flex space-x-2">
                                 <button type="button" class="text-blue-500">
                                     <p class="ml-4 mr-4 font-averialibre text-orange-800 text-3xl">Edit</p>
@@ -177,25 +174,25 @@
 
                         <li class="flex justify-between items-center bg-[#FAC774] border-solid border-4 border-[#F1A03C] py-3 md:px-5 rounded-2xl md:w-full md:flex-row md:justify-between flex-col">
 
-                                <div class="flex flex-row items-center justify-center">
-                                    <img class="object-cover h-16 transform scale-x-[-1] -translate-y-2 mt-2" src="/images/ikan.webp" alt="Logo">
-                                    <div class= "">
-                                        <div class="flex h-16">
-                                            <input type="text" id="title" name="title" class="p-2 w-[200px] bg-[#FDED87] rounded-2xl border-solid border-2 border-[#945E3D] ml-2 font-averialibre placeholder-orange-700" placeholder="20-50pcs">
-                                        </div>
+                            <div class="flex flex-row items-center justify-center">
+                                <img class="object-cover h-16 transform scale-x-[-1] -translate-y-2 mt-2" src="/images/ikan.webp" alt="Logo">
+                                <div class="">
+                                    <div class="flex h-16">
+                                        <input type="text" id="title" name="title" class="p-2 w-[200px] bg-[#FDED87] rounded-2xl border-solid border-2 border-[#945E3D] ml-2 font-averialibre placeholder-orange-700" placeholder="20-50pcs">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="flex flex-row items-center justify-center gap-2 mt-2">
+                                <div class="">
+                                    <div class="flex h-16">
+                                        <input type="text" id="title" name="title" class="p-2 w-[200px] bg-[#FDED87] rounded-2xl border-solid border-2 border-[#945E3D] ml-2 font-averialibre placeholder-orange-700" placeholder="20-50pcs">
                                     </div>
                                 </div>
 
-                                <div class="flex flex-row items-center justify-center gap-2 mt-2">
-                                    <div class= "">
-                                        <div class="flex h-16">
-                                            <input type="text" id="title" name="title" class="p-2 w-[200px] bg-[#FDED87] rounded-2xl border-solid border-2 border-[#945E3D] ml-2 font-averialibre placeholder-orange-700" placeholder="20-50pcs">
-                                        </div>
-                                    </div>
-                                    
-                                    <span class="md:ml-[20px] font-averialibre text-orange-800 text-center text-xl md:text-4xl md:w-[180px] bg-[#FFDBA3] rounded-[10px] border-solid border-2 border-[#945E3D] h-16 items-center justify-center flex px-2">Per Pcs</span>
-                                    <!-- <span class="ml-2 font-averialibre text-orange-800 text-4xl">Item 1</span> -->
-                                </div>
+                                <span class="md:ml-[20px] font-averialibre text-orange-800 text-center text-xl md:text-4xl md:w-[180px] bg-[#FFDBA3] rounded-[10px] border-solid border-2 border-[#945E3D] h-16 items-center justify-center flex px-2">Per Pcs</span>
+                                <!-- <span class="ml-2 font-averialibre text-orange-800 text-4xl">Item 1</span> -->
+                            </div>
                             <!-- <div class="flex space-x-2">
                                 <button type="button" class="text-blue-500">
                                     <p class="ml-4 mr-4 font-averialibre text-orange-800 text-3xl">Edit</p>
@@ -208,25 +205,25 @@
 
                         <li class="flex justify-between items-center bg-[#FAC774] border-solid border-4 border-[#F1A03C] py-3 md:px-5 rounded-2xl md:w-full md:flex-row md:justify-between flex-col">
 
-                                <div class="flex flex-row items-center justify-center">
-                                    <img class="object-cover h-16 transform scale-x-[-1] -translate-y-2 mt-2" src="/images/ikan.webp" alt="Logo">
-                                    <div class= "">
-                                        <div class="flex h-16">
-                                            <input type="text" id="title" name="title" class="p-2 w-[200px] bg-[#FDED87] rounded-2xl border-solid border-2 border-[#945E3D] ml-2 font-averialibre placeholder-orange-700" placeholder="20-50pcs">
-                                        </div>
+                            <div class="flex flex-row items-center justify-center">
+                                <img class="object-cover h-16 transform scale-x-[-1] -translate-y-2 mt-2" src="/images/ikan.webp" alt="Logo">
+                                <div class="">
+                                    <div class="flex h-16">
+                                        <input type="text" id="title" name="title" class="p-2 w-[200px] bg-[#FDED87] rounded-2xl border-solid border-2 border-[#945E3D] ml-2 font-averialibre placeholder-orange-700" placeholder="20-50pcs">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="flex flex-row items-center justify-center gap-2 mt-2">
+                                <div class="">
+                                    <div class="flex h-16">
+                                        <input type="text" id="title" name="title" class="p-2 w-[200px] bg-[#FDED87] rounded-2xl border-solid border-2 border-[#945E3D] ml-2 font-averialibre placeholder-orange-700">
                                     </div>
                                 </div>
 
-                                <div class="flex flex-row items-center justify-center gap-2 mt-2">
-                                    <div class= "">
-                                        <div class="flex h-16">
-                                            <input type="text" id="title" name="title" class="p-2 w-[200px] bg-[#FDED87] rounded-2xl border-solid border-2 border-[#945E3D] ml-2 font-averialibre placeholder-orange-700">
-                                        </div>
-                                    </div>
-                                    
-                                    <span class="md:ml-[20px] font-averialibre text-orange-800 text-center text-xl md:text-4xl md:w-[180px] bg-[#FFDBA3] rounded-[10px] border-solid border-2 border-[#945E3D] h-16 items-center justify-center flex px-2">Per Pcs</span>
-                                    <!-- <span class="ml-2 font-averialibre text-orange-800 text-4xl">Item 1</span> -->
-                                </div>
+                                <span class="md:ml-[20px] font-averialibre text-orange-800 text-center text-xl md:text-4xl md:w-[180px] bg-[#FFDBA3] rounded-[10px] border-solid border-2 border-[#945E3D] h-16 items-center justify-center flex px-2">Per Pcs</span>
+                                <!-- <span class="ml-2 font-averialibre text-orange-800 text-4xl">Item 1</span> -->
+                            </div>
                             <!-- <div class="flex space-x-2">
                                 <button type="button" class="text-blue-500">
                                     <p class="ml-4 mr-4 font-averialibre text-orange-800 text-3xl">Edit</p>
@@ -237,7 +234,7 @@
                             </div> -->
                         </li>
                         <!-- Add more items as needed -->
-                        
+
                     </ul>
                     <div class="flex mb-4 justify-center mt-4">
                         <button class="bg-[#F1A03C] rounded-[20px] border-solid border-4 border-[#945E3D] flex items-center justify-center w-36 mr-4">
