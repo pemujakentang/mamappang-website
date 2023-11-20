@@ -7,7 +7,7 @@ module.exports = {
   ],
   theme: {
     extend: {
-      
+
       keyframes: {
         wiggle: {
           '0%, 100%': { transform: 'rotate(-5deg)' },
@@ -38,7 +38,8 @@ module.exports = {
         averialibrelight: ['Averia Libre Light'],
         averialibrelightitalic: ['Averia Libre Light Italic'],
         averialibre: ['Averia Libre'],
-        lazydog: ['Lazy Dog']
+        lazydog: ['Lazy Dog'],
+        blackhansans: ['Black Han Sans'],
       },
     },
   },

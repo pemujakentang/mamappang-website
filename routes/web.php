@@ -20,3 +20,7 @@ Route::get('/', function () {
 Route::get('/bulk-order', function () {
     return view('bulk.bulk');
 });
+
+Route::get('/franchise', function () {
+    return view('franchise.franchise');
+});
