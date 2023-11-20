@@ -109,7 +109,7 @@
                                 <!-- Preview Image -->
                                 <img id="imagePreview" class="h-full w-full object-contain object-center" src="/images/placeholder-image.webp">
                             </span>
-                            <label for="fileInput" class="ml-4 mt-[20px] cursor-pointer">
+                            <label for="fileInput" class="ml-4 mt-[140px] cursor-pointer">
                                 <span class="text-1xl font-averialibre text-orange-800 hover:text-orange-600 bg-[#FDED87] rounded-2xl border-[2.037px] border-solid border-4 border-[#945E3D]">Choose File</span>
                                 <input type="file" id="fileInput" class="hidden" accept="image/*" onchange="previewImage()">
                             </label>
@@ -135,7 +135,7 @@
                     </div>
                     <div class="flex mb-4 ">
                         <button class="bg-[#F1A03C] rounded-[20px] border-[2.037px] border-solid border-4 border-[#945E3D] flex items-center w-35 ml-[360px] mr-4">
-                            <a href="#" class="ml-4 mr-4 font-averialibre text-orange-800 text-3xl">Cancel</a>
+                            <a href="{{ route('franchise-edit') }}" class="ml-4 mr-4 font-averialibre text-orange-800 text-3xl">Cancel</a>
                         </button>
                         <button class="bg-[#FDED87] rounded-[20px] border-[2.037px] border-solid border-4 border-[#945E3D] flex items-center w-35 ml-[30px] mr-4">
                             <a href="#" class="ml-4 mr-4 font-averialibre text-orange-800 text-3xl">Save</a>

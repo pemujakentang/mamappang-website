@@ -102,12 +102,12 @@
                         </button>
                     </div>
                     <div>
-                        <button class="bg-[#FDED87] rounded-2xl border-solid border-4 border-[#F1A03C] flex items-center w-35 ml-auto mr-4">
+                        <button class="bg-[#FDED87] rounded-2xl border-solid border-4 border-[#F1A03C] flex items-center w-35 ml-auto">
                             <a href="{{ route('tambah-series') }}" class="ml-4 mr-4 font-averialibre text-orange-800 text-3xl">Tambah Series</a>
                         </button>
                     </div>
                     <div>
-                        <button class="bg-[#FDED87] rounded-2xl border-solid border-4 border-[#F1A03C] flex items-center w-35 mr-4">
+                        <button class="bg-[#FDED87] rounded-2xl border-solid border-4 border-[#F1A03C] flex items-center w-35 ml-auto mr-4">
                             <a href="{{ route('tambah-rasa') }}" class="ml-4 mr-4 font-averialibre text-orange-800 text-3xl">Tambah Rasa</a>
                         </button>
                     </div>

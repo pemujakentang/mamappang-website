@@ -132,7 +132,7 @@
                     </div>
                     <div class="flex mb-4 mt-[250px]">
                         <button class="bg-[#F1A03C] rounded-[20px] border-[2.037px] border-solid border-4 border-[#945E3D] flex items-center w-35 ml-[360px] mr-4">
-                            <a href="#" class="ml-4 mr-4 font-averialibre text-orange-800 text-3xl">Cancel</a>
+                            <a href="{{ route('menu-edit') }}" class="ml-4 mr-4 font-averialibre text-orange-800 text-3xl">Cancel</a>
                         </button>
                         <button class="bg-[#FDED87] rounded-[20px] border-[2.037px] border-solid border-4 border-[#945E3D] flex items-center w-35 ml-[30px] mr-4">
                             <a href="#" class="ml-4 mr-4 font-averialibre text-orange-800 text-3xl">Save</a>

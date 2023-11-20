@@ -106,21 +106,20 @@
                         </button>
                     </div> -->
                 </div>
-                <div class="rounded-2xl border-solid border-4 border-[#F1A03C] mt-6 mb-6 bg-[#FAC774] overflow-y-auto max-h-[600px] h-[500px] max-w-[980px] mr-2">
+                <div class="rounded-2xl border-solid border-4 border-[#F1A03C] mt-6 mb-6 bg-[#FAC774] overflow-y-auto max-h-[600px] h-[500px] max-w-[1100px] mr-2">
                     <ul class="mt-4 mb-4 ml-4 space-y-2">
                         <!-- Dummy data, replace with dynamic data in a real application -->
-                        <li class="flex justify-between items-center bg-[#FAC774] border-solid border-4 border-[#F1A03C] p-2 rounded-2xl w-[900px]">
+                        <li class="flex justify-between items-center bg-[#FAC774] border-solid border-4 border-[#F1A03C] p-2 rounded-2xl w-[1000px]">
                             <div class="flex items-center">
                                 <img class="object-cover h-14 transform scale-x-[-1] -translate-y-2 mt-2" src="/images/ikan.webp" alt="Logo">
                                 <div class= "ml-4">
                                     <div class="mt-1 flex ">
-                                        <!-- <label for="title" class="block text-2xl font-averialibre text-orange-800 ml-4">Price</label> -->
+                                        <label for="title" class="block text-2xl font-averialibre text-orange-800 ml-4">Rasa 1</label>
                                         <input type="text" id="title" name="title" class="p-2 w-[200px] bg-[#FDED87] rounded-2xl border-[2.037px] border-solid border-4 border-[#945E3D] ml-[30px]">
                                     </div>
                                 </div>
                                 <div class= "ml-4">
                                     <div class="mt-1 flex ">
-                                        <!-- <label for="title" class="block text-2xl font-averialibre text-orange-800 ml-4">Price</label> -->
                                         <input type="text" id="title" name="title" class="p-2 w-[200px] bg-[#FDED87] rounded-2xl border-[2.037px] border-solid border-4 border-[#945E3D] ml-[170px]">
                                     </div>
                                 </div>
@@ -136,18 +135,17 @@
                                 </button>
                             </div> -->
                         </li>
-                        <li class="flex justify-between items-center bg-[#FAC774] border-solid border-4 border-[#F1A03C] p-2 rounded-2xl w-[900px]">
+                        <li class="flex justify-between items-center bg-[#FAC774] border-solid border-4 border-[#F1A03C] p-2 rounded-2xl w-[1000px]">
                             <div class="flex items-center">
                                 <img class="object-cover h-14 transform scale-x-[-1] -translate-y-2 mt-2" src="/images/ikan.webp" alt="Logo">
                                 <div class= "ml-4">
                                     <div class="mt-1 flex ">
-                                        <!-- <label for="title" class="block text-2xl font-averialibre text-orange-800 ml-4">Price</label> -->
+                                        <label for="title" class="block text-2xl font-averialibre text-orange-800 ml-4">Rasa 2</label>
                                         <input type="text" id="title" name="title" class="p-2 w-[200px] bg-[#FDED87] rounded-2xl border-[2.037px] border-solid border-4 border-[#945E3D] ml-[30px]">
                                     </div>
                                 </div>
                                 <div class= "ml-4">
                                     <div class="mt-1 flex ">
-                                        <!-- <label for="title" class="block text-2xl font-averialibre text-orange-800 ml-4">Price</label> -->
                                         <input type="text" id="title" name="title" class="p-2 w-[200px] bg-[#FDED87] rounded-2xl border-[2.037px] border-solid border-4 border-[#945E3D] ml-[170px]">
                                     </div>
                                 </div>
@@ -163,18 +161,17 @@
                                 </button>
                             </div> -->
                         </li>
-                        <li class="flex justify-between items-center bg-[#FAC774] border-solid border-4 border-[#F1A03C] p-2 rounded-2xl w-[900px]">
+                        <li class="flex justify-between items-center bg-[#FAC774] border-solid border-4 border-[#F1A03C] p-2 rounded-2xl w-[1000px]">
                             <div class="flex items-center">
                                 <img class="object-cover h-14 transform scale-x-[-1] -translate-y-2 mt-2" src="/images/ikan.webp" alt="Logo">
                                 <div class= "ml-4">
                                     <div class="mt-1 flex ">
-                                        <!-- <label for="title" class="block text-2xl font-averialibre text-orange-800 ml-4">Price</label> -->
+                                        <label for="title" class="block text-2xl font-averialibre text-orange-800 ml-4">Rasa 3</label>
                                         <input type="text" id="title" name="title" class="p-2 w-[200px] bg-[#FDED87] rounded-2xl border-[2.037px] border-solid border-4 border-[#945E3D] ml-[30px]">
                                     </div>
                                 </div>
                                 <div class= "ml-4">
                                     <div class="mt-1 flex ">
-                                        <!-- <label for="title" class="block text-2xl font-averialibre text-orange-800 ml-4">Price</label> -->
                                         <input type="text" id="title" name="title" class="p-2 w-[200px] bg-[#FDED87] rounded-2xl border-[2.037px] border-solid border-4 border-[#945E3D] ml-[170px]">
                                     </div>
                                 </div>
@@ -192,8 +189,8 @@
                         <!-- Add more items as needed -->
                     </ul>
                     <div class="flex mb-4 mt-[140px]">
-                        <button class="bg-[#F1A03C] rounded-[20px] border-[2.037px] border-solid border-4 border-[#945E3D] flex items-center w-35 ml-[360px] mr-4">
-                            <a href="#" class="ml-4 mr-4 font-averialibre text-orange-800 text-3xl">Cancel</a>
+                        <button class="bg-[#F1A03C] rounded-[20px] border-[2.037px] border-solid border-4 border-[#945E3D] flex items-center w-35 ml-[390px] mr-4">
+                            <a href="{{ route('menu-edit') }}" class="ml-4 mr-4 font-averialibre text-orange-800 text-3xl">Cancel</a>
                         </button>
                         <button class="bg-[#FDED87] rounded-[20px] border-[2.037px] border-solid border-4 border-[#945E3D] flex items-center w-35 ml-[30px] mr-4">
                             <a href="#" class="ml-4 mr-4 font-averialibre text-orange-800 text-3xl">Save</a>

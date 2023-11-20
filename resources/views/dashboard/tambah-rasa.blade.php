@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,6 +9,7 @@
     @vite('resources/css/app.css')
     <title>Tambah Rasa</title>
 </head>
+
 <body>
     <!-- component -->
     <div class="min-h-screen flex flex-col flex-auto flex-shrink-0 antialiased bg-gray-50 text-gray-800">
@@ -121,7 +123,7 @@
                                 </button>
                             </div> -->
                         </li>
-                        
+
                         <!-- Add more items as needed -->
                     </ul>
                     <div class="mb-4 ml-4 mt-4">
@@ -130,7 +132,34 @@
                             <input type="text" id="title" name="title" class="mt-1 p-2 w-[400px] bg-[#FDED87] rounded-2xl border-[2.037px] border-solid border-4 border-[#945E3D] ml-[330px]">
                         </div>
                     </div>
-                    <div class="flex mb-4 mt-[250px]">
+                    <div class="mb-4 ml-4 mt-4">
+                        <div class="mt-1 flex items-center">
+                            <label for="title" class="block text-2xl font-averialibre text-orange-800 ml-4">Nama Series</label>
+
+                            <div class="flex flex-row justify-center pt-4 relative">
+                                <div class="flex-none p-2 bg-[#FDED87] rounded-2xl border-[2.037px] border-solid border-4 border-[#945E3D] ml-[325px]">
+                                    <button onclick="showDropdownOptions()" class="flex flex-row justify-between w-48 h-[40px] px-2 py-2 font-averialibre text-orange-800 bg-[#FDED87] border-3 rounded-2xl focus:border-orange-800">
+                                        <span class="select-none">Select Series</span>
+
+                                        <svg id="arrow-down" class="hidden w-6 h-6 stroke-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+                                        </svg>
+                                        <svg id="arrow-up" class="w-6 h-6 stroke-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd" d="M14.707 12.707a1 1 0 01-1.414 0L10 9.414l-3.293 3.293a1 1 0 01-1.414-1.414l4-4a1 1 0 011.414 0l4 4a1 1 0 010 1.414z" clip-rule="evenodd" />
+                                        </svg>
+                                    </button>
+
+                                    <div id="options" class="hidden absolute top-full left-0 w-52 py-2 mt-2 bg-[#FDED87] border-solid border-2 border-[#945E3D] rounded-lg font-averialibre text-orange-800 ml-[325px]">
+                                        <a href="#" class="block px-4 py-2 text-orange-800 hover:bg-[#FDED87] hover:text-orange-600">series 1</a>
+                                        <a href="#" class="block px-4 py-2 text-orange-800 hover:bg-[#FDED87] hover:text-orange-600">series 2</a>
+                                        <a href="#" class="block px-4 py-2 text-orange-800 hover:bg-[#FDED87] hover:text-orange-600">series 3</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="flex mb-4 mt-[160px]">
                         <button class="bg-[#F1A03C] rounded-[20px] border-[2.037px] border-solid border-4 border-[#945E3D] flex items-center w-35 ml-[360px] mr-4">
                             <a href="#" class="ml-4 mr-4 font-averialibre text-orange-800 text-3xl">Cancel</a>
                         </button>
@@ -143,5 +172,13 @@
             </div>
         </div>
     </div>
+    <script>
+        function showDropdownOptions() {
+            document.getElementById("options").classList.toggle("hidden");
+            document.getElementById("arrow-up").classList.toggle("hidden");
+            document.getElementById("arrow-down").classList.toggle("hidden");
+        }
+    </script>
 </body>
+
 </html>
