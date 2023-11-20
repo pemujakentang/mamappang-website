@@ -11,9 +11,42 @@
 </head>
 
 <body>
+
+<div id="header" x-data="{ isOpen: false }" class="fixed rounded-b-2xl border-x-2 border-b-2 border-orange-300  bg-orange-700  justify-center z-40 w-[97%] md:hidden flex items-center flex-col">
+
+<button @click="isOpen = !isOpen" type="submit" class="w-full">
+    <svg xmlns="http://www.w3.org/2000/svg" class="w-12 h-12 my-2 text-orange-300 lg:hidden mx-auto" fill="none"
+        viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+    </svg>
+</button>
+
+
+<div class="w-full">
+
+    <div class="w-full h-2 bg-gradient-to-t from-orange-300" x-show="isOpen"
+        @click.away=" isOpen = false">
+    </div>
+
+    <div class="flex left-0 w-full px-3 pt-4 pb-6 bg-orange-300 rounded-b-xl" x-show="isOpen"
+        @click.away=" isOpen = false">
+        <div class="flex flex-col space-y-4 w-full items-center">
+            <a class="text-orange-700 font-averialibre cursor-pointer text-2xl" href="/">SIGN IN</a>
+            <a class="text-orange-700 font-averialibre cursor-pointer text-2xl" href="/">HOME</a>
+            <a class="text-orange-700 font-averialibre cursor-pointer text-2xl" href="/bulk-order">BULK ORDER</a>
+            <a class="text-orange-700 font-averialibre cursor-pointer text-2xl" href="/">FRANCHISE</a>
+            <a class="text-orange-700 font-averialibre cursor-pointer text-2xl" href="/">ABOUT US</a>
+            <a class="text-orange-700 font-averialibre cursor-pointer text-2xl" href="/">MY DASHBOARD</a>
+        </div>
+    </div>
+
+</div>
+
+</div>
+
     <!-- component -->
     <div class="min-h-screen flex flex-col flex-auto flex-shrink-0 antialiased bg-gray-50 text-gray-800">
-        <div class="fixed flex flex-col top-0 left-0 w-64 bg-[#E16F25] h-full">
+    <div class="fixed hidden md:flex flex-col top-0 left-0 w-64 bg-[#E16F25] h-full">
             <div class="flex items-center justify-center h-14 mb-4 mt-4 ">
                 <img class="object-cover h-16" src="/images/logo.webp" alt="Logo">
             </div>
@@ -90,57 +123,60 @@
                 </ul>
             </div>
         </div>
-        <div class="flex-auto min-h-screen bg-[#FFDBA3]">
+        
+        <div class="flex-auto bg-[#FFDBA3] md:pt-0 pt-20 flex md:justify-start justify-center items-center md:items-stretch flex-col w-full">
             <!-- Dummy Content on the Right Sidebar -->
-            <div class="ml-64 p-8">
-                <div class="grid grid-cols-3 items-center">
-                    <div class="col-span-2 text-5xl tracking-wide truncate font-averialibre text-orange-800">Franchise Edit</div>
+
+            <div class="ml-0 md:ml-64 md:p-8 md:justify-center md:items-center md:flex md:flex-col">
+
+                <div class="flex">
+                    <p class="text-5xl font-averialibre text-orange-800">Franchise Edit</p>
                     <div>
                         <!-- <button class="bg-[#FAC774] rounded-2xl border-[2.037px] border-solid border-4 border-[#945E3D] flex items-center w-35 ml-auto mr-4">
                             <a href="{{ route('franchise-edit-page') }}" class="ml-4 mr-4 font-averialibre text-orange-800 text-2xl">Add New</a>
                         </button> -->
                     </div>
                 </div>
-                <div class="rounded-2xl border-solid border-4 border-[#F1A03C] mt-6 mb-6 bg-[#FAC774] max-h-[600px]  max-w-[1000px] mr-2">
-                    <div class="mb-4 ml-4 mt-4">
-                        <div class="mt-1 flex">
-                            <label for="image" class="block text-2xl font-averialibre text-orange-800 ml-4">Image</label>
-                            <span class="inline-block h-44 w-44 overflow-hidden bg-gray-100 ml-[405px] rounded-2xl border-[2.037px] border-solid border-4 border-[#945E3D]">
+
+                <div class="rounded-2xl border-solid border-4 border-[#F1A03C] my-6 bg-[#FAC774] p-4 md:w-[75%] ">
+                    <div class="mt-1 flex flex-col md:flex-row md:justify-between justify-center items-center">
+                        <label for="image" class="block text-2xl font-averialibre text-orange-800">Image</label>
+                        <div class="flex flex-col md:flex-row w-full md:w-96">
+                            <span class="h-44 w-full md:w-44 overflow-hidden bg-gray-100 rounded-2xl border-solid border-2 mt-2 border-[#945E3D]">
                                 <!-- Preview Image -->
                                 <img id="imagePreview" class="h-full w-full object-contain object-center" src="/images/placeholder-image.webp">
                             </span>
-                            <label for="fileInput" class="ml-4 mt-[140px] cursor-pointer">
-                                <span class="text-1xl font-averialibre text-orange-800 hover:text-orange-600 bg-[#FDED87] rounded-2xl border-[2.037px] border-solid border-4 border-[#945E3D]">Choose File</span>
+                            <button for="fileInput" class="cursor-pointer pt-4 mt-2 w-full md:w-44 text-xl font-averialibre text-orange-800 hover:text-orange-600 bg-[#FDED87] rounded-2xl border-solid border-2 border-[#945E3D] p-4 md:h-16 md:ml-4">
+                                <span class="text-xl font-averialibre text-orange-800 hover:text-orange-600 bg-[#FDED87]">Choose File</span>
                                 <input type="file" id="fileInput" class="hidden" accept="image/*" onchange="previewImage()">
-                            </label>
+                            </button>
                         </div>
                     </div>
-                    <div class="mb-4 ml-4 mt-4">
-                        <div class="mt-1 flex items-center">
-                            <label for="title" class="block text-2xl font-averialibre text-orange-800 ml-4">Package Title</label>
-                            <input type="text" id="title" name="title" class="mt-1 p-2 w-[400px] bg-[#FDED87] rounded-2xl border-[2.037px] border-solid border-4 border-[#945E3D] ml-[330px]">
-                        </div>
+
+                    <div class="mt-6 flex flex-col md:flex-row justify-between">
+                        <label for="title" class="block text-2xl font-averialibre text-orange-800">Package Title</label>
+                        <input type="text" id="title" name="title" class="md:w-96 mt-1 p-2 bg-[#FDED87] rounded-2xl border-solid border-2 border-[#945E3D]">
                     </div>
-                    <div class="mb-4 ml-4 mt-4">
-                        <div class="mt-1 flex items-center">
-                            <label for="title" class="block text-2xl font-averialibre text-orange-800 ml-4">Price</label>
-                            <input type="text" id="title" name="title" class="mt-1 p-2 w-[400px] bg-[#FDED87] rounded-2xl border-[2.037px] border-solid border-4 border-[#945E3D] ml-[420px]">
-                        </div>
+
+                    <div class="mt-6 flex flex-col md:flex-row justify-between">
+                        <label for="title" class="block text-2xl font-averialibre text-orange-800">Price</label>
+                        <input type="text" id="title" name="title" class="md:w-96 mt-1 p-2 bg-[#FDED87] rounded-2xl border-solid border-2 border-[#945E3D]">                     
                     </div>
-                    <div class="mb-4 ml-4 mt-4">
-                        <div class="mt-1 flex">
-                            <label for="title" class="block text-2xl font-averialibre text-orange-800 ml-4">Description</label>
-                            <input type="text" id="title" name="title" class="mt-1 p-2 w-[400px] h-[100px] bg-[#FDED87] rounded-2xl border-[2.037px] border-solid border-4 border-[#945E3D] ml-[350px]">
-                        </div>
+
+                    <div class="mt-6 flex flex-col md:flex-row justify-between">
+                        <label for="title" class="block text-2xl font-averialibre text-orange-800">Description</label>
+                        <textarea type="text" id="title" name="title" class="md:w-96 mt-1 p-2 bg-[#FDED87] rounded-2xl border-solid border-2 border-[#945E3D] max-h-28 h-28"> </textarea>
                     </div>
-                    <div class="flex mb-4 ">
-                        <button class="bg-[#F1A03C] rounded-[20px] border-[2.037px] border-solid border-4 border-[#945E3D] flex items-center w-35 ml-[360px] mr-4">
-                            <a href="{{ route('franchise-edit') }}" class="ml-4 mr-4 font-averialibre text-orange-800 text-3xl">Cancel</a>
+
+                    <div class="flex mb-4 justify-center mt-6 gap-4">
+                        <button class="bg-[#F1A03C] rounded-[20px] border-solid border-4 border-[#945E3D] flex items-center justify-center w-36">
+                            <a href="{{ route('menu-edit') }}" class="ml-4 mr-4 font-averialibre text-orange-800 text-3xl text-center">Cancel</a>
                         </button>
-                        <button class="bg-[#FDED87] rounded-[20px] border-[2.037px] border-solid border-4 border-[#945E3D] flex items-center w-35 ml-[30px] mr-4">
-                            <a href="#" class="ml-4 mr-4 font-averialibre text-orange-800 text-3xl">Save</a>
+                        <button class="bg-[#FDED87] rounded-[20px] border-solid border-4 border-[#945E3D] flex items-center justify-center w-36">
+                            <a href="#" class="ml-4 mr-4 font-averialibre text-orange-800 text-3xl text-center">Save</a>
                         </button>
                     </div>
+
                 </div>
 
             </div>

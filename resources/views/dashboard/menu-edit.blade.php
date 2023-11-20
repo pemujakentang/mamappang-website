@@ -12,9 +12,42 @@
 </head>
 
 <body>
+
+    <div id="header" x-data="{ isOpen: false }" class="fixed rounded-b-2xl border-x-2 border-b-2 border-orange-300  bg-orange-700  justify-center z-40 w-[97%] md:hidden flex items-center flex-col">
+
+        <button @click="isOpen = !isOpen" type="submit" class="w-full">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-12 h-12 my-2 text-orange-300 lg:hidden mx-auto" fill="none"
+                viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+        </button>
+
+
+        <div class="w-full">
+
+            <div class="w-full h-2 bg-gradient-to-t from-orange-300" x-show="isOpen"
+                @click.away=" isOpen = false">
+            </div>
+
+            <div class="flex left-0 w-full px-3 pt-4 pb-6 bg-orange-300 rounded-b-xl" x-show="isOpen"
+                @click.away=" isOpen = false">
+                <div class="flex flex-col space-y-4 w-full items-center">
+                    <a class="text-orange-700 font-averialibre cursor-pointer text-2xl" href="/">SIGN IN</a>
+                    <a class="text-orange-700 font-averialibre cursor-pointer text-2xl" href="/">HOME</a>
+                    <a class="text-orange-700 font-averialibre cursor-pointer text-2xl" href="/bulk-order">BULK ORDER</a>
+                    <a class="text-orange-700 font-averialibre cursor-pointer text-2xl" href="/">FRANCHISE</a>
+                    <a class="text-orange-700 font-averialibre cursor-pointer text-2xl" href="/">ABOUT US</a>
+                    <a class="text-orange-700 font-averialibre cursor-pointer text-2xl" href="/">MY DASHBOARD</a>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
     <!-- component -->
     <div class="min-h-screen flex flex-col flex-auto flex-shrink-0 antialiased bg-gray-50 text-gray-800">
-        <div class="fixed flex flex-col top-0 left-0 w-64 bg-[#E16F25] h-full">
+        <div class="fixed flex-col top-0 left-0 w-64 bg-[#E16F25] h-full md:flex hidden">
             <div class="flex items-center justify-center h-14 mb-4 mt-4 ">
                 <img class="object-cover h-16" src="/images/logo.webp" alt="Logo">
             </div>
@@ -91,31 +124,35 @@
                 </ul>
             </div>
         </div>
+
         <div class="flex-auto min-h-screen bg-[#FFDBA3]">
             <!-- Dummy Content on the Right Sidebar -->
-            <div class="ml-64 p-8">
-                <div class="grid grid-cols-4 items-center">
+            <div class="ml-0 md:ml-64 md:p-8 p-2 md:pt-0 pt-20">
+                <div class="flex-col flex">
                     <div class="col-span-1 text-5xl tracking-wide truncate font-averialibre text-orange-800">Menu Edit</div>
-                    <div>
-                        <button class="bg-[#FDED87] rounded-2xl border-solid border-4 border-[#F1A03C] flex items-center w-35 ml-auto">
-                            <a href="{{ route('edit-bulk') }}" class="ml-4 mr-4 font-averialibre text-orange-800 text-3xl">Edit Harga Bulk</a>
-                        </button>
-                    </div>
-                    <div>
-                        <button class="bg-[#FDED87] rounded-2xl border-solid border-4 border-[#F1A03C] flex items-center w-35 ml-auto">
-                            <a href="{{ route('tambah-series') }}" class="ml-4 mr-4 font-averialibre text-orange-800 text-3xl">Tambah Series</a>
-                        </button>
-                    </div>
-                    <div>
-                        <button class="bg-[#FDED87] rounded-2xl border-solid border-4 border-[#F1A03C] flex items-center w-35 ml-auto mr-4">
-                            <a href="{{ route('tambah-rasa') }}" class="ml-4 mr-4 font-averialibre text-orange-800 text-3xl">Tambah Rasa</a>
-                        </button>
+                    <div class="mt-2 flex flex-col md:flex-row gap-3 md:justify-normal justify-center items-center">
+                        <div class="w-full md:w-auto">
+                            <button class="bg-[#FDED87] rounded-2xl border-solid border-4 border-[#F1A03C] w-full md:w-35 py-2">
+                                <a href="{{ route('edit-bulk') }}" class="ml-4 mr-4 font-averialibre text-orange-800 text-3xl text-center">Edit Harga Bulk</a>
+                            </button>
+                        </div>
+                        <div class="w-full md:w-auto">
+                            <button class="bg-[#FDED87] rounded-2xl border-solid border-4 border-[#F1A03C] w-full md:w-35 py-2">
+                                <a href="{{ route('tambah-series') }}" class="ml-4 mr-4 font-averialibre text-orange-800 text-3xl">Tambah Series</a>
+                            </button>
+                        </div>
+                        <div class="w-full md:w-auto">
+                            <button class="bg-[#FDED87] rounded-2xl border-solid border-4 border-[#F1A03C] w-full md:w-35 py-2">
+                                <a href="{{ route('tambah-rasa') }}" class="ml-4 mr-4 font-averialibre text-orange-800 text-3xl">Tambah Rasa</a>
+                            </button>
+                        </div>
                     </div>
                 </div>
-                <div class="rounded-2xl border-solid border-4 border-[#F1A03C] mt-6 mb-6 bg-[#FAC774] max-h-[600px] mr-2 simplebar">
+
+                <div class="rounded-2xl border-solid border-4 border-[#F1A03C] mt-6 mb-6 bg-[#FAC774] mr-2 simplebar">
                     <ul class="mt-4 mb-4 ml-4 mr-4 space-y-2">
                         <!-- Dummy data, replace with dynamic data in a real application -->
-                        <li class="flex justify-between items-center bg-[#FAC774] border-solid border-4 border-[#F1A03C] p-2 rounded-2xl max-w-[1100px]">
+                        <li class="flex justify-between items-center bg-[#FAC774] border-solid border-4 border-orange-700 p-2 rounded-2xl max-w-[1100px] flex-col md:flex-row">
                             <div class="flex items-center">
                                 <img class="object-cover h-14 transform scale-x-[-1] -translate-y-2 mt-2" src="/images/ikan.webp" alt="Logo">
                                 <span class="ml-2 font-averialibre text-orange-800 text-3xl">Series 1</span>
@@ -129,7 +166,7 @@
                                 </button>
                             </div>
                         </li>
-                        <li class="flex justify-between items-center bg-[#FAC774] border-solid border-4 border-[#F1A03C] p-2 rounded-2xl max-w-[1000px] ml-24">
+                        <li class="flex justify-between items-center bg-[#FAC774] border-solid border-4 border-[#F1A03C] p-2 rounded-2xl max-w-[1000px]  md:ml-24 mx-4 flex-col md:flex-row">
                             <div class="flex items-center">
                                 <img class="object-cover h-14 transform scale-x-[-1] -translate-y-2 mt-2" src="/images/ikan.webp" alt="Logo">
                                 <span class="ml-2 font-averialibre text-orange-800 text-3xl">rasa 1</span>
@@ -143,7 +180,7 @@
                                 </button>
                             </div>
                         </li>
-                        <li class="flex justify-between items-center bg-[#FAC774] border-solid border-4 border-[#F1A03C] p-2 rounded-2xl max-w-[1000px] ml-24">
+                        <li class="flex justify-between items-center bg-[#FAC774] border-solid border-4 border-[#F1A03C] p-2 rounded-2xl max-w-[1000px]  md:ml-24 mx-4 flex-col md:flex-row">
                             <div class="flex items-center">
                                 <img class="object-cover h-14 transform scale-x-[-1] -translate-y-2 mt-2" src="/images/ikan.webp" alt="Logo">
                                 <span class="ml-2 font-averialibre text-orange-800 text-3xl">rasa 2</span>
@@ -157,7 +194,21 @@
                                 </button>
                             </div>
                         </li>
-                        <li class="flex justify-between items-center bg-[#FAC774] border-solid border-4 border-[#F1A03C] p-2 rounded-2xl max-w-[1100px]">
+                        <li class="flex justify-between items-center bg-[#FAC774] border-solid border-4 border-[#F1A03C] p-2 rounded-2xl max-w-[1000px]  md:ml-24 mx-4 flex-col md:flex-row">
+                            <div class="flex items-center">
+                                <img class="object-cover h-14 transform scale-x-[-1] -translate-y-2 mt-2" src="/images/ikan.webp" alt="Logo">
+                                <span class="ml-2 font-averialibre text-orange-800 text-3xl">rasa 3</span>
+                            </div>
+                            <div class="flex space-x-2">
+                                <button type="button" class="text-blue-500">
+                                    <p class="ml-4 mr-4 font-averialibre text-orange-800 text-3xl">Edit</p>
+                                </button>
+                                <button type="button" class="text-red-500">
+                                    <p class="ml-4 mr-4 font-averialibre text-orange-800 text-3xl">Delete</p>
+                                </button>
+                            </div>
+                        </li>
+                        <li class="flex justify-between items-center bg-[#FAC774] border-solid border-4 border-orange-700 p-2 rounded-2xl max-w-[1100px] flex-col md:flex-row">
                             <div class="flex items-center">
                                 <img class="object-cover h-14 transform scale-x-[-1] -translate-y-2 mt-2" src="/images/ikan.webp" alt="Logo">
                                 <span class="ml-2 font-averialibre text-orange-800 text-3xl">Series 2</span>

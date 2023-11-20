@@ -11,9 +11,42 @@
 </head>
 
 <body>
+
+    <div id="header" x-data="{ isOpen: false }" class="fixed rounded-b-2xl border-x-2 border-b-2 border-orange-300  bg-orange-700  justify-center z-40 w-[97%] md:hidden flex items-center flex-col">
+
+        <button @click="isOpen = !isOpen" type="submit" class="w-full">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-12 h-12 my-2 text-orange-300 lg:hidden mx-auto" fill="none"
+                viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+        </button>
+
+
+        <div class="w-full">
+
+            <div class="w-full h-2 bg-gradient-to-t from-orange-300" x-show="isOpen"
+                @click.away=" isOpen = false">
+            </div>
+
+            <div class="flex left-0 w-full px-3 pt-4 pb-6 bg-orange-300 rounded-b-xl" x-show="isOpen"
+                @click.away=" isOpen = false">
+                <div class="flex flex-col space-y-4 w-full items-center">
+                    <a class="text-orange-700 font-averialibre cursor-pointer text-2xl" href="/">SIGN IN</a>
+                    <a class="text-orange-700 font-averialibre cursor-pointer text-2xl" href="/">HOME</a>
+                    <a class="text-orange-700 font-averialibre cursor-pointer text-2xl" href="/bulk-order">BULK ORDER</a>
+                    <a class="text-orange-700 font-averialibre cursor-pointer text-2xl" href="/">FRANCHISE</a>
+                    <a class="text-orange-700 font-averialibre cursor-pointer text-2xl" href="/">ABOUT US</a>
+                    <a class="text-orange-700 font-averialibre cursor-pointer text-2xl" href="/">MY DASHBOARD</a>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
     <!-- component -->
     <div class="min-h-screen flex flex-col flex-auto flex-shrink-0 antialiased bg-gray-50 text-gray-800">
-        <div class="fixed flex flex-col top-0 left-0 w-64 bg-[#E16F25] h-full">
+        <div class="fixed hidden md:flex flex-col top-0 left-0 w-64 bg-[#E16F25] h-full">
             <div class="flex items-center justify-center h-14 mb-4 mt-4 ">
                 <img class="object-cover h-16" src="/images/logo.webp" alt="Logo">
             </div>
@@ -90,11 +123,12 @@
                 </ul>
             </div>
         </div>
-        <div class="flex-auto min-h-screen bg-[#FFDBA3]">
+        
+        <div class="flex-auto min-h-screen bg-[#FFDBA3] pt-20 md:pt-0">
             <!-- Dummy Content on the Right Sidebar -->
-            <div class="ml-64 p-8">
-                <div class="grid grid-cols-4 items-center">
-                    <div class="col-span-2 text-5xl tracking-wide truncate font-averialibre text-orange-800">Menu Edit</div>
+            <div class="ml-0 md:ml-64 p-3 md:p-8">
+                <div class="flex">
+                    <p class="text-5xl font-averialibre text-orange-800">Edit Harga Bulk</p>
                     <!-- <div>
                         <button class="bg-[#FDED87] rounded-2xl border-solid border-4 border-[#F1A03C] flex items-center w-35 ml-auto">
                             <a href="{{ route('edit-bulk') }}" class="ml-4 mr-4 font-averialibre text-orange-800 text-3xl">Edit Harga Bulk</a>
@@ -106,26 +140,31 @@
                         </button>
                     </div> -->
                 </div>
-                <div class="rounded-2xl border-solid border-4 border-[#F1A03C] mt-6 mb-6 bg-[#FAC774] overflow-y-auto max-h-[600px] h-[500px] max-w-[1100px] mr-2">
-                    <ul class="mt-4 mb-4 ml-4 space-y-2">
+
+                <div class="rounded-2xl border-solid border-4 border-[#F1A03C] my-6 bg-[#FAC774] overflow-y-auto">
+                    <ul class="m-2 md:m-4 space-y-2">
                         <!-- Dummy data, replace with dynamic data in a real application -->
-                        <li class="flex justify-between items-center bg-[#FAC774] border-solid border-4 border-[#F1A03C] p-2 rounded-2xl w-[1000px]">
-                            <div class="flex items-center">
-                                <img class="object-cover h-14 transform scale-x-[-1] -translate-y-2 mt-2" src="/images/ikan.webp" alt="Logo">
-                                <div class= "ml-4">
-                                    <div class="mt-1 flex ">
-                                        <label for="title" class="block text-2xl font-averialibre text-orange-800 ml-4">Rasa 1</label>
-                                        <input type="text" id="title" name="title" class="p-2 w-[200px] bg-[#FDED87] rounded-2xl border-[2.037px] border-solid border-4 border-[#945E3D] ml-[30px]">
+                        <li class="flex justify-between items-center bg-[#FAC774] border-solid border-4 border-[#F1A03C] py-3 md:px-5 rounded-2xl md:w-full md:flex-row md:justify-between flex-col">
+
+                                <div class="flex flex-row items-center justify-center">
+                                    <img class="object-cover h-16 transform scale-x-[-1] -translate-y-2 mt-2" src="/images/ikan.webp" alt="Logo">
+                                    <div class= "">
+                                        <div class="flex h-16">
+                                            <input type="text" id="title" name="title" class="p-2 w-[200px] bg-[#FDED87] rounded-2xl border-solid border-2 border-[#945E3D] ml-2 font-averialibre placeholder-orange-700" placeholder="20-50pcs">
+                                        </div>
                                     </div>
                                 </div>
-                                <div class= "ml-4">
-                                    <div class="mt-1 flex ">
-                                        <input type="text" id="title" name="title" class="p-2 w-[200px] bg-[#FDED87] rounded-2xl border-[2.037px] border-solid border-4 border-[#945E3D] ml-[170px]">
+
+                                <div class="flex flex-row items-center justify-center gap-2 mt-2">
+                                    <div class= "">
+                                        <div class="flex h-16">
+                                            <input type="text" id="title" name="title" class="p-2 w-[200px] bg-[#FDED87] rounded-2xl border-solid border-2 border-[#945E3D] ml-2 font-averialibre placeholder-orange-700" placeholder="20-50pcs">
+                                        </div>
                                     </div>
+                                    
+                                    <span class="md:ml-[20px] font-averialibre text-orange-800 text-center text-xl md:text-4xl md:w-[180px] bg-[#FFDBA3] rounded-[10px] border-solid border-2 border-[#945E3D] h-16 items-center justify-center flex px-2">Per Pcs</span>
+                                    <!-- <span class="ml-2 font-averialibre text-orange-800 text-4xl">Item 1</span> -->
                                 </div>
-                                <span class="ml-[20px] font-averialibre text-orange-800 text-center text-4xl w-[180px] bg-[#FFDBA3] rounded-[10px] border-[2.037px] border-solid border-4 border-[#945E3D]">Per Pcs</span>
-                                <!-- <span class="ml-2 font-averialibre text-orange-800 text-4xl">Item 1</span> -->
-                            </div>
                             <!-- <div class="flex space-x-2">
                                 <button type="button" class="text-blue-500">
                                     <p class="ml-4 mr-4 font-averialibre text-orange-800 text-3xl">Edit</p>
@@ -135,23 +174,28 @@
                                 </button>
                             </div> -->
                         </li>
-                        <li class="flex justify-between items-center bg-[#FAC774] border-solid border-4 border-[#F1A03C] p-2 rounded-2xl w-[1000px]">
-                            <div class="flex items-center">
-                                <img class="object-cover h-14 transform scale-x-[-1] -translate-y-2 mt-2" src="/images/ikan.webp" alt="Logo">
-                                <div class= "ml-4">
-                                    <div class="mt-1 flex ">
-                                        <label for="title" class="block text-2xl font-averialibre text-orange-800 ml-4">Rasa 2</label>
-                                        <input type="text" id="title" name="title" class="p-2 w-[200px] bg-[#FDED87] rounded-2xl border-[2.037px] border-solid border-4 border-[#945E3D] ml-[30px]">
+
+                        <li class="flex justify-between items-center bg-[#FAC774] border-solid border-4 border-[#F1A03C] py-3 md:px-5 rounded-2xl md:w-full md:flex-row md:justify-between flex-col">
+
+                                <div class="flex flex-row items-center justify-center">
+                                    <img class="object-cover h-16 transform scale-x-[-1] -translate-y-2 mt-2" src="/images/ikan.webp" alt="Logo">
+                                    <div class= "">
+                                        <div class="flex h-16">
+                                            <input type="text" id="title" name="title" class="p-2 w-[200px] bg-[#FDED87] rounded-2xl border-solid border-2 border-[#945E3D] ml-2 font-averialibre placeholder-orange-700" placeholder="20-50pcs">
+                                        </div>
                                     </div>
                                 </div>
-                                <div class= "ml-4">
-                                    <div class="mt-1 flex ">
-                                        <input type="text" id="title" name="title" class="p-2 w-[200px] bg-[#FDED87] rounded-2xl border-[2.037px] border-solid border-4 border-[#945E3D] ml-[170px]">
+
+                                <div class="flex flex-row items-center justify-center gap-2 mt-2">
+                                    <div class= "">
+                                        <div class="flex h-16">
+                                            <input type="text" id="title" name="title" class="p-2 w-[200px] bg-[#FDED87] rounded-2xl border-solid border-2 border-[#945E3D] ml-2 font-averialibre placeholder-orange-700" placeholder="20-50pcs">
+                                        </div>
                                     </div>
+                                    
+                                    <span class="md:ml-[20px] font-averialibre text-orange-800 text-center text-xl md:text-4xl md:w-[180px] bg-[#FFDBA3] rounded-[10px] border-solid border-2 border-[#945E3D] h-16 items-center justify-center flex px-2">Per Pcs</span>
+                                    <!-- <span class="ml-2 font-averialibre text-orange-800 text-4xl">Item 1</span> -->
                                 </div>
-                                <span class="ml-[20px] font-averialibre text-orange-800 text-center text-4xl w-[180px] bg-[#FFDBA3] rounded-[10px] border-[2.037px] border-solid border-4 border-[#945E3D]">Per Pcs</span>
-                                <!-- <span class="ml-2 font-averialibre text-orange-800 text-4xl">Item 1</span> -->
-                            </div>
                             <!-- <div class="flex space-x-2">
                                 <button type="button" class="text-blue-500">
                                     <p class="ml-4 mr-4 font-averialibre text-orange-800 text-3xl">Edit</p>
@@ -161,22 +205,28 @@
                                 </button>
                             </div> -->
                         </li>
-                        <li class="flex justify-between items-center bg-[#FAC774] border-solid border-4 border-[#F1A03C] p-2 rounded-2xl w-[1000px]">
-                            <div class="flex items-center">
-                                <img class="object-cover h-14 transform scale-x-[-1] -translate-y-2 mt-2" src="/images/ikan.webp" alt="Logo">
-                                <div class= "ml-4">
-                                    <div class="mt-1 flex ">
-                                        <label for="title" class="block text-2xl font-averialibre text-orange-800 ml-4">Rasa 3</label>
-                                        <input type="text" id="title" name="title" class="p-2 w-[200px] bg-[#FDED87] rounded-2xl border-[2.037px] border-solid border-4 border-[#945E3D] ml-[30px]">
+
+                        <li class="flex justify-between items-center bg-[#FAC774] border-solid border-4 border-[#F1A03C] py-3 md:px-5 rounded-2xl md:w-full md:flex-row md:justify-between flex-col">
+
+                                <div class="flex flex-row items-center justify-center">
+                                    <img class="object-cover h-16 transform scale-x-[-1] -translate-y-2 mt-2" src="/images/ikan.webp" alt="Logo">
+                                    <div class= "">
+                                        <div class="flex h-16">
+                                            <input type="text" id="title" name="title" class="p-2 w-[200px] bg-[#FDED87] rounded-2xl border-solid border-2 border-[#945E3D] ml-2 font-averialibre placeholder-orange-700" placeholder="20-50pcs">
+                                        </div>
                                     </div>
                                 </div>
-                                <div class= "ml-4">
-                                    <div class="mt-1 flex ">
-                                        <input type="text" id="title" name="title" class="p-2 w-[200px] bg-[#FDED87] rounded-2xl border-[2.037px] border-solid border-4 border-[#945E3D] ml-[170px]">
+
+                                <div class="flex flex-row items-center justify-center gap-2 mt-2">
+                                    <div class= "">
+                                        <div class="flex h-16">
+                                            <input type="text" id="title" name="title" class="p-2 w-[200px] bg-[#FDED87] rounded-2xl border-solid border-2 border-[#945E3D] ml-2 font-averialibre placeholder-orange-700">
+                                        </div>
                                     </div>
+                                    
+                                    <span class="md:ml-[20px] font-averialibre text-orange-800 text-center text-xl md:text-4xl md:w-[180px] bg-[#FFDBA3] rounded-[10px] border-solid border-2 border-[#945E3D] h-16 items-center justify-center flex px-2">Per Pcs</span>
+                                    <!-- <span class="ml-2 font-averialibre text-orange-800 text-4xl">Item 1</span> -->
                                 </div>
-                                <span class="ml-[20px] font-averialibre text-orange-800 text-center text-4xl w-[180px] bg-[#FFDBA3] rounded-[10px] border-[2.037px] border-solid border-4 border-[#945E3D]">Per Pcs</span>
-                            </div>
                             <!-- <div class="flex space-x-2">
                                 <button type="button" class="text-blue-500">
                                     <p class="ml-4 mr-4 font-averialibre text-orange-800 text-3xl">Edit</p>
@@ -187,13 +237,14 @@
                             </div> -->
                         </li>
                         <!-- Add more items as needed -->
+                        
                     </ul>
-                    <div class="flex mb-4 mt-[140px]">
-                        <button class="bg-[#F1A03C] rounded-[20px] border-[2.037px] border-solid border-4 border-[#945E3D] flex items-center w-35 ml-[390px] mr-4">
-                            <a href="{{ route('menu-edit') }}" class="ml-4 mr-4 font-averialibre text-orange-800 text-3xl">Cancel</a>
+                    <div class="flex mb-4 justify-center mt-4">
+                        <button class="bg-[#F1A03C] rounded-[20px] border-solid border-4 border-[#945E3D] flex items-center justify-center w-36 mr-4">
+                            <a href="{{ route('menu-edit') }}" class="ml-4 mr-4 font-averialibre text-orange-800 text-3xl text-center">Cancel</a>
                         </button>
-                        <button class="bg-[#FDED87] rounded-[20px] border-[2.037px] border-solid border-4 border-[#945E3D] flex items-center w-35 ml-[30px] mr-4">
-                            <a href="#" class="ml-4 mr-4 font-averialibre text-orange-800 text-3xl">Save</a>
+                        <button class="bg-[#FDED87] rounded-[20px] border-solid border-4 border-[#945E3D] flex items-center justify-center w-36 mr-4">
+                            <a href="#" class="ml-4 mr-4 font-averialibre text-orange-800 text-3xl text-center">Save</a>
                         </button>
                     </div>
                 </div>
