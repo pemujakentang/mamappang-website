@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html class="scroll-smooth">
 
 <head>
     <meta charset="UTF-8">
@@ -12,7 +12,7 @@
 </head>
 
 <body>
-<div class="overflow-y-scroll flex flex-col items-center bg-[#FF6400] overflow-x-hidden relative">
+<div class="mx-auto my-auto overflow-y-hidden relative overflow-x-hidden flex flex-col items-center bg-[#FF6400]">
 
     <!-- button whatsapp -->
     <div id="button1" class="fixed bottom-12 end-4 md:bottom-8 md:end-20 flex justify-center items-center z-20 animate-move-y-fast ">
@@ -23,6 +23,7 @@
         </a>
     </div>
 
+    <!-- navbar mobile -->
     <div id="header" x-data="{ isOpen: false }" class="fixed rounded-b-2xl border-x-2 border-b-2 border-orange-300  bg-orange-700  justify-center z-40 w-[97%] md:hidden flex items-center flex-col">
 
             <button @click="isOpen = !isOpen" type="submit" class="w-full">
@@ -42,6 +43,7 @@
                 <div class="flex left-0 w-full px-3 pt-4 pb-6 bg-orange-300 rounded-b-xl" x-show="isOpen"
                     @click.away=" isOpen = false">
                     <div class="flex flex-col space-y-4 w-full items-center">
+                        <a class="text-orange-700 font-averialibre cursor-pointer text-2xl" href="/">SIGN IN</a>
                         <a class="text-orange-700 font-averialibre cursor-pointer text-2xl" href="/">HOME</a>
                         <a class="text-orange-700 font-averialibre cursor-pointer text-2xl" href="/bulk-order">BULK ORDER</a>
                         <a class="text-orange-700 font-averialibre cursor-pointer text-2xl" href="/">FRANCHISE</a>
@@ -57,9 +59,9 @@
     <!-- section - home -->
     <div class="h-screen relative">
 
-        <img class="absolute h-96 z-10 -right-56 bottom-10 mt-6 animate-wiggle opacity-70" src="/images/awan.webp" alt="Logo">
-        <img class="absolute h-96 z-10 -left-60 -bottom-32 animate-wiggle opacity-70" src="/images/awan.webp" alt="Logo">
-        <div class="absolute h-80 z-10 left-20 top-32 animate-move-x">
+        <img class="absolute h-auto md:h-96 z-10 -right-56 bottom-10 mt-6 animate-wiggle opacity-70" src="/images/awan.webp" alt="Logo">
+        <img class="absolute h-auto md:h-96 z-10 -left-60 -bottom-32 animate-wiggle opacity-70" src="/images/awan.webp" alt="Logo">
+        <div class="hidden md:flex absolute h-auto md:h-80 z-10 left-20 top-32 animate-move-x">
             <img class="animate-move-y opacity-70 h-80" src="/images/awan.webp" alt="Logo">
         </div>
 
@@ -91,11 +93,14 @@
 
 
             <div class="w-full md:w-[75%] flex items-center justify-center mt-0 md:mt-20 z-10">
-                <img class="object-cover scale-[1.4] md:scale-100" src="/images/logo2.webp" alt="Logo">
+                <img class="object-cover scale-[1.4] md:scale-100 z-10" src="/images/logo2.webp" alt="Logo">
+                <div class="absolute w-screen z-0 scale-[1.2] flex md:hidden">
+                    <img class="object-cover animate-spin-slow" src="/images/cahaya.webp" alt="Logo">
+                </div>
             </div>
 
             <div class="flex mt-20 md:mt-16 z-10 md:flex-row flex-col w-full md:w-auto items-center">
-                <a href="#menu" class="no-underline w-full">
+                <a href="#menu" class="no-underline w-full flex justify-center">
                     <button href="#menu" class="flex h-16 md:h-14 md:w-56 w-[85%] rounded-full border-2 border-yellow-800 bg-orange-300 items-center justify-center mx-4 hover:scale-[1.2] duration-75">
                         <p class="text-orange-800 font-averialibre text-2xl">See Our Menu</p>
                         <div class="w-8 flex items-center justify-center ml-1">
@@ -103,7 +108,7 @@
                         </div>
                     </button>
                 </a>
-                <a href="#franchise" class="no-underline w-full">
+                <a href="#franchise" class="no-underline w-full flex justify-center">
                     <button href="" class="flex h-16 md:h-14 md:w-56 w-[85%]  rounded-full border-2 border-yellow-800 bg-orange-300 items-center justify-center mx-4 hover:scale-[1.2] duration-75 mt-4 md:mt-0">
                         <p class="text-orange-800 font-averialibre text-2xl">Franchise Info ⓘ</p>
                     </button>
@@ -113,14 +118,14 @@
 
     </div>
 
-    <div class="w-full">
-        <div class="absolute w-screen z-0 scale-[3.3] md:scale-[1.7] lg:-mt-56 md:-mt-48">
+    <div class="w-full hidden md:flex">
+        <div class="absolute w-screen z-0 scale-[1.7] lg:-mt-56 md:-mt-48">
             <img class="object-cover animate-spin-slow" src="/images/cahaya.webp" alt="Logo">
         </div>
     </div>
 
     <!-- section - menu -->
-    <div id="menu" class="w-full flex flex-col items-center z-10" style="background-image: url('/images/background-menu.webp');">
+    <div id="menu" class="w-full flex flex-col items-center z-10 pt-16 md:pt-0" style="background-image: url('/images/background-menu.webp');">
         <p class="text-orange-800 font-averialibre text-5xl mx-auto md:my-5 my-10" style="text-shadow: 4px 4px 4px #FFFFFF, -4px -4px 4px #FFFFFF, 4px -4px 4px #FFFFFF, -4px 4px 4px #FFFFFF;">Our Menu</p>
         <div class="flex flex-col md:flex-row md:w-[90%] w-full">
             <div class="w-full md:w-[50%]">
@@ -242,11 +247,11 @@
     <!-- section - franchise -->
     <div id="franchise" class="w-full flex flex-col relative items-center bg-[#F1A03C]">
 
-        <img class="absolute h-96 z-0 -left-64 mt-5 animate-wiggle" src="/images/awan.webp" alt="Logo">
-        <img class="absolute h-96 z-0 -right-64 bottom-0 mt-5 animate-wiggle" src="/images/awan.webp" alt="Logo">
+        <img class="absolute h-auto md:h-96 z-0 -left-64 mt-5 animate-wiggle" src="/images/awan.webp" alt="Logo">
+        <img class="absolute h-auto md:h-96 z-0 -right-64 md:bottom-0 top-20 mt-5 animate-wiggle" src="/images/awan.webp" alt="Logo">
 
         
-        <div class="flex flex-col md:flex-row w-[90%] md:w-[80%] mt-10 z-10 ">
+        <div class="flex flex-col md:flex-row w-[90%] md:w-[80%] mt-10 z-10 pt-12 md:pt-0">
             <div class="w-full md:w-[50%]">
                 <div class="w-full flex items-center justify-center mx-auto mb-0 md:mb-16">
                     <img class="object-cover" src="/images/booth.webp" alt="Logo">
@@ -267,7 +272,7 @@
     </div>
 
     <!-- footer -->
-    <div class="w-full flex flex-col z-10 px-5 md:px-3 md:pl-7 py-7" style="background-image: url('/images/background-menu.webp');">
+    <div class="w-full flex flex-col z-10 px-5 md:px-3 md:pl-7 py-7 bg-[#FF6400]">
         <p class="text-orange-800 font-averialibre text-3xl md:text-4xl mb-3">Mamappang - Best In Town</p>
         <p class="text-orange-800 font-averialibre text-lg md:text-xl w-full md:w-[70%] text-justify mb-6">mammapang is Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. </p>
         <p class="text-orange-800 font-averialibrebold text-xl md:text-2xl mb-1">In collaboration with :</p>
@@ -285,3 +290,5 @@
 
 </div>
 </body>
+
+</html>
