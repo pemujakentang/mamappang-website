@@ -119,7 +119,7 @@
     </div>
 
     <div class="w-full hidden md:flex">
-        <div class="absolute w-screen z-0 scale-[1.7] lg:-mt-56 md:-mt-48">
+        <div class="fixed w-screen z-0 scale-[1.7] lg:-mt-56 md:-mt-48">
             <img class="object-cover animate-spin-slow" src="/images/cahaya.webp" alt="Logo">
         </div>
     </div>
@@ -248,7 +248,7 @@
     <div id="franchise" class="w-full flex flex-col relative items-center bg-[#F1A03C]">
 
         <img class="absolute h-auto md:h-96 z-0 -left-64 mt-5 animate-wiggle" src="/images/awan.webp" alt="Logo">
-        <img class="absolute h-auto md:h-96 z-0 -right-64 md:bottom-0 top-20 mt-5 animate-wiggle" src="/images/awan.webp" alt="Logo">
+        <img class="absolute h-auto md:h-96 z-0 -right-64 md:bottom-0 top-20 md:top-auto mt-5 animate-wiggle" src="/images/awan.webp" alt="Logo">
 
         
         <div class="flex flex-col md:flex-row w-[90%] md:w-[80%] mt-10 z-10 pt-12 md:pt-0">

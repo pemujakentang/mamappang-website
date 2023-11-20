@@ -634,7 +634,7 @@
     </div>
 
     <div class="w-full hidden md:flex">
-        <div class="absolute w-screen z-0 scale-[1.7] lg:-mt-56 md:-mt-48">
+        <div class="fixed w-screen z-0 scale-[1.7] lg:-mt-56 md:-mt-48">
             <img class="object-cover animate-spin-slow" src="/images/cahaya.webp" alt="Logo">
         </div>
         
