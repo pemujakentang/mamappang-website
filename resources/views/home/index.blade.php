@@ -89,32 +89,40 @@
         
 
         <!-- home -->
-        <div class="flex flex-col items-center relative md:justify-normal justify-center h-screen ">
 
+        <div class="flex flex-col items-center relative md:justify-normal justify-center h-full ">
 
-            <div class="w-full md:w-[75%] flex items-center justify-center mt-0 md:mt-20 z-10">
-                <img class="object-cover scale-[1.4] md:scale-100 z-10" src="/images/logo2.webp" alt="Logo">
-                <div class="absolute w-screen z-0 scale-[1.2] flex md:hidden">
-                    <img class="object-cover animate-spin-slow" src="/images/cahaya.webp" alt="Logo">
+            <div class="flex flex-col items-center relative justify-center h-full">
+                
+                <div class="w-full md:w-[75%] flex items-center justify-center z-10 md:h-[65%] mt-20 md:mt-10" >
+                    <img class="object-cover scale-[1.4] md:scale-100 z-10 md:h-full" src="/images/logo2.webp" alt="Logo">
+                    <div class="absolute w-screen z-0 scale-[1.2] flex md:hidden">
+                        <img class="object-cover animate-spin-slow" src="/images/cahaya.webp" alt="Logo">
+                    </div>
+                </div>
+
+                <div class="flex mt-20 md:mt-0 md:pt-6 z-10 md:flex-row flex-col w-full md:w-auto md:h-[35%]">
+                    <a href="#menu" class="no-underline w-full flex justify-center">
+                        <button href="#menu" class="flex h-16 md:h-14 md:w-56 w-[85%] rounded-full border-2 border-yellow-800 bg-orange-300 items-center justify-center mx-4 hover:scale-[1.2] duration-75">
+                            <p class="text-orange-800 font-averialibre text-2xl">See Our Menu</p>
+                            <div class="w-8 flex items-center justify-center ml-1">
+                                <img class="object-cover" src="/images/play.webp" alt="Logo">
+                            </div>
+                        </button>
+                    </a>
+                    <a href="#franchise" class="no-underline w-full flex justify-center">
+                        <button href="" class="flex h-16 md:h-14 md:w-56 w-[85%]  rounded-full border-2 border-yellow-800 bg-orange-300 items-center justify-center mx-4 hover:scale-[1.2] duration-75 mt-4 md:mt-0">
+                            <p class="text-orange-800 font-averialibre text-2xl">Franchise Info ⓘ</p>
+                        </button>
+                    </a>
                 </div>
             </div>
 
-            <div class="flex mt-20 md:mt-16 z-10 md:flex-row flex-col w-full md:w-auto items-center">
-                <a href="#menu" class="no-underline w-full flex justify-center">
-                    <button href="#menu" class="flex h-16 md:h-14 md:w-56 w-[85%] rounded-full border-2 border-yellow-800 bg-orange-300 items-center justify-center mx-4 hover:scale-[1.2] duration-75">
-                        <p class="text-orange-800 font-averialibre text-2xl">See Our Menu</p>
-                        <div class="w-8 flex items-center justify-center ml-1">
-                            <img class="object-cover" src="/images/play.webp" alt="Logo">
-                        </div>
-                    </button>
-                </a>
-                <a href="#franchise" class="no-underline w-full flex justify-center">
-                    <button href="" class="flex h-16 md:h-14 md:w-56 w-[85%]  rounded-full border-2 border-yellow-800 bg-orange-300 items-center justify-center mx-4 hover:scale-[1.2] duration-75 mt-4 md:mt-0">
-                        <p class="text-orange-800 font-averialibre text-2xl">Franchise Info ⓘ</p>
-                    </button>
-                </a>
-            </div>
         </div>
+
+
+            
+       
 
     </div>
 

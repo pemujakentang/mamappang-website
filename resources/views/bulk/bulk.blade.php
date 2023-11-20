@@ -599,9 +599,10 @@
         </div>
 
         <!-- home -->
-        <div class="flex flex-col items-center relative z-10 h-full justify-center d:-mt-20">
+        <div class="flex flex-col items-center relative md:justify-normal justify-center h-full ">
 
-            <div class="flex flex-col md:flex-row w-[90%] mt-2 justify-center">
+            <div class="flex flex-col md:flex-row w-[90%] mt-2 justify-center md:items-center md:h-[80%]">
+
                 <div class="w-full md:w-[50%]">
                     <div class="w-full md:w-[85%] flex items-center justify-center mx-auto mb-10 md:mb-4">
                         <img class="object-cover z-10" src="/images/logo3.webp" alt="Logo">
@@ -609,14 +610,17 @@
                             <img class="object-cover animate-spin-slow" src="/images/cahaya.webp" alt="Logo">
                         </div>
                     </div>
-            </div>
+                </div>
 
                 <div class="w-full md:w-[50%] flex flex-col justify-center md:pr-7 z-10">
                     <!-- SERIES #1 -->
                     <p class="text-orange-800 font-averialibrebold text-5xl mx-auto mb-6" style="text-shadow: 4px 4px 4px #FFFFFF, -4px -4px 4px #FFFFFF, 4px -4px 4px #FFFFFF, -4px 4px 4px #FFFFFF;">BULK ORDER</p>
                     <p class="text-orange-800 font-averialibrebold text-xl md:text-2xl text-justify mx-auto " style="text-shadow: 4px 4px 4px #FFFFFF, -4px -4px 4px #FFFFFF, 4px -4px 4px #FFFFFF, -4px 4px 4px #FFFFFF;">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ab, cupiditate adipisci, inventore et necessitatibus nemo nesciunt repellat debitis, officia laborum temporibus tempore soluta ut dolore. Ullam quidem magni nisi. Ab!</p>
                 </div>
+                
             </div>
+
+            <div class="hidden md:flex md:h-[20%]"></div>
 
         </div>
 
