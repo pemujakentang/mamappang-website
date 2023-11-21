@@ -130,7 +130,6 @@
         <div class="fixed w-screen z-0 scale-[1.7] lg:-mt-56 md:-mt-48">
             <img class="object-cover animate-spin-slow" src="/images/cahaya.webp" alt="Logo">
         </div>
-    </div>
 
     <!-- section - menu -->
     <div id="menu" class="w-full flex flex-col items-center z-10 pt-16 md:pt-0" style="background-image: url('/images/background-menu.webp');">
@@ -273,10 +272,28 @@
                     <button href="" class="flex md:h-24 h-20 w-full md:w-[90%] rounded-full border-2 border-yellow-800 bg-[#FF6400] items-center justify-center my-10 md:my-16 mx-auto hover:scale-[1.2] duration-75">
                         <p class="text-white font-averialibre text-3xl md:text-4xl ">Gabung bersama kami</p>
                     </button>
-                </a>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- footer -->
+        <div class="w-full flex flex-col z-10 pl-7 py-7" style="background-image: url('/images/background-menu.webp');">
+            <p class="text-orange-800 font-averialibre text-4xl mb-3">Mamappang - Best In Town</p>
+            <p class="text-orange-800 font-averialibre text-xl w-[70%] text-justify mb-6">mammapang is Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. </p>
+            <p class="text-orange-800 font-averialibrebold text-2xl mb-1">In collaboration with :</p>
+            <div class="flex">
+                <div class="w-42 flex items-center justify-center">
+                    <img class="object-cover" src="/images/umn.webp" alt="Logo">
+                </div>
+                <div class="w-42 flex items-center justify-center ml-3">
+                    <img class="object-cover" src="/images/logo.webp" alt="Logo">
+                </div>
             </div>
         </div>
-        
+
+
+
     </div>
 
     <!-- footer -->
