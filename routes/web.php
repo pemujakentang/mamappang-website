@@ -24,6 +24,14 @@ Route::get('/bulk-order', function () {
     return view('bulk.bulk');
 });
 
+Route::get('/franchise', function () {
+    return view('franchise.franchise');
+});
+
+Route::get('/franchise', function () {
+    return view('franchise.franchise');
+});
+
 Route::controller(LoginController::class)->group(function () {
     Route::get('/login', 'index')->name('login');
     Route::post('/login', 'authenticate');
