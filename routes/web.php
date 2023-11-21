@@ -17,7 +17,11 @@ use Illuminate\Support\Facades\Auth;
 */
 
 Route::get('/', function () {
-    return view('Home.index');
+    return view('home.index');
+});
+
+Route::get('/bulk-order', function () {
+    return view('bulk.bulk');
 });
 
 Route::controller(LoginController::class)->group(function () {
