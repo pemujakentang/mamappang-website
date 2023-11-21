@@ -20,6 +20,7 @@ return new class extends Migration
             $table->string('no_hp')->nullable();
             $table->text('link')->nullable();
             $table->text('keterangan')->nullable();
+            $table->string('status');
             $table->timestamps();
         });
     }

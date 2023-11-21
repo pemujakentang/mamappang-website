@@ -12,9 +12,9 @@ class Menu extends Model
     protected $fillable = [
         'name',
         'description',
-        'excerpt',
         'image',
-        'price'
+        'price',
+        'category'
     ];
 
     protected $guarded = ['id'];

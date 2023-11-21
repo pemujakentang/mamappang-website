@@ -14,7 +14,8 @@ class Preorders extends Model
         'shipment_address',
         'tanggal_pesanan',
         'total_price',
-        'total_qty'
+        'total_qty',
+        'status'
     ];
 
     protected $guarded = [

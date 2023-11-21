@@ -11,13 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('preorders', function (Blueprint $table) {
+        Schema::create('payments', function (Blueprint $table) {
             $table->id();
-            $table->integer('user_id');
-            $table->string('shipment_address');
-            $table->date('tanggal_pesanan');
-            $table->integer('total_price');
-            $table->integer('total_qty');
+            $table->string('user_id');
+            $table->string('preorder_id');
+            $table->text('keterangan')->nullable();
+            $table->text('image');
             $table->string('status');
             $table->timestamps();
         });
@@ -28,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('preorders');
+        Schema::dropIfExists('payments');
     }
 };
