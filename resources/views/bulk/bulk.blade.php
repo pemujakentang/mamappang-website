@@ -19,7 +19,7 @@
     <!-- section - home -->
 
     <!-- popup / form -->
-    <form id="popup-main" class="hidden fixed w-full h-screen z-30 px-2 md:px-10 pt-10 pb-8 items-center justify-center bg-[#00000080]">
+    <form id="popup-main" class="hidden fixed w-full h-screen z-30 px-2 md:px-10 md:pt-10 pt-20 pb-2 md:pb-8 items-center justify-center bg-[#00000080]">
         <div class="border-4 rounded-3xl w-full md:w-[50%] h-full px-5 md:px-7 pt-7 pb-5 overflow-scroll bg-orange-500 border-orange-800 flex flex-col relative overflow-x-hidden">
 
             <button onclick="closePopup()" class="flex absolute cursor-pointer rotate-45 right-5 top-2 font-averialibrebold text-5xl scale-[1.3] text-orange-800 hover:text-orange-950">+</button>

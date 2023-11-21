@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html class="scroll-smooth">
 
 <head>
     <meta charset="UTF-8">
@@ -17,8 +17,8 @@
 
 <body>
     <div
-        class="fixed mx-auto my-auto overflow-y-hidden relative overflow-x-hidden flex flex-col items-center bg-[#FF6400]">
-        <div class="h-screen flex relative justify-center flex-col">
+        class=" mx-auto my-auto overflow-y-hidden relative overflow-x-hidden flex flex-col items-center bg-[#FF6400]">
+        <div class="h-screen flex relative justify-center flex-col ">
 
             <!--Whatsapp button-->
             <div id="button1" class="fixed bottom-12 end-4 md:bottom-8 md:end-20 flex justify-center items-center z-20 animate-move-y-fast ">
@@ -70,12 +70,12 @@
                 <!-------->
                 <div class="flex flex-col md:ml-28 md:flex-row w-[90%] mt-2 justify-center">
                     <div class="w-full md:-mx-20 md:w-[50%] flex flex-col justify-center">
-                        <div class=" mx-40  text-center text-yellow-900 text-[8rem] font-black font-blackhansans tracking-tighter"
+                        <p class="  text-yellow-900 text-[8rem] font-black font-blackhansans tracking-tighter text-center"
                             style="-webkit-text-stroke: 3.5px white; line-height:1;">
-                            Join The Family!</div>
-                        <div class="mt-6 text-center text-orange-300 text-4xl font-black font-averialibre"
-                            style="-webkit-text-stroke:2px #ab5000;">The best
-                            Bungeoppang Family in Town!</div>
+                            Join The Family!</p>
+                        <p class="mt-6 text-center text-orange-300 text-4xl font-black font-averialibre"
+                            style="-webkit-text-stroke:1px #ab5000;">Best
+                            Bungeoppang in Town!</p>
                     </div>
                     <div class="w-full md:w-[60%]">
                         <div class="w-full flex items-center justify-center mx-auto mb-10 md:mb-4">
@@ -101,7 +101,7 @@
         </div>
 
         <div class="w-full">
-            <div class="absolute w-screen z-0 scale-[1.7] lg:-mt-56 md:-mt-48">
+            <div class="fixed w-screen z-0 scale-[1.7] lg:-mt-56 md:-mt-48">
                 <img class="object-cover animate-spin-slow" src="/images/cahaya.webp" alt="Logo">
             </div>
         </div>
@@ -110,13 +110,14 @@
         <div id="franchise-list" class="w-full justify-center z-10 py-12 bg-orange-500">
             <div class="grid grid-rows-3 grid-cols-1 gap-6 mb-12">
 
-                <div class="flex flex-row gap-10 justify-center">
+                <div class="flex flex-row gap-10 justify-center relative">
+                    
                     <div class="flex-col relative">
                         <div class="w-[854px] h-[171px] relative">
                             <div
                                 class="w-[854px] h-48 left-0 top-0 absolute bg-orange-200 rounded-[15px] border-4 border-orange-600">
                             </div>
-                            <<div class="hover:scale-[1.2] duration-75 w-[184px] -mt-2 left-[38rem] top-20 bottom-20 absolute">
+                            <div class="hover:scale-[1.2] duration-75 w-[184px] -mt-2 left-[38rem] top-20 bottom-20 absolute">
                                 <div
                                     class=" w-[184px] h-[39px] left-0 top-0 absolute bg-[#E16F25] rounded-[53.44px] border-2 border-orange-700">
                                     <button id="open-btn"
@@ -128,7 +129,7 @@
                             <div
                                 class="left-[24px] top-[17px] absolute text-black text-[32px] font-normal font-averialibre">
                                 Package 1</div>
-                            <img class="w-[141px] h-40 left-4 top-8 absolute scale-x-[-1] " src="/images/ikan.webp" />
+                                <img class="w-[141px] h-40 left-4 top-8 absolute scale-x-[-1] " src="/images/ikan.webp" />
                             <div
                                 class="w-[464px] h-[131px] left-48 top-[40px] absolute text-black text-2xl font-normal font-averialibre">
                                 <li>details</li>
@@ -140,7 +141,8 @@
                         </div>
                     </div>
 
-                    <div class="flex-col">
+                    <div class="flex-col relative">
+                        <p class="absolute font-averialibre text-white text-3xl z-10 right-0 bg-[#FF0000] px-5 py-1 rounded-tr-[15px] rounded-bl-[15px]">Rp. 9.999.999</p>
                         <img class="w-full h-48 rounded-[15px] shadow border-4 border-orange-600"
                             src="https://via.placeholder.com/328x171" />
                     </div>
@@ -148,7 +150,8 @@
 
                 <div class="flex flex-row gap-10 justify-center">
 
-                    <div class="flex-col">
+                    <div class="flex-col relative">
+                        <p class="absolute font-averialibre text-white text-3xl z-10 left-0 bg-[#FF0000] px-5 py-1 rounded-tl-[15px] rounded-br-[15px]">Rp. 9.999.999</p>
                         <img class="w-full h-48 rounded-[15px] shadow border-4 border-orange-600"
                             src="https://via.placeholder.com/328x171" />
                     </div>
@@ -216,7 +219,8 @@
                         </div>
                     </div>
 
-                    <div class="flex-col">
+                    <div class="flex-col relative">
+                        <p class="absolute font-averialibre text-white text-3xl z-10 right-0 bg-[#FF0000] px-5 py-1 rounded-tr-[15px] rounded-bl-[15px]">Rp. 9.999.999</p>
                         <img class="w-full h-48 rounded-[15px] shadow border-4 border-orange-600"
                             src="https://via.placeholder.com/328x171" />
                     </div>
@@ -261,52 +265,49 @@
     </div>
 
     <!-- Modal -->
-    <div class="fixed hidden h-full z-10 inset-0 bg-gray-600 bg-opacity-50 overflow-y-auto  w-full" id="modal">
-        <div class="top-16 mx-auto w-[600px] h-[600px] border-orange-300 shadow-xl rounded-xl bg-[#E16F25] relative">
-            <button onclick="closeModal()"
-                class="absolute top-4 right-8 text-white text-4xl font-bold focus:outline-none">
-                &times;
-            </button>
-            <div class="transform translate-y-10 ml-16 ">
-                <div class="text-yellow-800 text-5xl mt-20 font-black font-averialibre">
-                    Package 1
-                </div>
-                <div></div>
-                <div class="text-yellow-800 text-2xl mt-2 font-black font-averialibre">Rp.999.999,00</div>
-                <div class="flex flex-row gap-8">
-                    <div class="flex-col  font-averialibre text-yellow-800 text-2xl font-black mt-8 mr-36 mb-16">
-                        <li>capek</li>
-                        <li>capek</li>
-                        <li>gatel</li>
-                        <li>makan</li>
-                        <li>capek</li>
-                        <li>capek</li>
-                        <li>gatel</li>
-                        <li>makan</li>
-                    </div>
-                    <div class="flex-col">
-                        <img class="rounded-2xl" src="/images/lelah.webp" alt="">
-                    </div>
-                </div>
-            </div>
+    <div class="hidden fixed w-full h-screen z-30 px-2 md:px-10 md:pt-10 pt-20 pb-2 md:pb-8 items-center justify-center bg-[#00000080] inset-0 mx-auto" id="modal">
+        <div class="h-full items-center justify-center flex">
+            <div class="border-4 rounded-3xl w-full md:w-[50%] h-full md:h-fit px-5 md:px-7 pt-7 pb-5 overflow-scroll bg-orange-500 border-orange-800 flex flex-col relative overflow-x-hidden mx-auto md:justify-center md:items-center ">
+                <button onclick="closeModal()" class="flex absolute cursor-pointer rotate-45 right-5 top-2 font-averialibrebold text-5xl scale-[1.3] text-orange-800 hover:text-orange-950">+</button>
 
-            <div class="font-averialibre text-xl mt-8 ml-[21rem]">
-                Ada Pertanyaan?
-            </div>
-            <div class="mt-4 flex justify-center items-center space-x-8">
-                <div>
-                    <button id="franchise-btn" onclick="openFranchiseFormModal()"
-                        class="h-12 w-full md:w-48 text-white font-averialibre text-2xl rounded-full border-2 border-yellow-800 bg-orange-400 items-center justify-center hover:scale-[1.125] duration-75">
-                        Jadi Franchise
-                    </button>
+                <div class="mx-auto w-full md:p-2">
+                    <p class="text-yellow-800 text-5xl font-black font-averialibre">
+                        Package 1
+                    </p>
+                    <p class="text-yellow-800 text-2xl mt-2 font-black font-averialibre">Rp.999.999,00</p>
+                    <div class="flex flex-col md:flex-row w-full justify-center md:items-start items-center md:justify-between my-3 md:my-5 ">
+                        <div class="flex-col font-averialibre text-yellow-800 text-2xl font-black md:w-[50%] w-full gap-y-2">
+                            <div class="w-[70%] mx-auto pt-4 md:mt-0">
+                                <li>capek</li>
+                                <li>capek</li>
+                                <li>gatel</li>
+                                <li>makan</li>
+                                <li>capek</li>
+                                <li>capek</li>
+                                <li>gatel</li>
+                                <li>makan</li>
+                            </div>
+                        </div>
+                        <div class="flex-col md:order-last order-first md:w-[50%] w-full">
+                            <img class="rounded-2xl border-4 border-orange-700 w-[80%] md:w-auto md:max-h-96 mx-auto object-cover" src="/images/lelah.webp" alt="">
+                        </div>
+                    </div>
+                    
+                    <p class="font-averialibre text-orange-800 w-full flex justify-end items-end pr-8 -mb-4 mt-6 md:mt-10">ingin tahu lebih lanjut?</p>
 
+                    <div class="mt-4 flex justify-center items-center flex-col md:flex-row w-full gap-2">
+                            <button id="franchise-btn" onclick="openFranchiseFormModal()"
+                                class="h-16 w-full md:w-[60%] text-white font-averialibre text-2xl rounded-full border-2 border-yellow-800 bg-orange-400 items-center justify-center hover:scale-[1.125] duration-75 p-2">
+                                Daftar Jadi Franchise
+                            </button>
+                            <button id="contact-btn"
+                                class="md:order-last order-first h-16 w-full md:w-[40%] text-white font-averialibre text-2xl rounded-full border-2 border-yellow-800 bg-orange-400 items-center justify-center hover:scale-[1.125] duration-75 p-2">
+                                Contact Us
+                            </button>
+                    </div>
                 </div>
-                <div>
-                    <button id="contact-btn"
-                        class="h-12 w-full md:w-48 text-white font-averialibre text-2xl rounded-full border-2 border-yellow-800 bg-orange-400 items-center justify-center hover:scale-[1.125] duration-75">
-                        Contact Us
-                    </button>
-                </div>
+
+                
             </div>
         </div>
     </div>
@@ -336,51 +337,49 @@
     </script>
 
     <!-- Modal2 -->
-    <div class="fixed hidden h-full z-10 inset-0 bg-gray-600 bg-opacity-50 overflow-y-auto  w-full" id="modal2">
-        <div class="top-16 mx-auto w-[600px] h-[600px] border-orange-300 shadow-xl rounded-xl bg-[#E16F25] relative">
-            <button onclick="closeModal2()"
-                class="absolute top-4 right-8 text-white text-4xl font-bold focus:outline-none">
-                &times;
-            </button>
-            <div class="transform translate-y-10 ml-16 ">
-                <div class="text-yellow-800 text-5xl mt-20 font-black font-averialibre">
-                    Package 2
-                </div>
-                <div></div>
-                <div class="text-yellow-800 text-2xl mt-2 font-black font-averialibre">Rp.999.999,00</div>
-                <div class="flex flex-row gap-8">
-                    <div class="flex-col  font-averialibre text-yellow-800 text-2xl font-black mt-8 mr-36 mb-16">
-                        <li>capek</li>
-                        <li>capek</li>
-                        <li>gatel</li>
-                        <li>makan</li>
-                        <li>capek</li>
-                        <li>capek</li>
-                        <li>gatel</li>
-                        <li>makan</li>
-                    </div>
-                    <div class="flex-col">
-                        <img class="rounded-2xl" src="/images/lelah.webp" alt="">
-                    </div>
-                </div>
-            </div>
+    <div class="hidden fixed w-full h-screen z-30 px-2 md:px-10 md:pt-10 pt-20 pb-2 md:pb-8 items-center justify-center bg-[#00000080] inset-0 mx-auto" id="modal2">
+        <div class="h-full items-center justify-center flex">
+            <div class="border-4 rounded-3xl w-full md:w-[50%] h-full md:h-fit px-5 md:px-7 pt-7 pb-5 overflow-scroll bg-orange-500 border-orange-800 flex flex-col relative overflow-x-hidden mx-auto md:justify-center md:items-center ">
+                <button onclick="closeModal2()" class="flex absolute cursor-pointer rotate-45 right-5 top-2 font-averialibrebold text-5xl scale-[1.3] text-orange-800 hover:text-orange-950">+</button>
 
-            <div class="font-averialibre text-xl mt-8 ml-[21rem]">
-                Ada Pertanyaan?
-            </div>
-            <div class="mt-4 flex justify-center items-center space-x-8">
-                <div>
-                    <button id="franchise-btn2" onclick="openFranchiseFormModal()"
-                        class="h-12 w-full md:w-48 text-white font-averialibre text-2xl rounded-full border-2 border-yellow-800 bg-orange-400 items-center justify-center hover:scale-[1.125] duration-75">
-                        Jadi Franchise
-                    </button>
+                <div class="mx-auto w-full md:p-2">
+                    <p class="text-yellow-800 text-5xl font-black font-averialibre">
+                        Package 2
+                    </p>
+                    <p class="text-yellow-800 text-2xl mt-2 font-black font-averialibre">Rp.999.999,00</p>
+                    <div class="flex flex-col md:flex-row w-full justify-center md:items-start items-center md:justify-between my-3 md:my-5 ">
+                        <div class="flex-col font-averialibre text-yellow-800 text-2xl font-black md:w-[50%] w-full gap-y-2">
+                            <div class="w-[70%] mx-auto pt-4 md:mt-0">
+                                <li>capek</li>
+                                <li>capek</li>
+                                <li>gatel</li>
+                                <li>makan</li>
+                                <li>capek</li>
+                                <li>capek</li>
+                                <li>gatel</li>
+                                <li>makan</li>
+                            </div>
+                        </div>
+                        <div class="flex-col md:order-last order-first md:w-[50%] w-full">
+                            <img class="rounded-2xl border-4 border-orange-700 w-[80%] md:w-auto md:max-h-96 mx-auto object-cover" src="/images/lelah.webp" alt="">
+                        </div>
+                    </div>
+                    
+                    <p class="font-averialibre text-orange-800 w-full flex justify-end items-end pr-8 -mb-4 mt-6 md:mt-10">ingin tahu lebih lanjut?</p>
+
+                    <div class="mt-4 flex justify-center items-center flex-col md:flex-row w-full gap-2">
+                            <button id="franchise-btn" onclick="openFranchiseFormModal()"
+                                class="h-16 w-full md:w-[60%] text-white font-averialibre text-2xl rounded-full border-2 border-yellow-800 bg-orange-400 items-center justify-center hover:scale-[1.125] duration-75 p-2">
+                                Daftar Jadi Franchise
+                            </button>
+                            <button id="contact-btn"
+                                class="md:order-last order-first h-16 w-full md:w-[40%] text-white font-averialibre text-2xl rounded-full border-2 border-yellow-800 bg-orange-400 items-center justify-center hover:scale-[1.125] duration-75 p-2">
+                                Contact Us
+                            </button>
+                    </div>
                 </div>
-                <div>
-                    <button id="contact-btn2"
-                        class="h-12 w-full md:w-48 text-white font-averialibre text-2xl rounded-full border-2 border-yellow-800 bg-orange-400 items-center justify-center hover:scale-[1.125] duration-75">
-                        Contact Us
-                    </button>
-                </div>
+
+                
             </div>
         </div>
     </div>
@@ -409,51 +408,49 @@
     </script>
 
     <!-- Modal3 -->
-    <div class="fixed hidden h-full z-10 inset-0 bg-gray-600 bg-opacity-50 overflow-y-auto  w-full" id="modal3">
-        <div class="top-16 mx-auto w-[600px] h-[600px] border-orange-300 shadow-xl rounded-xl bg-[#E16F25] relative">
-            <button onclick="closeModal3()"
-                class="absolute top-4 right-8 text-white text-4xl font-bold focus:outline-none">
-                &times;
-            </button>
-            <div class="transform translate-y-10 ml-16 ">
-                <div class="text-yellow-800 text-5xl mt-20 font-black font-averialibre">
-                    Package 3
-                </div>
-                <div></div>
-                <div class="text-yellow-800 text-2xl mt-2 font-black font-averialibre">Rp.999.999,00</div>
-                <div class="flex flex-row gap-8">
-                    <div class="flex-col  font-averialibre text-yellow-800 text-2xl font-black mt-8 mr-36 mb-16">
-                        <li>capek</li>
-                        <li>capek</li>
-                        <li>gatel</li>
-                        <li>makan</li>
-                        <li>capek</li>
-                        <li>capek</li>
-                        <li>gatel</li>
-                        <li>makan</li>
-                    </div>
-                    <div class="flex-col">
-                        <img class="rounded-2xl" src="/images/lelah.webp" alt="">
-                    </div>
-                </div>
-            </div>
+    <div class="hidden fixed w-full h-screen z-30 px-2 md:px-10 md:pt-10 pt-20 pb-2 md:pb-8 items-center justify-center bg-[#00000080] inset-0 mx-auto" id="modal3">
+        <div class="h-full items-center justify-center flex">
+            <div class="border-4 rounded-3xl w-full md:w-[50%] h-full md:h-fit px-5 md:px-7 pt-7 pb-5 overflow-scroll bg-orange-500 border-orange-800 flex flex-col relative overflow-x-hidden mx-auto md:justify-center md:items-center ">
+                <button onclick="closeModal3()" class="flex absolute cursor-pointer rotate-45 right-5 top-2 font-averialibrebold text-5xl scale-[1.3] text-orange-800 hover:text-orange-950">+</button>
 
-            <div class="font-averialibre text-xl mt-8 ml-[21rem]">
-                Ada Pertanyaan?
-            </div>
-            <div class="mt-4 flex justify-center items-center space-x-8">
-                <div>
-                    <button id="franchise-btn3" onclick="openFranchiseFormModal()"
-                        class="h-12 w-full md:w-48 text-white font-averialibre text-2xl rounded-full border-2 border-yellow-800 bg-orange-400 items-center justify-center hover:scale-[1.125] duration-75">
-                        Jadi Franchise
-                    </button>
+                <div class="mx-auto w-full md:p-2">
+                    <p class="text-yellow-800 text-5xl font-black font-averialibre">
+                        Package 3
+                    </p>
+                    <p class="text-yellow-800 text-2xl mt-2 font-black font-averialibre">Rp.999.999,00</p>
+                    <div class="flex flex-col md:flex-row w-full justify-center md:items-start items-center md:justify-between my-3 md:my-5 ">
+                        <div class="flex-col font-averialibre text-yellow-800 text-2xl font-black md:w-[50%] w-full gap-y-2">
+                            <div class="w-[70%] mx-auto pt-4 md:mt-0">
+                                <li>capek</li>
+                                <li>capek</li>
+                                <li>gatel</li>
+                                <li>makan</li>
+                                <li>capek</li>
+                                <li>capek</li>
+                                <li>gatel</li>
+                                <li>makan</li>
+                            </div>
+                        </div>
+                        <div class="flex-col md:order-last order-first md:w-[50%] w-full">
+                            <img class="rounded-2xl border-4 border-orange-700 w-[80%] md:w-auto md:max-h-96 mx-auto object-cover" src="/images/lelah.webp" alt="">
+                        </div>
+                    </div>
+                    
+                    <p class="font-averialibre text-orange-800 w-full flex justify-end items-end pr-8 -mb-4 mt-6 md:mt-10">ingin tahu lebih lanjut?</p>
+
+                    <div class="mt-4 flex justify-center items-center flex-col md:flex-row w-full gap-2">
+                            <button id="franchise-btn" onclick="openFranchiseFormModal()"
+                                class="h-16 w-full md:w-[60%] text-white font-averialibre text-2xl rounded-full border-2 border-yellow-800 bg-orange-400 items-center justify-center hover:scale-[1.125] duration-75 p-2">
+                                Daftar Jadi Franchise
+                            </button>
+                            <button id="contact-btn"
+                                class="md:order-last order-first h-16 w-full md:w-[40%] text-white font-averialibre text-2xl rounded-full border-2 border-yellow-800 bg-orange-400 items-center justify-center hover:scale-[1.125] duration-75 p-2">
+                                Contact Us
+                            </button>
+                    </div>
                 </div>
-                <div>
-                    <button id="contact-btn3"
-                        class="h-12 w-full md:w-48 text-white font-averialibre text-2xl rounded-full border-2 border-yellow-800 bg-orange-400 items-center justify-center hover:scale-[1.125] duration-75">
-                        Contact Us
-                    </button>
-                </div>
+
+                
             </div>
         </div>
     </div>
