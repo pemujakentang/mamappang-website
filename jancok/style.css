@@ -1,0 +1,273 @@
+.backround-navbar {
+  background-color: #E16F25;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: relative;
+  height: 99px;
+  position: fixed;
+}
+
+.box {
+  position: relative;
+  width: 100%;
+  height: 99px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.box .navbar {
+  position: fixed;
+  width: 1356px;
+  height: 99px;
+  top: 0;
+  left: 0;
+}
+
+.box .group {
+  width: 248px;
+  left: 1110px;
+  position: absolute;
+  height: 51px;
+  top: 24px;
+}
+
+.box .overlap-group {
+  position: relative;
+  width: 252px;
+  height: 57px;
+  top: -3px;
+  left: -3px;
+  border-radius: 39px;
+}
+
+.box .rectangle {
+  position: absolute;
+  width: 252px;
+  height: 57px;
+  top: 0;
+  left: 0;
+  background-color: #fac774;
+  border-radius: 39px;
+  border: 3px solid;
+  border-color: #945e3d;
+  transform: rotate(180deg);
+}
+
+.box .login-sign-up {
+  position: absolute;
+  top: 10px;
+  left: 56px;
+  -webkit-text-stroke: 2px #f1a03c;
+  font-family: "Averia Libre", Helvetica;
+  font-weight: 400;
+  color: #992300;
+  font-size: 28px;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.box .ellipse {
+  position: absolute;
+  width: 36px;
+  height: 36px;
+  top: 11px;
+  left: 14px;
+  background-color: #ffffff;
+  border-radius: 18px;
+}
+
+.box .navbar-wrapper {
+  width: 888px;
+  left: 208px;
+  position: absolute;
+  height: 51px;
+  top: 24px;
+}
+
+.box .div {
+  position: relative;
+  width: 884px;
+  height: 57px;
+  top: -3px;
+  left: -3px;
+  background-color: #fac774;
+  border-radius: 39px;
+  border: 3px solid;
+  border-color: #945e3d;
+}
+
+.box .home {
+  left: 36px;
+  position: absolute;
+  top: 7px;
+  -webkit-text-stroke: 2px #f1a03c;
+  font-family: "Averia Libre", Helvetica;
+  font-weight: 400;
+  color: #992300;
+  font-size: 28px;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.box .text-wrapper {
+  position: absolute;
+  top: 7px;
+  left: 154px;
+  -webkit-text-stroke: 2px #f1a03c;
+  font-family: "Averia Libre", Helvetica;
+  font-weight: 400;
+  color: #992300;
+  font-size: 28px;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.box .franchise {
+  left: 336px;
+  position: absolute;
+  top: 7px;
+  -webkit-text-stroke: 2px #f1a03c;
+  font-family: "Averia Libre", Helvetica;
+  font-weight: 400;
+  color: #992300;
+  font-size: 28px;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.box .my-order {
+  position: absolute;
+  top: 7px;
+  left: 526px;
+  -webkit-text-stroke: 2px #f1a03c;
+  font-family: "Averia Libre", Helvetica;
+  font-weight: 400;
+  color: #992300;
+  font-size: 28px;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.box .about-us {
+  position: absolute;
+  top: 7px;
+  left: 709px;
+  -webkit-text-stroke: 2px #f1a03c;
+  font-family: "Averia Libre", Helvetica;
+  font-weight: 400;
+  color: #992300;
+  font-size: 28px;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.box .MAMAPPANG-removebg {
+  position: absolute;
+  width: 207px;
+  height: 99px;
+  top: 0;
+  left: 0;
+  object-fit: cover;
+}
+
+.box1 {
+  width: 100%;
+  height: 736px;
+}
+
+.box1 .rectangle {
+  margin-top: 99px;
+  position: fixed;
+  width: 100%;
+  height: 736px;
+  top: 0;
+  left: 0;
+  background-color: #f1a03c;
+}
+
+.box1 .rectangle h1 {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 48px;
+  margin-top: 20px;
+  margin-left: 20px;
+  text-shadow: 0 0 0.1em rgb(255, 255, 255) ;
+}
+
+.box1 .order-box {
+  margin-top: 20px;
+  position: fixed;
+  width: 80%;
+  height: 540px;
+  overflow-x: auto;
+  white-space: nowrap;
+  left: 10%;
+  right: 10%;
+  background-color: #FAC774;
+  border-radius: 15px;
+  display: flex;
+}
+
+.box1 .order-detail {
+  flex: 0 0 auto;
+  width: 450px; 
+  height: 480px;
+  background-color: #992300;
+  border-radius: 15px;
+  margin-right: 10px;
+  margin-top: 20px;
+  margin-left: 10px;
+}
+
+.box1 .order-detail h2 {
+  font-size: 48px;
+  color: #FAC774;
+  margin-top: 25px;
+  margin-left: 30px;
+  margin-right: 30px;
+}
+.box1 .order-detail h3 {
+  font-size: 35px;
+  color: #FAC774;
+  margin-top: 125px;
+  margin-left: 30px;
+  margin-right: 10px;
+
+}.box1 .order-detail p {
+  font-size: 20px;
+  color: #FAC774;
+  margin-top: 25px;
+  margin-left: 30px;
+  margin-right: 10px;
+}
+
+.box1 .order-detail button {
+  border: 3px solid #945E3D;
+  font-size: large;
+  border-radius: 40px;
+  background-color: #FAC774;
+  height: 60px;
+  width: 70%;
+  cursor: pointer;
+  padding: 14px 28px;
+  align-items: center;
+  margin-left: 15%;
+  margin-top: 50px;
+}
+
+.box1 .order-detail button:hover {
+  background-color: #e74616;
+}
+
+.franchise-box {
+  width: 2000px;
+  height: 200px;
+  color: black;
+}
