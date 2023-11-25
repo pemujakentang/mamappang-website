@@ -300,10 +300,10 @@ function replaceContent(action) {
 
         `;
         bottomButtons.innerHTML = `
-    <div id="greenSectionContent" class="flex-1 flex items-center justify-between">
-    <button onclick="resetContent()" class="font-averialibre text-orange-800 text-2xl flex items-center justify-center bg-[#f1a03c] text-[#b9480f] rounded-full h-[35px] w-[175px] border border-[#b9480f]">Cancel</button>
-    <button onclick="next()" class="font-averialibre text-orange-800 text-2xl flex items-center justify-center bg-[#fded87] text-[#b9480f] rounded-full h-[35px] w-[175px] border border-[#b9480f]">Save</button>
-</div>
+        <div id="greenSectionContent" class="flex-1 flex items-center justify-between">
+            <button onclick="resetContent()" class="font-averialibre text-orange-800 text-2xl flex items-center justify-center bg-[#f1a03c] text-[#b9480f] rounded-full h-[35px] w-[40%] border border-[#b9480f]">Cancel</button>
+            <button onclick="next()" class="font-averialibre text-orange-800 text-2xl flex items-center justify-center bg-[#fded87] text-[#b9480f] rounded-full h-[35px] w-[40%] border border-[#b9480f]">Save</button>
+        </div>
         `;
     } else if (action === 'tidak') {
         buttonContainer.classList.add('hidden');
@@ -318,8 +318,8 @@ function replaceContent(action) {
         `;
         bottomButtons.innerHTML = `
     <div id="greenSectionContent" class="flex-1 flex items-center justify-between">
-    <button onclick="resetContent()" class="font-averialibre text-orange-800 text-2xl flex items-center justify-center bg-[#f1a03c] text-[#b9480f] rounded-full h-[35px] w-[175px] border border-[#b9480f]">Cancel</button>
-    <button onclick="toggleModal()" class="font-averialibre text-orange-800 text-2xl flex items-center justify-center bg-[#fded87] text-[#b9480f] rounded-full h-[35px] w-[175px] border border-[#b9480f]">Save</button>
+    <button onclick="resetContent()" class="font-averialibre text-orange-800 text-2xl flex items-center justify-center bg-[#f1a03c] text-[#b9480f] rounded-full h-[35px] w-[40%] border border-[#b9480f]">Cancel</button>
+    <button onclick="toggleModal()" class="font-averialibre text-orange-800 text-2xl flex items-center justify-center bg-[#fded87] text-[#b9480f] rounded-full h-[35px] w-[40%] border border-[#b9480f]">Save</button>
 </div>
         `;
     } 
@@ -328,6 +328,8 @@ function replaceContent(action) {
 function next() {
     const replacementContent = document.getElementById('replacementContent');
     replacementContent.classList.add('hidden');
+    const modal = document.getElementById('modal');
+    modal.classList.toggle('hidden');
 
     const blueSectionContent = `
     <div id="combinedSectionContent" class="font-averialibre w-full h-auto bg-[#fac774] flex flex-col p-4">
@@ -365,10 +367,11 @@ function next() {
     blueSection.innerHTML = blueSectionContent;
 
     const bottomButtons = document.getElementById('bottomButtons');
+    // inii
     bottomButtons.innerHTML = `
         <div id="greenSectionContent" class="flex-1 flex items-center justify-between">
-            <button onclick="resetContentData()" class="font-averialibre text-orange-800 text-2xl flex items-center justify-center bg-[#f1a03c] text-[#b9480f] rounded-full h-[35px] w-[175px] border border-[#b9480f]">Cancel</button>
-            <button onclick="toggleModal()" class="font-averialibre text-orange-800 text-2xl flex items-center justify-center bg-[#fded87] text-[#b9480f] rounded-full h-[35px] w-[175px] border border-[#b9480f]">Save</button>
+            <button onclick="toggleModal()" class="font-averialibre text-orange-800 text-2xl flex items-center justify-center bg-[#f1a03c] text-[#b9480f] rounded-full h-[35px] w-[40%] border border-[#b9480f]">Cancel</button>
+            <button onclick="toggleModal()" class="font-averialibre text-orange-800 text-2xl flex items-center justify-center bg-[#fded87] text-[#b9480f] rounded-full h-[35px] w-[40%] border border-[#b9480f]">Save</button>
         </div>
     `;
 }

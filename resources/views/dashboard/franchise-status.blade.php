@@ -249,7 +249,7 @@
                         <p id="questionText" class="text-orange-800 text-justify flex-1">Terima Request?</p>
                         <div id="buttonContainer" class="flex gap-1">
                             <button onclick="replaceContent('terima')" class="font-averialibre text-orange-800 text-2xl flex items-center justify-center bg-[#f1a03c] text-[#b9480f] rounded-full h-[35px] w-[100px] border border-[#b9480f]">Terima</button>
-                            <button onclick="toggleModal('tidak')" class="font-averialibre text-orange-800 text-2xl flex items-center justify-center bg-[#fded87] text-[#b9480f] rounded-full h-[35px] w-[100px] border border-[#b9480f]">Tidak</button>
+                            <button onclick="replaceContent('tidak')" class="font-averialibre text-orange-800 text-2xl flex items-center justify-center bg-[#fded87] text-[#b9480f] rounded-full h-[35px] w-[100px] border border-[#b9480f]">Tidak</button>
                         </div>
                     </div>                    
                     <div id="replacementContent" class="hidden">
@@ -298,11 +298,21 @@ function replaceContent(action) {
     } else if (action === 'tidak') {
         buttonContainer.classList.add('hidden');
         replacementContent.classList.remove('hidden');
-    }
-
-    bottomButtons.innerHTML = `
-        <button onclick="resetContentData()" class="font-averialibre text-orange-800 text-3xl flex items-center justify-center bg-[#FAC774] text-[#b9480f] rounded-full h-[50px] w-full">Close</button>
-    `;
+        replacementContent.innerHTML = `
+        <div id="greenSectionContent" class="flex-1 flex items-center justify-between">
+    <p class="text-orange-800">Alasan Tidak Diterima:</p>
+    <div class="flex items-center mt-2">
+        <textarea id="reasonInput" class="border border-[#b9480f] text-orange-800 bg-[#fded87] rounded h-[35px] min-h-[35px] min-w-[150px] text-center" placeholder="Reason" oninput="adjustTextAreaHeight(this)"></textarea>
+    </div>
+</div>
+        `;
+        bottomButtons.innerHTML = `
+    <div id="greenSectionContent" class="flex-1 flex items-center justify-between">
+    <button onclick="resetContent()" class="font-averialibre text-orange-800 text-2xl flex items-center justify-center bg-[#f1a03c] text-[#b9480f] rounded-full h-[35px] w-[40%] border border-[#b9480f]">Cancel</button>
+    <button onclick="toggleModal()" class="font-averialibre text-orange-800 text-2xl flex items-center justify-center bg-[#fded87] text-[#b9480f] rounded-full h-[35px] w-[40%] border border-[#b9480f]">Save</button>
+</div>
+        `;
+    } 
 }
 
 function resetContent() {
