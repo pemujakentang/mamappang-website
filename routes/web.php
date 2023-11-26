@@ -20,6 +20,10 @@ Route::get('/', function () {
     return view('home.index');
 });
 
+Route::get('/user-dashboard', function () {
+    return view('dashboard-user.userdashboard');
+});
+
 Route::get('/bulk-order', function () {
     return view('bulk.bulk');
 });
