@@ -14,11 +14,12 @@ return new class extends Migration
         Schema::create('franchises', function (Blueprint $table) {
             $table->id();
             $table->integer('user_id');
-            $table->string('berita');
+            $table->foreignId('package_id');
             $table->string('domisili');
             $table->string('nama_bisnis');
             $table->string('address');
             $table->text('keterangan')->nullable();
+            $table->text('message')->nullable();
             $table->string('status');
             $table->timestamps();
         });

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Franchise;
 use App\Http\Requests\StoreFranchiseRequest;
 use App\Http\Requests\UpdateFranchiseRequest;
+use App\Models\Package;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -13,13 +14,15 @@ use Illuminate\Support\Facades\Storage;
 
 class FranchiseController extends Controller
 {
+    
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
         //
-        return view('franchise.index');
+        $packages = Package::all();
+        return view('franchise.franchise', ['packages' => $packages]);
     }
 
     /**
@@ -28,7 +31,7 @@ class FranchiseController extends Controller
     public function create()
     {
         //
-        return view('franchise.create');
+        
     }
 
     /**
@@ -41,7 +44,7 @@ class FranchiseController extends Controller
             $user = auth()->user();
 
             $validData = $request->validate([
-                'berita' => 'required',
+                'package_id' =>'required',
                 'domisili' => 'required',
                 'nama_bisnis' => 'required',
                 'address' => 'required',
@@ -53,7 +56,7 @@ class FranchiseController extends Controller
 
             Franchise::create($validData);
 
-            return redirect('/franchise');
+            return redirect('/franchise')->with('success', 'Berhasil Menambahkan Request Franchise');
         } else {
             return redirect('/login');
         }
@@ -80,33 +83,34 @@ class FranchiseController extends Controller
 
             // dd($request);
 
-            $sort = $request->query('sort', 'default_sort'); // 'default_sort' can be any default value you want
-            $status = $request->query('status', 'all');
+            // $sort = $request->query('sort', 'default_sort'); // 'default_sort' can be any default value you want
+            // $status = $request->query('status', 'all');
 
-            // Save the selections to the session
-            Session::put('sort', $sort);
-            Session::put('status', $status);
+            // // Save the selections to the session
+            // Session::put('sort', $sort);
+            // Session::put('status', $status);
 
-            $query = Franchise::query();
+            // $query = Franchise::query();
 
-            if ($sort == 'earliest') {
-                $query->orderBy('id', 'asc');
-            } else if ($sort == 'latest') {
-                $query->orderBy('id', 'desc');
-            } else if ($sort == 'priceup') {
-                $query->orderBy('total_price', 'asc');
-            } else if ($sort == 'pricedown') {
-                $query->orderBy('total_price', 'desc');
-            }
+            // if ($sort == 'earliest') {
+            //     $query->orderBy('id', 'asc');
+            // } else if ($sort == 'latest') {
+            //     $query->orderBy('id', 'desc');
+            // } else if ($sort == 'priceup') {
+            //     $query->orderBy('total_price', 'asc');
+            // } else if ($sort == 'pricedown') {
+            //     $query->orderBy('total_price', 'desc');
+            // }
 
-            if ($status != 'all') {
-                $query->where('status', strtoupper($status));
-            }
+            // if ($status != 'all') {
+            //     $query->where('status', strtoupper($status));
+            // }
 
-            $franchises = $query->get();
+            // $franchises = $query->get();
+            $franchises = Franchise::all();
 
             // dd([$sort, $status]);
-            return view('admin.franchises', [
+            return view('dashboard.franchise-status', [
                 'franchises' => $franchises
             ]);
         } else {
@@ -144,17 +148,33 @@ class FranchiseController extends Controller
         }
     }
 
+    public function reject(Franchise $franchise, Request $request)
+    {
+        //
+        if (Auth::check()) {
+            $franchise->update([
+                'status' => 'CANCELED',
+                'message' => $request->message
+            ]);
+            return redirect('/dashboard/franchise-status')->with(array(
+                'success' => "Franchise Application Rejected ".$franchise->id
+            ));
+        } else {
+            return redirect('/login');
+        }
+    }
+
     public function confirm(Franchise $franchise)
     {
         //
         if (Auth::check()) {
             $user = auth()->user();
 
-            if (
-                $user->role !== 'admin' || $user->role !== 'superadmin'
-            ) {
-                return redirect('/');
-            }
+            // if (
+            //     $user->role !== 'admin' || $user->role !== 'superadmin'
+            // ) {
+            //     return redirect('/');
+            // }
             
             $franchise->update([
                 'status' => 'CONFIRMED'
@@ -162,7 +182,7 @@ class FranchiseController extends Controller
 
             //send email
 
-            return redirect('/admin/dashboard/franchise')->with(array(
+            return redirect('/dashboard/franchise-status')->with(array(
                 'success' => "Franchise Application Confirmed"
             ));
         } else {
