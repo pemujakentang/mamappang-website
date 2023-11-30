@@ -9,7 +9,7 @@
                 <div
                     class="border-4 rounded-3xl w-full md:w-[50%] h-full px-5 md:px-7 pt-7 pb-5 overflow-scroll bg-orange-500 border-orange-800 flex flex-col relative overflow-x-hidden">
 
-                    <button onclick="closePopup()"
+                    <button onclick="closePopup()" type="button"
                         class="flex absolute cursor-pointer rotate-45 right-5 top-2 font-averialibrebold text-5xl scale-[1.3] text-orange-800 hover:text-orange-950">+</button>
 
 
@@ -17,330 +17,172 @@
                         style="text-shadow: 4px 4px 4px #FFFFFF, -4px -4px 4px #FFFFFF, 4px -4px 4px #FFFFFF, -4px 4px 4px #FFFFFF;">
                         FORM PEMESANAN BULK ORDER</p>
 
-                    <!-- series -->
-                    <div class="mb-2">
-                        <div id="series" class="flex justify-between flex-row bg-orange-700 py-2 px-3.5 rounded-2xl">
-
-                            <p class="text-orange-300 font-averialibre text-lg md:text-2xl my-auto">Coklat Series</p>
-
-                            <div class="flex items-center justify-center gap-2">
-
-                                <div id="series-1"
-                                    class="border-2 rounded-xl bg-orange-300 border-orange-800 font-averialibre text-2xl px-2 text-orange-700 w-32 py-1 h-12 text-center">
-                                    0Pcs</div>
-
-                                <button onclick="changeClass()"
-                                    class="rounded-xl bg-orange-300 text-orange-700 w-16 h-12 py-1 border-2 border-orange-800 flex items-center justify-center">
-                                    <div class="w-6">
-                                        <img id="arrow" class="-rotate-90 object-cover duration-75"
-                                            src="/images/arrow.webp" alt="Logo">
-                                    </div>
-                                </button>
-
-                                <script>
-                                    function changeClass() {
-                                        var arrow = document.getElementById('arrow');
-                                        var dropcontent = document.getElementById('dropcontent');
-                                        var series = document.getElementById('series');
-
-                                        if (arrow.classList.contains('rotate-0')) {
-                                            arrow.classList.remove('rotate-0');
-                                            arrow.classList.add('-rotate-90');
-                                        } else {
-                                            arrow.classList.remove('-rotate-90');
-                                            arrow.classList.add('rotate-0');
-                                        }
-
-                                        if (dropcontent.classList.contains('hidden')) {
-                                            dropcontent.classList.remove('hidden');
-                                            dropcontent.classList.add('flex');
-                                            series.classList.remove('rounded-2xl');
-                                            series.classList.add('rounded-t-2xl');
-                                        } else {
-                                            dropcontent.classList.remove('flex');
-                                            dropcontent.classList.add('hidden');
-                                            series.classList.remove('rounded-t-2xl');
-                                            series.classList.add('rounded-2xl');
-                                        }
-                                    }
-                                </script>
-
-                            </div>
-
-                        </div>
-
-                        <div id="dropcontent" class="hidden duration-75 flex-col rounded-b-2xl py-2 bg-orange-300">
-
-
-
-                            <!-- menu -->
-                            <div class="flex justify-between flex-row  py-2 pr-4 md:md:pl-8 pl-4">
-                                <p class="text-orange-700 font-averialibre text-lg md:text-2xl my-auto">Coklat</p>
-
-
-
-                                <div class="flex items-center justify-center gap-2">
-
-                                    <button onclick="kurangAngka('series-1-menu-1')"
-                                        class="rounded-xl bg-orange-300 hover:bg-orange-800 hover:text-orange-300 text-orange-700 w-10 h-10 py-1 border-2 border-orange-800 flex items-center justify-center text-3xl font-averialibre">
-                                        <p class="text-center -translate-y-[1.5px]">-</p>
-                                    </button>
-
-                                    <input type="text" id="series-1-menu-1" placeholder="0"
-                                        class="border-2 rounded-xl bg-orange-300 border-orange-800 focus:outline-none font-averialibre text-2xl px-2 text-orange-700 placeholder-orange-700 w-24 py-1 h-10 text-center"
-                                        oninput="this.value=this.value.replace(/[^0-9]/g,'')"> </input>
-
-                                    <button onclick="tambahAngka('series-1-menu-1')"
-                                        class="rounded-xl bg-orange-300 hover:bg-orange-800 hover:text-orange-300 text-orange-700 w-10 h-10 py-1 border-2 border-orange-800 flex items-center justify-center text-3xl font-averialibre">
-                                        <p class="text-center -translate-y-[1.55px]">+</p>
-                                    </button>
-
-                                </div>
-
-                            </div>
-
-                            <div class="flex justify-between flex-row  py-2 pr-4 md:pl-8 pl-4">
-
-                                <p class="text-orange-700 font-averialibre text-lg md:text-2xl my-auto">Coklat vanilla
+                    @foreach ($categories as $category)
+                        <!-- series -->
+                        <div class="mb-2">
+                            <div id="{{ 'series' . $category->name }}"
+                                class="flex justify-between flex-row bg-orange-700 py-2 px-3.5 rounded-2xl">
+                                <p class="text-orange-300 font-averialibre text-lg md:text-2xl my-auto">
+                                    {{ $category->name }} Series
                                 </p>
                                 <div class="flex items-center justify-center gap-2">
 
-                                    <button onclick="kurangAngka('series-1-menu-2')"
-                                        class="rounded-xl bg-orange-300 hover:bg-orange-800 hover:text-orange-300 text-orange-700 w-10 h-10 py-1 border-2 border-orange-800 flex items-center justify-center text-3xl font-averialibre">
-                                        <p class="text-center -translate-y-[1.5px]">-</p>
+                                    <div id="{{ 'series-' . $category->name }}"
+                                        class="border-2 rounded-xl bg-orange-300 border-orange-800 font-averialibre text-2xl px-2 text-orange-700 w-32 py-1 h-12 text-center">
+                                        0Pcs</div>
+
+                                    <button onclick="{{ 'changeClass' . $category->name . '()' }}" type="button"
+                                        class="rounded-xl bg-orange-300 text-orange-700 w-16 h-12 py-1 border-2 border-orange-800 flex items-center justify-center">
+                                        <div class="w-6">
+                                            <img id="{{ 'arrow' . $category->name }}"
+                                                class="-rotate-90 object-cover duration-75" src="/images/arrow.webp"
+                                                alt="Logo">
+                                        </div>
                                     </button>
 
-                                    <input type="text" id="series-1-menu-2" placeholder="0"
-                                        class="border-2 rounded-xl bg-orange-300 border-orange-800 focus:outline-none font-averialibre text-2xl px-2 text-orange-700 w-24 py-1 h-10 text-center placeholder-orange-700"
-                                        oninput="this.value=this.value.replace(/[^0-9]/g,'')"> </input>
+                                    <script>
+                                        function {{ 'changeClass' . $category->name . '()' }} {
+                                            var {{ 'arrow' . $category->name }} = document.getElementById("{{ 'arrow' . $category->name }}");
+                                            var {{ 'dropContent' . $category->name }} = document.getElementById("{{ 'dropContent' . $category->name }}");
+                                            var {{ 'series' . $category->name }} = document.getElementById("{{ 'series' . $category->name }}");
 
-                                    <button onclick="tambahAngka('series-1-menu-2')"
-                                        class="rounded-xl bg-orange-300 hover:bg-orange-800 hover:text-orange-300 text-orange-700 w-10 h-10 py-1 border-2 border-orange-800 flex items-center justify-center text-3xl font-averialibre">
-                                        <p class="text-center -translate-y-[1.55px]">+</p>
-                                    </button>
+                                            if ({{ 'arrow' . $category->name }}.classList.contains('rotate-0')) {
+                                                {{ 'arrow' . $category->name }}.classList.remove('rotate-0');
+                                                {{ 'arrow' . $category->name }}.classList.add('-rotate-90');
+                                            } else {
+                                                {{ 'arrow' . $category->name }}.classList.remove('-rotate-90');
+                                                {{ 'arrow' . $category->name }}.classList.add('rotate-0');
+                                            }
 
+                                            if ({{ 'dropContent' . $category->name }}.classList.contains('hidden')) {
+                                                {{ 'dropContent' . $category->name }}.classList.remove('hidden');
+                                                {{ 'dropContent' . $category->name }}.classList.add('flex');
+                                                {{ 'series' . $category->name }}.classList.remove('rounded-2xl');
+                                                {{ 'series' . $category->name }}.classList.add('rounded-t-2xl');
+                                            } else {
+                                                {{ 'dropContent' . $category->name }}.classList.remove('flex');
+                                                {{ 'dropContent' . $category->name }}.classList.add('hidden');
+                                                {{ 'series' . $category->name }}.classList.remove('rounded-t-2xl');
+                                                {{ 'series' . $category->name }}.classList.add('rounded-2xl');
+                                            }
+                                        }
+                                    </script>
                                 </div>
                             </div>
 
+                            <div id="{{ 'dropContent' . $category->name }}"
+                                class="hidden duration-75 flex-col rounded-b-2xl py-2 bg-orange-300">
+                                <!-- menu -->
 
+                                @foreach ($category->menus as $menu)
+                                    <div class="flex justify-between flex-row  py-2 pr-4 md:md:pl-8 pl-4">
+                                        <p class="text-orange-700 font-averialibre text-lg md:text-2xl my-auto">
+                                            {{ $menu->name }}
+                                        </p>
+                                        <div class="flex items-center justify-center gap-2">
+                                            <button type="button"
+                                                onclick="kurangAngka('{{ $category->name . $menu->id }}')"
+                                                class="rounded-xl bg-orange-300 hover:bg-orange-800 hover:text-orange-300 text-orange-700 w-10 h-10 py-1 border-2 border-orange-800 flex items-center justify-center text-3xl font-averialibre">
+                                                <p class="text-center -translate-y-[1.5px]">-</p>
+                                            </button>
+                                            <input type="text" id="{{ $category->name . $menu->id }}"
+                                                placeholder="0"
+                                                class="border-2 rounded-xl bg-orange-300 border-orange-800 focus:outline-none font-averialibre text-2xl px-2 text-orange-700 placeholder-orange-700 w-24 py-1 h-10 text-center"
+                                                oninput="this.value=this.value.replace(/[^0-9]/g,'')">
 
-
-
-                        </div>
-                    </div>
-
-                    <!-- series -->
-                    <div class="mb-2">
-                        <div id="series2" class="flex justify-between flex-row bg-orange-700 py-2 px-3.5 rounded-2xl">
-
-                            <p class="text-orange-300 font-averialibre text-lg md:text-2xl my-auto">Vanilla Series</p>
-
-                            <div class="flex items-center justify-center gap-2">
-
-                                <div id="series-2"
-                                    class="border-2 rounded-xl bg-orange-300 border-orange-800 font-averialibre text-2xl px-2 text-orange-700 w-32 py-1 h-12 text-center">
-                                    0Pcs</div>
-
-                                <button onclick="changeClass2()"
-                                    class="rounded-xl bg-orange-300 text-orange-700 w-16 h-12 py-1 border-2 border-orange-800 flex items-center justify-center">
-                                    <div class="w-6">
-                                        <img id="arrow2" class="-rotate-90 object-cover duration-75"
-                                            src="/images/arrow.webp" alt="Logo">
+                                            <button type="button"
+                                                onclick="tambahAngka('{{ $category->name . $menu->id }}')"
+                                                class="rounded-xl bg-orange-300 hover:bg-orange-800 hover:text-orange-300 text-orange-700 w-10 h-10 py-1 border-2 border-orange-800 flex items-center justify-center text-3xl font-averialibre">
+                                                <p class="text-center -translate-y-[1.55px]">+</p>
+                                            </button>
+                                        </div>
                                     </div>
-                                </button>
+                                    <script>
+                                        document.getElementById("{{ $category->name . $menu->id }}").addEventListener('input', function() {
+                                            updateTotalPcs{{$category->name}}("{{ $category->name . $menu->id }}");
+                                        });
+                                    </script>
+                                @endforeach
 
-                                <script>
-                                    function changeClass2() {
-                                        var arrow2 = document.getElementById('arrow2');
-                                        var dropcontent2 = document.getElementById('dropcontent2');
-                                        var series2 = document.getElementById('series2');
+                                {{-- <div class="flex justify-between flex-row  py-2 pr-4 md:md:pl-8 pl-4">
+                                    <p class="text-orange-700 font-averialibre text-lg md:text-2xl my-auto">Coklat</p>
+                                    <div class="flex items-center justify-center gap-2">
+                                        <button onclick="kurangAngka('series-1-menu-1')"
+                                            class="rounded-xl bg-orange-300 hover:bg-orange-800 hover:text-orange-300 text-orange-700 w-10 h-10 py-1 border-2 border-orange-800 flex items-center justify-center text-3xl font-averialibre">
+                                            <p class="text-center -translate-y-[1.5px]">-</p>
+                                        </button>
+                                        <input type="text" id="series-1-menu-1" placeholder="0"
+                                            class="border-2 rounded-xl bg-orange-300 border-orange-800 focus:outline-none font-averialibre text-2xl px-2 text-orange-700 placeholder-orange-700 w-24 py-1 h-10 text-center"
+                                            oninput="this.value=this.value.replace(/[^0-9]/g,'')"> </input>
 
-                                        if (arrow2.classList.contains('rotate-0')) {
-                                            arrow2.classList.remove('rotate-0');
-                                            arrow2.classList.add('-rotate-90');
-                                        } else {
-                                            arrow2.classList.remove('-rotate-90');
-                                            arrow2.classList.add('rotate-0');
-                                        }
-
-                                        if (dropcontent2.classList.contains('hidden')) {
-                                            dropcontent2.classList.remove('hidden');
-                                            dropcontent2.classList.add('flex');
-                                            series2.classList.remove('rounded-2xl');
-                                            series2.classList.add('rounded-t-2xl');
-                                        } else {
-                                            dropcontent2.classList.remove('flex');
-                                            dropcontent2.classList.add('hidden');
-                                            series2.classList.remove('rounded-t-2xl');
-                                            series2.classList.add('rounded-2xl');
-                                        }
-                                    }
-                                </script>
-
-                            </div>
-
-                        </div>
-
-                        <div id="dropcontent2" class="hidden duration-75 flex-col rounded-b-2xl py-2 bg-orange-300 ">
-                            <!-- menu -->
-                            <div class="flex justify-between flex-row  py-2 pr-4 md:pl-8 pl-4">
-                                <p class="text-orange-700 font-averialibre text-lg md:text-2xl my-auto">Vanilla</p>
-
-                                <div class="flex items-center justify-center gap-2">
-
-                                    <button onclick="kurangAngka('series-2-menu-1')"
-                                        class="rounded-xl bg-orange-300 hover:bg-orange-800 hover:text-orange-300 text-orange-700 w-10 h-10 py-1 border-2 border-orange-800 flex items-center justify-center text-3xl font-averialibre">
-                                        <p class="text-center -translate-y-[1.5px]">-</p>
-                                    </button>
-
-                                    <input type="text" id="series-2-menu-1" placeholder="0"
-                                        class="border-2 rounded-xl bg-orange-300 border-orange-800 focus:outline-none font-averialibre text-2xl px-2 text-orange-700 placeholder-orange-700 w-24 py-1 h-10 text-center"
-                                        oninput="this.value=this.value.replace(/[^0-9]/g,'')"> </input>
-
-                                    <button onclick="tambahAngka('series-2-menu-1')"
-                                        class="rounded-xl bg-orange-300 hover:bg-orange-800 hover:text-orange-300 text-orange-700 w-10 h-10 py-1 border-2 border-orange-800 flex items-center justify-center text-3xl font-averialibre">
-                                        <p class="text-center -translate-y-[1.55px]">+</p>
-                                    </button>
-
-                                </div>
-
-                            </div>
-
-                            <div class="flex justify-between flex-row  py-2 pr-4 md:pl-8 pl-4">
-
-                                <p class="text-orange-700 font-averialibre text-lg md:text-2xl my-auto">Vanilla oreo</p>
-
-                                <div class="flex items-center justify-center gap-2">
-
-                                    <button onclick="kurangAngka('series-2-menu-2')"
-                                        class="rounded-xl bg-orange-300 hover:bg-orange-800 hover:text-orange-300 text-orange-700 w-10 h-10 py-1 border-2 border-orange-800 flex items-center justify-center text-3xl font-averialibre">
-                                        <p class="text-center -translate-y-[1.5px]">-</p>
-                                    </button>
-
-                                    <input type="text" id="series-2-menu-2" placeholder="0"
-                                        class="border-2 rounded-xl bg-orange-300 border-orange-800 focus:outline-none font-averialibre text-2xl px-2 text-orange-700 placeholder-orange-700 w-24 py-1 h-10 text-center"
-                                        oninput="this.value=this.value.replace(/[^0-9]/g,'')"> </input>
-
-                                    <button onclick="tambahAngka('series-2-menu-2')"
-                                        class="rounded-xl bg-orange-300 hover:bg-orange-800 hover:text-orange-300 text-orange-700 w-10 h-10 py-1 border-2 border-orange-800 flex items-center justify-center text-3xl font-averialibre">
-                                        <p class="text-center -translate-y-[1.55px]">+</p>
-                                    </button>
-
-                                </div>
-                            </div>
-
-
-
-                        </div>
-                    </div>
-
-
-                    <!-- series -->
-                    <div class="mb-2">
-                        <div id="series3" class="flex justify-between flex-row bg-orange-700 py-2 px-3.5 rounded-2xl">
-
-                            <p class="text-orange-300 font-averialibre text-lg md:text-2xl my-auto">Other Series</p>
-
-                            <div class="flex items-center justify-center gap-2">
-
-                                <div id="series-3"
-                                    class="border-2 rounded-xl bg-orange-300 border-orange-800 font-averialibre text-2xl px-2 text-orange-700 w-32 py-1 h-12 text-center">
-                                    0Pcs</div>
-
-                                <button onclick="changeClass3()"
-                                    class="rounded-xl bg-orange-300 text-orange-700 w-16 h-12 py-1 border-2 border-orange-800 flex items-center justify-center">
-                                    <div class="w-6">
-                                        <img id="arrow3" class="-rotate-90 object-cover duration-75"
-                                            src="/images/arrow.webp" alt="Logo">
+                                        <button onclick="tambahAngka('series-1-menu-1')"
+                                            class="rounded-xl bg-orange-300 hover:bg-orange-800 hover:text-orange-300 text-orange-700 w-10 h-10 py-1 border-2 border-orange-800 flex items-center justify-center text-3xl font-averialibre">
+                                            <p class="text-center -translate-y-[1.55px]">+</p>
+                                        </button>
                                     </div>
-                                </button>
-
-                                <script>
-                                    function changeClass3() {
-                                        var arrow3 = document.getElementById('arrow3');
-                                        var dropcontent3 = document.getElementById('dropcontent3');
-                                        var series3 = document.getElementById('series3');
-
-                                        if (arrow3.classList.contains('rotate-0')) {
-                                            arrow3.classList.remove('rotate-0');
-                                            arrow3.classList.add('-rotate-90');
-                                        } else {
-                                            arrow3.classList.remove('-rotate-90');
-                                            arrow3.classList.add('rotate-0');
-                                        }
-
-                                        if (dropcontent3.classList.contains('hidden')) {
-                                            dropcontent3.classList.remove('hidden');
-                                            dropcontent3.classList.add('flex');
-                                            series3.classList.remove('rounded-2xl');
-                                            series3.classList.add('rounded-t-2xl');
-                                        } else {
-                                            dropcontent3.classList.remove('flex');
-                                            dropcontent3.classList.add('hidden');
-                                            series3.classList.remove('rounded-t-2xl');
-                                            series3.classList.add('rounded-2xl');
-                                        }
-                                    }
-                                </script>
-
-                            </div>
-
-                        </div>
-
-                        <div id="dropcontent3" class="hidden duration-75 flex-col rounded-b-2xl py-2 bg-orange-300 ">
-                            <!-- menu -->
-                            <div class="flex justify-between flex-row  py-2 pr-4 md:pl-8 pl-4">
-                                <p class="text-orange-700 font-averialibre text-lg md:text-2xl my-auto">Strawberry</p>
-
-                                <div class="flex items-center justify-center gap-2">
-
-                                    <button onclick="kurangAngka('series-3-menu-1')"
-                                        class="rounded-xl bg-orange-300 hover:bg-orange-800 hover:text-orange-300 text-orange-700 w-10 h-10 py-1 border-2 border-orange-800 flex items-center justify-center text-3xl font-averialibre">
-                                        <p class="text-center -translate-y-[1.5px]">-</p>
-                                    </button>
-
-                                    <input type="text" id="series-3-menu-1" placeholder="0"
-                                        class="border-2 rounded-xl bg-orange-300 border-orange-800 focus:outline-none font-averialibre text-2xl px-2 text-orange-700 placeholder-orange-700 w-24 py-1 h-10 text-center"
-                                        oninput="this.value=this.value.replace(/[^0-9]/g,'')"> </input>
-
-                                    <button onclick="tambahAngka('series-3-menu-1')"
-                                        class="rounded-xl bg-orange-300 hover:bg-orange-800 hover:text-orange-300 text-orange-700 w-10 h-10 py-1 border-2 border-orange-800 flex items-center justify-center text-3xl font-averialibre">
-                                        <p class="text-center -translate-y-[1.55px]">+</p>
-                                    </button>
-
                                 </div>
 
+                                <div class="flex justify-between flex-row  py-2 pr-4 md:pl-8 pl-4">
+                                    <p class="text-orange-700 font-averialibre text-lg md:text-2xl my-auto">Coklat
+                                        vanilla
+                                    </p>
+                                    <div class="flex items-center justify-center gap-2">
+
+                                        <button onclick="kurangAngka('series-1-menu-2')"
+                                            class="rounded-xl bg-orange-300 hover:bg-orange-800 hover:text-orange-300 text-orange-700 w-10 h-10 py-1 border-2 border-orange-800 flex items-center justify-center text-3xl font-averialibre">
+                                            <p class="text-center -translate-y-[1.5px]">-</p>
+                                        </button>
+
+                                        <input type="text" id="series-1-menu-2" placeholder="0"
+                                            class="border-2 rounded-xl bg-orange-300 border-orange-800 focus:outline-none font-averialibre text-2xl px-2 text-orange-700 w-24 py-1 h-10 text-center placeholder-orange-700"
+                                            oninput="this.value=this.value.replace(/[^0-9]/g,'')"> </input>
+
+                                        <button onclick="tambahAngka('series-1-menu-2')"
+                                            class="rounded-xl bg-orange-300 hover:bg-orange-800 hover:text-orange-300 text-orange-700 w-10 h-10 py-1 border-2 border-orange-800 flex items-center justify-center text-3xl font-averialibre">
+                                            <p class="text-center -translate-y-[1.55px]">+</p>
+                                        </button>
+
+                                    </div>
+                                </div> --}}
                             </div>
-
-                            <div class="flex justify-between flex-row  py-2 pr-4 md:pl-8 pl-4">
-
-                                <p class="text-orange-700 font-averialibre text-lg md:text-2xl my-auto">Kacang merah
-                                </p>
-                                <div class="flex items-center justify-center gap-2">
-
-                                    <button onclick="kurangAngka('series-3-menu-2')"
-                                        class="rounded-xl bg-orange-300 hover:bg-orange-800 hover:text-orange-300 text-orange-700 w-10 h-10 py-1 border-2 border-orange-800 flex items-center justify-center text-3xl font-averialibre">
-                                        <p class="text-center -translate-y-[1.5px]">-</p>
-                                    </button>
-
-                                    <input type="text" id="series-3-menu-2" placeholder="0"
-                                        class="border-2 rounded-xl bg-orange-300 border-orange-800 focus:outline-none font-averialibre text-2xl px-2 text-orange-700 placeholder-orange-700 w-24 py-1 h-10 text-center"
-                                        oninput="this.value=this.value.replace(/[^0-9]/g,'')"> </input>
-
-                                    <button onclick="tambahAngka('series-3-menu-2')"
-                                        class="rounded-xl bg-orange-300 hover:bg-orange-800 hover:text-orange-300 text-orange-700 w-10 h-10 py-1 border-2 border-orange-800 flex items-center justify-center text-3xl font-averialibre">
-                                        <p class="text-center -translate-y-[1.55px]">+</p>
-                                    </button>
-
-                                </div>
-                            </div>
-
-
-
-
-
                         </div>
-                    </div>
+                        <script>
+                            function updateTotalPcs{{$category->name}}(categoryName) {
+                                var totalPcs = 0;
+                                var menuInputs = document.querySelectorAll('[id^="' + categoryName + '"]');
+                                console.log(menuInputs);
+                                menuInputs.forEach(function(input) {
+                                    console.log(parseInt(input.value))
+                                    totalPcs += parseInt(input.value) || 0;
+                                });
+                                console.log(totalPcs);
+                                var seriesTotalElement = document.getElementById("{{ 'series-' . $category->name }}");
+                                seriesTotalElement.textContent = totalPcs + "Pcs";
+                            }
+
+                            function tambahAngka(id) {
+                                var input = document.getElementById(id);
+                                if (!input.value.trim()) {
+                                    input.value = "1";
+                                } else {
+                                    input.value = parseInt(input.value) + 1;
+                                }
+                                // updateResult();
+                                updateTotalPcs{{$category->name}}("{{ $category->name . $menu->id }}");
+                            }
+
+                            function kurangAngka(id) {
+                                var input = document.getElementById(id);
+                                if (!input.value.trim()) {
+                                    input.value = "0";
+                                } else {
+                                    input.value = Math.max(parseInt(input.value) - 1, 0);
+                                }
+                                // updateResult();
+                                updateTotalPcs{{$category->name}}("{{ $category->name . $menu->id }}");
+                            }
+                        </script>
+                    @endforeach
 
                     <div class="mb-4">
                         <div id="series3"
@@ -384,7 +226,7 @@
                             PENGIRIMAN</p>
 
                         <input type="date"
-                            class="bg-orange-300 border-orange-800 text-orange-700 border-2 outline-none text-xl rounded-xl max-h-28 h-16 p-3 font-averialibre w-full md:w-[60%]"></input>
+                            class="bg-orange-300 border-orange-800 text-orange-700 border-2 outline-none text-xl rounded-xl max-h-28 h-16 p-3 font-averialibre w-full md:w-[60%]">
 
 
                     </div>
@@ -440,49 +282,46 @@
                 </div>
             </div>
 
-
-
-
             <script>
-                document.getElementById('series-1-menu-1').addEventListener('input', function() {
-                    updateResult();
-                });
-                document.getElementById('series-1-menu-2').addEventListener('input', function() {
-                    updateResult();
-                });
-                document.getElementById('series-2-menu-1').addEventListener('input', function() {
-                    updateResult();
-                });
-                document.getElementById('series-2-menu-2').addEventListener('input', function() {
-                    updateResult();
-                });
-                document.getElementById('series-3-menu-1').addEventListener('input', function() {
-                    updateResult();
-                });
-                document.getElementById('series-3-menu-2').addEventListener('input', function() {
-                    updateResult();
-                });
+                // document.getElementById('series-1-menu-1').addEventListener('input', function() {
+                //     updateResult();
+                // });
+                // document.getElementById('series-1-menu-2').addEventListener('input', function() {
+                //     updateResult();
+                // });
+                // document.getElementById('series-2-menu-1').addEventListener('input', function() {
+                //     updateResult();
+                // });
+                // document.getElementById('series-2-menu-2').addEventListener('input', function() {
+                //     updateResult();
+                // });
+                // document.getElementById('series-3-menu-1').addEventListener('input', function() {
+                //     updateResult();
+                // });
+                // document.getElementById('series-3-menu-2').addEventListener('input', function() {
+                //     updateResult();
+                // });
 
 
-                function tambahAngka(id) {
-                    var input = document.getElementById(id);
-                    if (!input.value.trim()) {
-                        input.value = "1";
-                    } else {
-                        input.value = parseInt(input.value) + 1;
-                    }
-                    updateResult();
-                }
+                // function tambahAngka(id) {
+                //     var input = document.getElementById(id);
+                //     if (!input.value.trim()) {
+                //         input.value = "1";
+                //     } else {
+                //         input.value = parseInt(input.value) + 1;
+                //     }
+                //     updateResult();
+                // }
 
-                function kurangAngka(id) {
-                    var input = document.getElementById(id);
-                    if (!input.value.trim()) {
-                        input.value = "0";
-                    } else {
-                        input.value = Math.max(parseInt(input.value) - 1, 0);
-                    }
-                    updateResult();
-                }
+                // function kurangAngka(id) {
+                //     var input = document.getElementById(id);
+                //     if (!input.value.trim()) {
+                //         input.value = "0";
+                //     } else {
+                //         input.value = Math.max(parseInt(input.value) - 1, 0);
+                //     }
+                //     updateResult();
+                // }
 
                 function updateResult() {
                     var series1angka1 = document.getElementById('series-1-menu-1').value;
@@ -582,43 +421,8 @@
                 }
             </script>
 
-            {{-- <div id="header" x-data="{ isOpen: false }" class="fixed rounded-b-2xl border-x-2 border-b-2 border-orange-300  bg-orange-700  justify-center z-40 w-[97%] md:hidden flex items-center flex-col">
-
-        <button @click="isOpen = !isOpen" type="submit" class="w-full">
-            <svg xmlns="http://www.w3.org/2000/svg" class="w-12 h-12 my-2 text-orange-300 lg:hidden mx-auto" fill="none"
-                viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-            </svg>
-        </button>
-
-
-        <div class="w-full">
-
-            <div class="w-full h-2 bg-gradient-to-t from-orange-300" x-show="isOpen"
-                @click.away=" isOpen = false">
-            </div>
-
-            <div class="flex left-0 w-full px-3 pt-4 pb-6 bg-orange-300 rounded-b-xl" x-show="isOpen"
-                @click.away=" isOpen = false">
-                <div class="flex flex-col space-y-4 w-full items-center">
-                    <a class="text-orange-700 font-averialibre cursor-pointer text-2xl" href="/">SIGN IN</a>
-                    <a class="text-orange-700 font-averialibre cursor-pointer text-2xl" href="/">HOME</a>
-                    <a class="text-orange-700 font-averialibre cursor-pointer text-2xl" href="/bulk-order">BULK ORDER</a>
-                    <a class="text-orange-700 font-averialibre cursor-pointer text-2xl" href="/">FRANCHISE</a>
-                    <a class="text-orange-700 font-averialibre cursor-pointer text-2xl" href="/">ABOUT US</a>
-                    <a class="text-orange-700 font-averialibre cursor-pointer text-2xl" href="/">MY DASHBOARD</a>
-                </div>
-            </div>
-
-        </div>
-
-    </div> --}}
-
 
             <div class="h-screen flex relative justify-center flex-col">
-
-
-
                 <img class="absolute h-96 z-10 -right-56 bottom-10 mt-6 animate-wiggle opacity-70"
                     src="/images/awan.webp" alt="Logo">
                 <img class="absolute h-96 z-10 -left-60 -bottom-32 animate-wiggle opacity-70" src="/images/awan.webp"

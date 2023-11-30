@@ -96,124 +96,24 @@
                         </div>
                     </div>
                     <div class="w-full md:w-[50%] flex flex-col">
-                        <!-- SERIES #1 -->
-                        <p class="text-orange-800 font-averialibre md:text-4xl text-3xl mx-auto mt-3 md:mt-0"
-                            style="text-shadow: 4px 4px 4px #FFFFFF, -4px -4px 4px #FFFFFF, 4px -4px 4px #FFFFFF, -4px 4px 4px #FFFFFF;">
-                            COKLAT SERIES</p>
-                        <div class="grid grid-cols-1 md:grid-cols-2 md:w-[80%] w-[95%] mx-auto mt-3">
-                            <!-- RASA -->
-                            <div class="flex mx-auto md:mx-0">
-                                <div class="w-8 flex items-center justify-center mr-2">
-                                    <img class="object-cover h-14 transform scale-x-[-1] md:-translate-y-2 -translate-y-3"
-                                        src="/images/ikan.webp" alt="Logo">
-                                </div>
-                                <p class="text-orange-800 font-averialibre md:text-3xl text-2xl">Coklat</p>
+                        @foreach ($categories as $category)
+                            <!-- SERIES -->
+                            <p class="text-orange-800 font-averialibre md:text-4xl text-3xl mx-auto mt-3 md:mt-0"
+                                style="text-shadow: 4px 4px 4px #FFFFFF, -4px -4px 4px #FFFFFF, 4px -4px 4px #FFFFFF, -4px 4px 4px #FFFFFF;">
+                                {{ $category->name }} SERIES</p>
+                            <div class="grid grid-cols-1 md:grid-cols-2 md:w-[80%] w-[95%] mx-auto mt-3">
+                                @foreach ($category->menus as $menu)
+                                    <!-- RASA -->
+                                    <div class="flex mx-auto md:mx-0">
+                                        <div class="w-8 flex items-center justify-center mr-2">
+                                            <img class="object-cover h-14 transform scale-x-[-1] md:-translate-y-2 -translate-y-3"
+                                                src="/images/ikan.webp" alt="Logo">
+                                        </div>
+                                        <p class="text-orange-800 font-averialibre md:text-3xl text-2xl">{{$menu->name}}</p>
+                                    </div>
+                                @endforeach
                             </div>
-
-                            <div class="flex mx-auto md:mx-0">
-                                <div class="w-8 flex items-center justify-center mr-2">
-                                    <img class="object-cover h-14 transform scale-x-[-1] md:-translate-y-2 -translate-y-3"
-                                        src="/images/ikan.webp" alt="Logo">
-                                </div>
-                                <p class="text-orange-800 font-averialibre md:text-3xl text-2xl">Coklat keju</p>
-                            </div>
-
-                            <div class="flex mx-auto md:mx-0">
-                                <div class="w-8 flex items-center justify-center mr-2">
-                                    <img class="object-cover h-14 transform scale-x-[-1] md:-translate-y-2 -translate-y-3"
-                                        src="/images/ikan.webp" alt="Logo">
-                                </div>
-                                <p class="text-orange-800 font-averialibre md:text-3xl text-2xl">Coklat vanilla</p>
-                            </div>
-
-                            <div class="flex mx-auto md:mx-0">
-                                <div class="w-8 flex items-center justify-center mr-2">
-                                    <img class="object-cover h-14 transform scale-x-[-1] md:-translate-y-2 -translate-y-3"
-                                        src="/images/ikan.webp" alt="Logo">
-                                </div>
-                                <p class="text-orange-800 font-averialibre md:text-3xl text-2xl">Coklat oreo</p>
-                            </div>
-
-                            <div class="flex mx-auto md:mx-0">
-                                <div class="w-8 flex items-center justify-center mr-2">
-                                    <img class="object-cover h-14 transform scale-x-[-1] md:-translate-y-2 -translate-y-3"
-                                        src="/images/ikan.webp" alt="Logo">
-                                </div>
-                                <p class="text-orange-800 font-averialibre md:text-3xl text-2xl">Coklat caramel</p>
-                            </div>
-
-                        </div>
-
-                        <!-- SERIES #2 -->
-                        <p class="text-orange-800 font-averialibre md:text-4xl text-3xl mx-auto mt-3 md:mt-0"
-                            style="text-shadow: 4px 4px 4px #FFFFFF, -4px -4px 4px #FFFFFF, 4px -4px 4px #FFFFFF, -4px 4px 4px #FFFFFF;">
-                            VANILLA SERIES</p>
-                        <div class="grid grid-cols-1 md:grid-cols-2 md:w-[80%] w-[95%] mx-auto mt-3">
-                            <!-- RASA -->
-                            <div class="flex mx-auto md:mx-0">
-                                <div class="w-8 flex items-center justify-center mr-2">
-                                    <img class="object-cover h-14 transform scale-x-[-1] md:-translate-y-2 -translate-y-3"
-                                        src="/images/ikan.webp" alt="Logo">
-                                </div>
-                                <p class="text-orange-800 font-averialibre md:text-3xl text-2xl">Vanilla</p>
-                            </div>
-
-                            <div class="flex mx-auto md:mx-0">
-                                <div class="w-8 flex items-center justify-center mr-2">
-                                    <img class="object-cover h-14 transform scale-x-[-1] md:-translate-y-2 -translate-y-3"
-                                        src="/images/ikan.webp" alt="Logo">
-                                </div>
-                                <p class="text-orange-800 font-averialibre md:text-3xl text-2xl">Vanilla keju</p>
-                            </div>
-
-                            <div class="flex mx-auto md:mx-0">
-                                <div class="w-8 flex items-center justify-center mr-2">
-                                    <img class="object-cover h-14 transform scale-x-[-1] md:-translate-y-2 -translate-y-3"
-                                        src="/images/ikan.webp" alt="Logo">
-                                </div>
-                                <p class="text-orange-800 font-averialibre md:text-3xl text-2xl">Vanilla oreo</p>
-                            </div>
-
-                            <div class="flex mx-auto md:mx-0">
-                                <div class="w-8 flex items-center justify-center mr-2">
-                                    <img class="object-cover h-14 transform scale-x-[-1] md:-translate-y-2 -translate-y-3"
-                                        src="/images/ikan.webp" alt="Logo">
-                                </div>
-                                <p class="text-orange-800 font-averialibre md:text-3xl text-2xl">Vanilla caramel</p>
-                            </div>
-                        </div>
-
-                        <!-- SERIES #3 -->
-                        <p class="text-orange-800 font-averialibre md:text-4xl text-3xl mx-auto mt-3 md:mt-0"
-                            style="text-shadow: 4px 4px 4px #FFFFFF, -4px -4px 4px #FFFFFF, 4px -4px 4px #FFFFFF, -4px 4px 4px #FFFFFF;">
-                            OTHER SERIES</p>
-                        <div class="grid grid-cols-1 md:grid-cols-2 md:w-[80%] w-[95%] mx-auto mt-3">
-                            <!-- RASA -->
-                            <div class="flex mx-auto md:mx-0">
-                                <div class="w-8 flex items-center justify-center mr-2">
-                                    <img class="object-cover h-14 transform scale-x-[-1] md:-translate-y-2 -translate-y-3"
-                                        src="/images/ikan.webp" alt="Logo">
-                                </div>
-                                <p class="text-orange-800 font-averialibre md:text-3xl text-2xl">Strawberry</p>
-                            </div>
-
-                            <div class="flex mx-auto md:mx-0">
-                                <div class="w-8 flex items-center justify-center mr-2">
-                                    <img class="object-cover h-14 transform scale-x-[-1] md:-translate-y-2 -translate-y-3"
-                                        src="/images/ikan.webp" alt="Logo">
-                                </div>
-                                <p class="text-orange-800 font-averialibre md:text-3xl text-2xl">Blueberry</p>
-                            </div>
-
-                            <div class="flex mx-auto md:mx-0">
-                                <div class="w-8 flex items-center justify-center mr-2">
-                                    <img class="object-cover h-14 transform scale-x-[-1] md:-translate-y-2 -translate-y-3"
-                                        src="/images/ikan.webp" alt="Logo">
-                                </div>
-                                <p class="text-orange-800 font-averialibre md:text-3xl text-2xl">Kacang merah</p>
-                            </div>
-
-                        </div>
+                        @endforeach
                     </div>
                 </div>
                 <a href="/bulk-order"

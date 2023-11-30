@@ -13,15 +13,16 @@
                     <p class="text-5xl font-averialibre text-orange-800">Tambah Series</p>
                 </div>
 
-                <form action="/admin/dashboard/create-series" method="POST" enctype="multipart/form-data" class="rounded-2xl border-solid border-4 border-[#F1A03C] my-6 bg-[#FAC774] overflow-y-auto">
+                <form action="/admin/series/{{$category->id}}/update" method="POST" enctype="multipart/form-data" class="rounded-2xl border-solid border-4 border-[#F1A03C] my-6 bg-[#FAC774] overflow-y-auto">
                     @csrf
+                    @method('put')
                     <div class="p-3 md:p-8">
 
                         <!-- Add more items as needed -->
                         <div class="rounded-2xl my-6 bg-[#FAC774] overflow-y-auto py-4">
                             <div class="px-2 flex items-center">
                                 <label for="name" class="block text-2xl font-averialibre text-orange-800 ml-4">Nama Series</label>
-                                <input type="text" id="name" name="name" class="p-2 w-[200px] bg-[#FDED87] rounded-2xl border-solid border-2 border-[#945E3D] ml-2 md:ml-10 font-averialibre placeholder-orange-700">
+                                <input type="text" id="name" name="name" class="p-2 w-[200px] bg-[#FDED87] rounded-2xl border-solid border-2 border-[#945E3D] ml-2 md:ml-10 font-averialibre placeholder-orange-700" value="{{ old('name', $category->name)}}">
                             </div>
                         </div>
                         <div class="flex mb-4 justify-center mt-4">

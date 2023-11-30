@@ -12,9 +12,8 @@ class Menu extends Model
     protected $fillable = [
         'name',
         'description',
-        'image',
         'price',
-        'category'
+        'category_id'
     ];
 
     protected $guarded = ['id'];

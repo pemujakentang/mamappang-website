@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Controller;
 use App\Http\Controllers\FranchiseController;
+use App\Http\Controllers\MenuController;
 use App\Http\Controllers\PackageController;
 use Illuminate\Support\Facades\Route;
 
@@ -26,25 +27,35 @@ Route::view('profile', 'profile')
     ->middleware(['auth'])
     ->name('profile');
 
-Route::get('/', function () {
-    return view('home.index');
-})->name('home');
-
-Route::get('/bulk-order', function () {
-    return view('bulk.bulk');
-})->name('bulk-order');
-
 Route::controller(Controller::class)->group(
     function(){
         Route::get('/admin/dashboard', 'adminDashboard')->name('admin-dashboard');
     }
 )->middleware('auth');
 
+Route::controller(MenuController::class)->group(
+    function(){
+        Route::get('/', 'home')->name('home');
+        Route::get('/bulk-order', 'index')->name('bulk-order');
+        Route::get('/admin/dashboard/menus', 'dashboard')->name('menu-edit');
+        Route::get('/admin/dashboard/add-menu', 'create');
+        Route::get('/admin/dashboard/add-series', 'createseries');
+        Route::post('/admin/dashboard/create-menu', 'store');
+        Route::post('/admin/dashboard/create-series', 'storeseries');
+        Route::get('/admin/menu/{menu:id}/edit', 'edit');
+        Route::get('/admin/series/{category:id}/edit', 'editseries');
+        Route::put('/admin/menu/{menu:id}/update', 'update');
+        Route::put('/admin/series/{category:id}/update', 'updateseries');
+        Route::delete('/admin/menu/{menu:id}/delete', 'destroy');
+        Route::delete('/admin/series/{category:id}/delete', 'destroyseries');
+    }
+);
+
 Route::controller(FranchiseController::class)->group(
     function(){
         Route::get('/franchise', 'index')->name('franchise');
         Route::post('/franchise/add', 'store');
-        Route::get('/dashboard/franchise-status', 'dashboard')->name('franchise-status');
+        Route::get('/admin/dashboard/franchise-status', 'dashboard')->name('franchise-status');
         Route::post('/franchise/{franchise:id}/reject', 'reject');
         Route::post('/franchise/{franchise:id}/confirm', 'confirm');
     }
@@ -52,10 +63,10 @@ Route::controller(FranchiseController::class)->group(
 
 Route::controller(PackageController::class)->group(
     function () {
-        Route::get('/dashboard/franchises', 'index')->name('franchises');
+        Route::get('/admin/dashboard/franchises', 'index')->name('franchises');
         Route::get('/admin/package/{package:id}/edit', 'edit');
         Route::put('/admin/package/{package:id}/update', 'update');
-        Route::get('/dashboard/franchise-create', function () {
+        Route::get('/admin//dashboard/franchise-create', function () {
             return view('dashboard.franchise-create');
         })->name('franchise-create');
         Route::post('/admin/package/add', 'store');
@@ -67,17 +78,6 @@ Route::get('/dashboard/order-status', function () {
     return view('dashboard.order-status');
 })->name('order-status');
 
-Route::get('/dashboard/menu-edit', function () {
-    return view('dashboard.menu-edit');
-})->name('menu-edit');
-
-Route::get('/dashboard/menu-edit/tambah-rasa', function () {
-    return view('dashboard.tambah-rasa');
-})->name('tambah-rasa');
-
-Route::get('/dashboard/menu-edit/tambah-series', function () {
-    return view('dashboard.tambah-series');
-})->name('tambah-series');
 Route::get('/dashboard/menu-edit/edit-bulk', function () {
     return view('dashboard.edit-bulk');
 })->name('edit-bulk');
