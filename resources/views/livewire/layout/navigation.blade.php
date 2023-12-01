@@ -122,6 +122,7 @@ $logout = function (Logout $logout) {
                 </svg>
             </button>
         </div>
+
         <!-- Responsive Navigation Menu -->
         <div :class="{ 'block': open, 'hidden': !open }"
             class="hidden left-0 w-[97%] px-3 pt-10 bg-orange-300 rounded-b-xl">

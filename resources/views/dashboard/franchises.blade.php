@@ -29,18 +29,18 @@
                         <!-- Dummy data, replace with dynamic data in a real application -->
                         @foreach ($packages as $package)
                             <li
-                                class="flex justify-between items-center bg-[#FAC774] border-solid border-4 border-orange-700 p-2 rounded-2xl max-w-[1100px] flex-col md:flex-row">
+                                class="flex justify-between items-center bg-[#FAC774] border-solid border-4 border-orange-700 p-2 rounded-2xl flex-col md:flex-row">
                                 <div class="flex items-center">
                                     <img class="object-cover h-14 transform scale-x-[-1] -translate-y-2 mt-2"
                                         src="/images/ikan.webp" alt="Logo">
                                     <span
                                         class="ml-2 font-averialibre text-orange-800 text-3xl">{{ $package->title }}</span>
                                 </div>
-                                <div class="flex space-x-2">
+                                <div class="flex space-x-2 items-center">
                                     <a href="/admin/package/{{ $package->id }}/edit"
                                         class="ml-4 mr-4 font-averialibre text-orange-800 text-3xl">Edit
                                     </a>
-                                    <form action="/admin/package/{{ $package->id }}/delete" method="post">
+                                    <form action="/admin/package/{{ $package->id }}/delete" method="post" class="my-auto">
                                         @method('delete')
                                         @csrf
                                         <button type="submit"
