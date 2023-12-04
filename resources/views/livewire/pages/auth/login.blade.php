@@ -28,6 +28,12 @@ $login = function () {
     <x-auth-session-status class="mb-4" :status="session('status')" />
 
     <form wire:submit="login">
+        @if ($errors->has('email') && $errors->first('email') === __('auth.failed'))
+            <div>
+                <span class="text-lg text-red-500 font-averialibrebold">{{ __('auth.failed') }}</span>
+            </div>
+        @endif
+
         <!-- Email Address -->
         <div>
             <x-input-label class="font-averialibre text-[#992300] text-xl" for="email" :value="__('Email')" />
@@ -63,7 +69,6 @@ $login = function () {
                 </svg>
             </div>
             {{-- <x-input-error :messages="$errors->get('form.password')" class="mt-2" /> --}}
-
         </div>
         @error('form.password')
             <x-input-error :messages="$message" class="mt-2" />

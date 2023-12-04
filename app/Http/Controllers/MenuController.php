@@ -6,6 +6,8 @@ use App\Models\Menu;
 use App\Http\Requests\StoreMenuRequest;
 use App\Http\Requests\UpdateMenuRequest;
 use App\Models\Category;
+use App\Models\Franchise;
+use App\Models\Package;
 use App\Models\Preorders;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Http\Request;
@@ -44,10 +46,12 @@ class MenuController extends Controller
     {
         $categories = Category::all();
         $menus = Menu::all();
+        $packages = Package::all();
 
         return view('dashboard.menu-edit', [
             'menus' => $menus,
-            'categories' => $categories
+            'categories' => $categories,
+            'packages' => $packages
         ]);
     }
 
@@ -109,7 +113,7 @@ class MenuController extends Controller
 
             Menu::create($validData);
 
-            return redirect('/admin/dashboard/menus')->with(array(
+            return redirect('/admin/dashboard')->with(array(
                 'success' => "Succesfully added new menu entry",
                 'name' => $request->name,
                 'kategori' => $request->category_id
@@ -135,7 +139,7 @@ class MenuController extends Controller
 
             Category::create($validData);
 
-            return redirect('/admin/dashboard/menus')->with(array(
+            return redirect('/admin/dashboard')->with(array(
                 'success' => "Succesfully added new series entry",
                 'name' => $request->name,
                 'kategori' => $request->category
@@ -197,7 +201,7 @@ class MenuController extends Controller
 
             $menu->update($validData);
 
-            return redirect('/admin/dashboard/menus')->with('success', "Menu updated.");
+            return redirect('/admin/dashboard')->with('success', "Menu updated.");
         } else {
             return redirect('/login');
         }
@@ -223,7 +227,7 @@ class MenuController extends Controller
 
             $category->update($validData);
 
-            return redirect('/admin/dashboard/menus')->with('success', "Series updated.");
+            return redirect('/admin/dashboard')->with('success', "Series updated.");
         } else {
             return redirect('/login');
         }
@@ -245,7 +249,7 @@ class MenuController extends Controller
             // }
 
             $menu->delete();
-            return redirect('/admin/dashboard/menus')->with('success', "Menu Deleted");
+            return redirect('/admin/dashboard')->with('success', "Menu Deleted");
         } else {
             return redirect('/login');
         }
@@ -262,8 +266,9 @@ class MenuController extends Controller
             //     return redirect('/');
             // }
             if ($category->menus()->exists()) {
+                // dd($category->menus());
                 // If there are related menus, redirect back with an error message
-                return redirect('/admin/dashboard/menus')->with('error', "Cannot delete the series as it still has menus.");
+                return redirect('/admin/dashboard')->with('error', "Cannot delete the series as it still has menus.");
             }
 
             $category->delete();

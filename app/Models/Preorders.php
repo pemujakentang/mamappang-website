@@ -18,12 +18,17 @@ class Preorders extends Model
         'tanggal_pesanan',
         'total_price',
         'total_qty',
-        'status'
+        'status',
+        'message'
     ];
 
     protected $guarded = [
         'id'
     ];
+
+    public function user(): BelongsTo{
+        return $this->belongsTo(User::class);
+    }
 
     public function category(): BelongsTo{
         return $this->belongsTo(Category::class);
@@ -35,5 +40,13 @@ class Preorders extends Model
 
     public function shipment():HasOne{
         return $this->hasOne(Shipment::class);
+    }
+
+    public function bill(): HasOne{
+        return $this->hasOne(Bill::class);
+    }
+
+    public function payment(): HasOne{
+        return $this->hasOne(Payment::class);
     }
 }

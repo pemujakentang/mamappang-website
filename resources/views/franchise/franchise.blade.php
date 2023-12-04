@@ -301,7 +301,6 @@
                         </div>
                     </x-modal>
                 </form>
-
                 @if (session()->has('success'))
                     <!-- Modal Request Sent Notification -->
                     <div class="fixed h-full z-10 inset-0 bg-gray-600 bg-opacity-50 w-full" id="notification"
@@ -321,10 +320,12 @@
                                 <br>
                                 Check your email or your dashboard page for further updates!
                             </div>
-                            <button id="check-order-btn"
-                                class="mx-[2.85rem] mt-10 w-[80%] h-14 bg-[#f1a03c] text-[#992300] font-black font-averialibre text-2xl rounded-2xl border-2 border-orange-700 hover:scale-[1.1] duration-75">
-                                Check My Dashboard
-                            </button>
+                            <a href="/my-dashboard">
+                                <button id="check-order-btn"
+                                    class="mx-[2.85rem] mt-10 w-[80%] h-14 bg-[#f1a03c] text-[#992300] font-black font-averialibre text-2xl rounded-2xl border-2 border-orange-700 hover:scale-[1.1] duration-75">
+                                    Check My Dashboard
+                                </button>
+                            </a>
                         </div>
                     </div>
                     <script>

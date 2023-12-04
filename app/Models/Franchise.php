@@ -25,7 +25,7 @@ class Franchise extends Model
 
     protected $guarded = ['id'];
 
-    public function Packages(): BelongsTo{
+    public function package(): BelongsTo{
         return $this->belongsTo(Package::class);
     }
 

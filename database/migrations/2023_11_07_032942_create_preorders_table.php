@@ -19,6 +19,7 @@ return new class extends Migration
             $table->integer('total_price');
             $table->integer('total_qty');
             $table->string('status');
+            $table->text('message')->nullable();
             $table->timestamps();
         });
     }

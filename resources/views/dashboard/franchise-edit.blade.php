@@ -69,7 +69,7 @@
 
                     <div class="flex mb-4 justify-center mt-6 gap-4">
 
-                        <a href="{{ route('franchises') }}"
+                        <a href="{{ route('admin-dashboard') }}"
                             class="mx-4 font-averialibre text-orange-800 text-3xl text-center bg-[#F1A03C] rounded-[20px] border-solid border-4 border-[#945E3D] flex items-center justify-center w-36">
                                 Cancel
                         </a>

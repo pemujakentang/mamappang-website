@@ -11,16 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('shipments', function (Blueprint $table) {
+        Schema::create('bills', function (Blueprint $table) {
             $table->id();
+            $table->integer('user_id');
             $table->integer('preorders_id');
-            $table->string('service_provider');
-            $table->string('driver')->nullable();
-            $table->string('plat')->nullable();
-            $table->string('no_hp')->nullable();
-            $table->text('link')->nullable();
-            $table->text('keterangan')->nullable();
-            $table->string('status');
+            $table->integer('price');
+            $table->integer('shipping');
+            $table->integer('total');
             $table->timestamps();
         });
     }
@@ -30,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('shipments');
+        Schema::dropIfExists('bills');
     }
 };

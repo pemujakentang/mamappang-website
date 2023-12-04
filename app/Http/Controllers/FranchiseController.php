@@ -65,8 +65,8 @@ class FranchiseController extends Controller
     public function userFranchises(Request $request)
     {
         if (Auth::check()) {
-            $logged_id = auth()->user()->id;
-            $franchises = Franchise::where('user_id', '=', $logged_id)->get();
+            $user = auth()->user();
+            $franchises = $user->franchises;
 
             return view('Home.index', [
                 'franchises' => $franchises
@@ -133,14 +133,15 @@ class FranchiseController extends Controller
         }
     }
 
-    public function cancel(Franchise $franchise)
+    public function cancel(Franchise $franchise, Request $request)
     {
         //
         if (Auth::check()) {
             $franchise->update([
-                'status' => 'CANCELED'
+                'message' => $request->message,
+                'status' => 'CANCELLED'
             ]);
-            return redirect('/franchise')->with(array(
+            return redirect('/my-dashboard')->with(array(
                 'success' => "Franchise Application Canceled"
             ));
         } else {
@@ -153,10 +154,10 @@ class FranchiseController extends Controller
         //
         if (Auth::check()) {
             $franchise->update([
-                'status' => 'CANCELED',
+                'status' => 'REJECTED',
                 'message' => $request->message
             ]);
-            return redirect('/dashboard/franchise-status')->with(array(
+            return redirect('/admin/dashboard/franchise-status')->with(array(
                 'success' => "Franchise Application Rejected ".$franchise->id
             ));
         } else {
@@ -182,7 +183,7 @@ class FranchiseController extends Controller
 
             //send email
 
-            return redirect('/dashboard/franchise-status')->with(array(
+            return redirect('/admin/dashboard/franchise-status')->with(array(
                 'success' => "Franchise Application Confirmed"
             ));
         } else {
@@ -193,9 +194,30 @@ class FranchiseController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateFranchiseRequest $request, Franchise $franchise)
+    public function update(Request $request, Franchise $franchise)
     {
         //
+        if (Auth::check()) {
+            // $user = auth()->user();
+
+            // if (
+            //     $user->role !== 'admin' || $user->role !== 'superadmin'
+            // ) {
+            //     return redirect('/');
+            // }
+
+
+
+            $franchise->update([
+                'status' => 'CONFIRMED'
+            ]);
+
+            return redirect('/franchises')->with(array(
+                    'success' => "Franchise Application Updated"
+                ));
+        } else {
+            return redirect('/login');
+        }
     }
 
     /**

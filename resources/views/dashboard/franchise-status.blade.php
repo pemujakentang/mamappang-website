@@ -84,28 +84,54 @@
                                                         {{ $franchise->keterangan }}</p>
                                                 </div>
                                             </div>
-                                            <div id="{{ 'greenSection' . $franchise->id }}"
-                                                class="font-averialibre w-full h-auto bg-[#fac774] rounded-b-lg p-4">
-                                                <!-- Content for the green section -->
-                                                <div id="{{ 'greenSection' . $franchise->id }}Content" font-averialibre
-                                                    class="flex-1 flex items-center justify-between">
-                                                    <p id="{{ 'questionText' . $franchise->id }}"
-                                                        class="text-orange-800 text-justify flex-1">
-                                                        Terima Request?</p>
-                                                    <div id="{{ 'buttonContainer' . $franchise->id }}"
-                                                        class="flex gap-1">
-                                                        <button
-                                                            onclick="{{ 'replaceContent' . $franchise->id }}('terima')"
-                                                            class="font-averialibre text-orange-800 text-2xl flex items-center justify-center bg-[#f1a03c] rounded-full h-[35px] w-[100px] border border-[#b9480f]">Terima</button>
-                                                        <button
-                                                            onclick="{{ 'replaceContent' . $franchise->id }}('tidak')"
-                                                            class="font-averialibre text-orange-800 text-2xl flex items-center justify-center bg-[#fded87] rounded-full h-[35px] w-[100px] border border-[#b9480f]">Tidak</button>
+                                            @if ($franchise->status == 'PENDING')
+                                                <div id="{{ 'greenSection' . $franchise->id }}"
+                                                    class="font-averialibre w-full h-auto bg-[#fac774] rounded-b-lg p-4">
+                                                    <!-- Content for the green section -->
+                                                    <div id="{{ 'greenSection' . $franchise->id }}Content"
+                                                        font-averialibre
+                                                        class="flex-1 flex items-center justify-between">
+                                                        <p id="{{ 'questionText' . $franchise->id }}"
+                                                            class="text-orange-800 text-justify flex-1">
+                                                            Terima Request?</p>
+                                                        <div id="{{ 'buttonContainer' . $franchise->id }}"
+                                                            class="flex gap-1">
+                                                            <button
+                                                                onclick="{{ 'replaceContent' . $franchise->id }}('terima')"
+                                                                class="font-averialibre text-orange-800 text-2xl flex items-center justify-center bg-[#f1a03c] rounded-full h-[35px] w-[100px] border border-[#b9480f]">Terima</button>
+                                                            <button
+                                                                onclick="{{ 'replaceContent' . $franchise->id }}('tidak')"
+                                                                class="font-averialibre text-orange-800 text-2xl flex items-center justify-center bg-[#fded87] rounded-full h-[35px] w-[100px] border border-[#b9480f]">Tidak</button>
+                                                        </div>
+                                                    </div>
+                                                    <div id="{{ 'replacementContent' . $franchise->id }}"
+                                                        class="hidden">
+                                                        <!-- Content will be replaced based on button clicks -->
                                                     </div>
                                                 </div>
-                                                <div id="{{ 'replacementContent' . $franchise->id }}" class="hidden">
-                                                    <!-- Content will be replaced based on button clicks -->
+                                            @else
+                                                <div id=""
+                                                    class="font-averialibre w-full h-auto bg-[#fac774] rounded-b-lg p-4">
+                                                    <!-- Content for the green section -->
+                                                    <div id=""
+                                                        font-averialibre
+                                                        class="flex-1 flex items-center justify-between">
+                                                        <p id=""
+                                                            class="text-orange-800 text-justify flex-1">
+                                                            Email Pengaju</p>
+                                                        <div id=""
+                                                            class="flex gap-1">
+                                                            <a href="mailto:{{$franchise->user->email}}"
+                                                                class="font-averialibre text-orange-800 text-2xl flex items-center justify-center bg-[#f1a03c] rounded-full h-[35px] w-[100px] border border-[#b9480f]">Email</a>
+                                                        </div>
+                                                    </div>
+                                                    <div id="{{ 'replacementContent' . $franchise->id }}"
+                                                        class="hidden">
+                                                        <!-- Content will be replaced based on button clicks -->
+                                                    </div>
                                                 </div>
-                                            </div>
+                                            @endif
+
                                         </div>
                                     </div>
                                     <div id="{{ 'bottomButtons' . $franchise->id }}"

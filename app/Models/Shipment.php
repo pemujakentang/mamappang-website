@@ -11,7 +11,7 @@ class Shipment extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['preorder_id', 'service_provider', 'driver', 'plat', 'no_hp', 'link', 'keterangan'];
+    protected $fillable = ['preorders_id', 'service_provider', 'driver', 'plat', 'no_hp', 'link', 'keterangan', 'status'];
 
     protected $guarded = ['id'];
 

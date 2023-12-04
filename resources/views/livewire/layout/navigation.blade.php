@@ -34,10 +34,10 @@ $logout = function (Logout $logout) {
                     <x-nav-link :href="route('franchise')" :active="request()->routeIs('franchise')" wire:navigate>
                         {{ __('Franchise') }}
                     </x-nav-link>
-                    <x-nav-link :href="route('home')" :active="request()->routeIs('home')" wire:navigate>
+                    <x-nav-link :href="route('about-us')" :active="request()->routeIs('about-us')" wire:navigate>
                         {{ __('About Us') }}
                     </x-nav-link>
-                    <x-nav-link :href="route('home')" :active="request()->routeIs('home')" wire:navigate>
+                    <x-nav-link :href="route('user-dashboard')" :active="request()->routeIs('user-dashboard')" wire:navigate>
                         {{ __('My Dashboard') }}
                     </x-nav-link>
                 </div>
@@ -122,6 +122,7 @@ $logout = function (Logout $logout) {
                 </svg>
             </button>
         </div>
+
         <!-- Responsive Navigation Menu -->
         <div :class="{ 'block': open, 'hidden': !open }"
             class="hidden left-0 w-[97%] px-3 pt-10 bg-orange-300 rounded-b-xl">
@@ -135,10 +136,10 @@ $logout = function (Logout $logout) {
                 <x-responsive-nav-link :href="route('franchise')" :active="request()->routeIs('franchise')" wire:navigate>
                     {{ __('Franchise') }}
                 </x-responsive-nav-link>
-                <x-responsive-nav-link :href="route('home')" :active="request()->routeIs('home')" wire:navigate>
+                <x-responsive-nav-link :href="route('about-us')" :active="request()->routeIs('about-us')" wire:navigate>
                     {{ __('About Us') }}
                 </x-responsive-nav-link>
-                <x-responsive-nav-link :href="route('home')" :active="request()->routeIs('home')" wire:navigate>
+                <x-responsive-nav-link :href="route('user-dashboard')" :active="request()->routeIs('user-dashboard')" wire:navigate>
                     {{ __('My Dashboard') }}
                 </x-responsive-nav-link>
             </div>

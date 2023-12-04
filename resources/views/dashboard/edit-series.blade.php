@@ -27,7 +27,7 @@
                         </div>
                         <div class="flex mb-4 justify-center mt-4">
                             <button class="bg-[#F1A03C] rounded-[20px] border-solid border-4 border-[#945E3D] flex items-center justify-center w-36 mr-4">
-                                <a href="{{ route('menu-edit') }}" class="ml-4 mr-4 font-averialibre text-orange-800 text-3xl text-center">Cancel</a>
+                                <a href="{{ route('admin-dashboard') }}" class="ml-4 mr-4 font-averialibre text-orange-800 text-3xl text-center">Cancel</a>
                             </button>
                             <button type="submit" class="bg-[#FDED87] rounded-[20px] border-solid border-4 border-[#945E3D] flex items-center justify-center w-36 ml-4 mr-4 font-averialibre text-orange-800 text-3xl text-center">
                                 Save

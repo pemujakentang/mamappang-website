@@ -48,7 +48,7 @@ class PackageController extends Controller
 
         Package::create($validData);
 
-        return redirect('/dashboard/franchises')->with('success', "Package added");
+        return redirect('/admin/dashboard')->with('success', "Package added");
     }
 
     /**
@@ -90,7 +90,7 @@ class PackageController extends Controller
 
         $package->update($validData);
 
-        return redirect('/dashboard/franchises')->with('success', "Package updated");
+        return redirect('/admin/dashboard')->with('success', "Package updated");
     }
 
     /**
@@ -99,8 +99,12 @@ class PackageController extends Controller
     public function destroy(Package $package)
     {
         //
+        if($package->franchises()->exists()){
+            // dd($package->franchises());
+            return redirect('/admin/dashboard')->with('error', 'Cannot delete the package as it has active franchises.');
+        }
         $package->delete();
-        return redirect('/dashboard/franchises')->with('success', 'Package Deleted');
+        return redirect('/admin/dashboard')->with('success', 'Package Deleted');
     }
 
     public function upload(Request $request)

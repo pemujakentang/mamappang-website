@@ -7,15 +7,17 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasOne;
 
-class Payment extends Model
+class Cart extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['user_id', 'preorders_id', 'keterangan', 'image', 'status'];
+    protected $fillable = ['user_id', 'menu_id', 'qty'];
 
-    protected $guarded = ['id'];
+    public function user():BelongsTo{
+        return $this->belongsTo(User::class);
+    }
 
-    public function preorder(): BelongsTo{
-        return $this->belongsTo(Preorders::class, 'preorder_id');
+    public function menu():HasOne{
+        return $this->hasOne(Menu::class);
     }
 }

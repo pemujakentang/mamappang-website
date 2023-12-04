@@ -95,12 +95,12 @@ $logout = function (Logout $logout) {
                     <li><x-nav-link :href="route('franchise-status')" :active="request()->routeIs('franchise-status')" wire:navigate>
                             {{ __('Franchise Status') }}
                         </x-nav-link></li>
-                    <li><x-nav-link :href="route('menu-edit')" :active="request()->routeIs('menu-edit')" wire:navigate>
+                    {{-- <li><x-nav-link :href="route('menu-edit')" :active="request()->routeIs('menu-edit')" wire:navigate>
                             {{ __('Menu') }}
                         </x-nav-link></li>
                     <li><x-nav-link :href="route('franchises')" :active="request()->routeIs('franchises')" wire:navigate>
                             {{ __('Franchises') }}
-                        </x-nav-link></li>
+                        </x-nav-link></li> --}}
                 </ul>
             </div>
         </div>
@@ -134,12 +134,12 @@ $logout = function (Logout $logout) {
                 <x-responsive-nav-link :href="route('franchise-status')" :active="request()->routeIs('franchise-status')" wire:navigate>
                     {{ __('Franchise Status') }}
                 </x-responsive-nav-link>
-                <x-responsive-nav-link :href="route('menu-edit')" :active="request()->routeIs('menu-edit')" wire:navigate>
+                {{-- <x-responsive-nav-link :href="route('menu-edit')" :active="request()->routeIs('menu-edit')" wire:navigate>
                     {{ __('Menu') }}
                 </x-responsive-nav-link>
                 <x-responsive-nav-link :href="route('franchises')" :active="request()->routeIs('franchises')" wire:navigate>
                     {{ __('Franchises') }}
-                </x-responsive-nav-link>
+                </x-responsive-nav-link> --}}
             </div>
 
             <!-- Responsive Settings Options -->

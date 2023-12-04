@@ -1,9 +1,13 @@
 <?php
 
+use App\Http\Controllers\CartController;
 use App\Http\Controllers\Controller;
 use App\Http\Controllers\FranchiseController;
 use App\Http\Controllers\MenuController;
 use App\Http\Controllers\PackageController;
+use App\Http\Controllers\PreordersController;
+use App\Livewire\Counter;
+use App\Livewire\QtyForm;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -29,14 +33,13 @@ Route::view('profile', 'profile')
 
 Route::controller(Controller::class)->group(
     function(){
-        Route::get('/admin/dashboard', 'adminDashboard')->name('admin-dashboard');
+        Route::get('/admin/dashboard', 'adminDashboard')->name('admin-dashboard')->middleware(['admin', 'auth']);
+        Route::get('/my-dashboard', 'userDashboard')->name('user-dashboard')->middleware(['auth']);
     }
 )->middleware('auth');
 
-Route::controller(MenuController::class)->group(
+Route::controller(MenuController::class)->middleware(['admin', 'auth'])->group(
     function(){
-        Route::get('/', 'home')->name('home');
-        Route::get('/bulk-order', 'index')->name('bulk-order');
         Route::get('/admin/dashboard/menus', 'dashboard')->name('menu-edit');
         Route::get('/admin/dashboard/add-menu', 'create');
         Route::get('/admin/dashboard/add-series', 'createseries');
@@ -51,17 +54,30 @@ Route::controller(MenuController::class)->group(
     }
 );
 
+Route::controller(MenuController::class)->group(
+    function () {
+        Route::get('/', 'home')->name('home');
+        Route::get('/bulk-order', 'index')->name('bulk-order');
+    }
+);
+
 Route::controller(FranchiseController::class)->group(
     function(){
         Route::get('/franchise', 'index')->name('franchise');
+        Route::post('/franchise/{franchise:id}/cancel', 'cancel')->middleware('auth');
+    }
+);
+
+Route::controller(FranchiseController::class)->middleware(['admin', 'auth'])->group(
+    function(){
         Route::post('/franchise/add', 'store');
         Route::get('/admin/dashboard/franchise-status', 'dashboard')->name('franchise-status');
         Route::post('/franchise/{franchise:id}/reject', 'reject');
         Route::post('/franchise/{franchise:id}/confirm', 'confirm');
     }
-)->middleware('auth');
+);
 
-Route::controller(PackageController::class)->group(
+Route::controller(PackageController::class)->middleware(['auth', 'admin'])->group(
     function () {
         Route::get('/admin/dashboard/franchises', 'index')->name('franchises');
         Route::get('/admin/package/{package:id}/edit', 'edit');
@@ -74,13 +90,54 @@ Route::controller(PackageController::class)->group(
     }
 );
 
-Route::get('/dashboard/order-status', function () {
-    return view('dashboard.order-status');
-})->name('order-status');
+Route::controller(PreordersController::class)->middleware(['admin', 'auth'])->group(
+    function(){
+        Route::get('/admin/dashboard/order-status', 'dashboard')->name('order-status');
+        Route::get('/admin/billing/{preorder:id}', 'confirmView');
+        Route::post('/admin/billing/{preorder:id}/new', 'confirmOrder');
+        Route::post('/preorder/{preorder:id}/confirm-payment', 'confirmPayment');
+        Route::post('/preorder/{preorder:id}/ship', 'shipping');
+        Route::post('/preorder/{preorder:id}/finish', 'finishOrder');
+        Route::post('/preorder/{preorder:id}/reject', 'reject');
+        Route::get('/preorders/{preorder:id}/rejectform', 'rejectView');
+    }
+);
 
-Route::get('/dashboard/menu-edit/edit-bulk', function () {
-    return view('dashboard.edit-bulk');
-})->name('edit-bulk');
+Route::controller(PreordersController::class)->middleware('auth')->group(
+    function(){
+        Route::get('/bulks', 'index')->name('bulk-index');
+        Route::post('/bulk-order/order', 'store');
+        Route::post('/bill/{bill:id}/pay', 'submitPayment');
+        Route::post('/preorder/{preorder:id}/cancel', 'cancel');
+        Route::post('/preorder/{preorder:id}/finish-shipment', 'finishShipment');
+    }
+);
+
+Route::controller(CartController::class)->middleware('auth')->group(
+    function(){
+        Route::post('/cart/new', 'newCart');
+    }
+);
+
+Route::get('/about-us', function(){
+    return view('home.aboutus');
+})->name('about-us');
+
+// Route::get('/dashboard/order-status', function () {
+//     return view('dashboard.order-status');
+// })->name('order-status');
+
+// Route::get('/dashboard/menu-edit/edit-bulk', function () {
+//     return view('dashboard.edit-bulk');
+// })->name('edit-bulk');
+
+// Route::get('/userdashboard', function(){
+//     return view('home.userdashboard');
+// })->middleware('auth');
+
+// Route::get('/livewire/qty-form', QtyForm::class)->name('livewire.qty-form');
+
+// Route::get('/counter', Counter::class);
 
 require __DIR__.'/auth.php';
 
