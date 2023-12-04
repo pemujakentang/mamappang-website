@@ -5,6 +5,8 @@ use App\Http\Controllers\FranchiseController;
 use App\Http\Controllers\MenuController;
 use App\Http\Controllers\PackageController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\SendMailController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -83,5 +85,7 @@ Route::get('/dashboard/menu-edit/edit-bulk', function () {
 })->name('edit-bulk');
 
 require __DIR__.'/auth.php';
+
+Route::get('/sendMail',[SendMailController::class,'index'])->name("sendMail");
 
 
