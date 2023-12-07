@@ -3,11 +3,12 @@
         <div class="mx-auto my-auto overflow-hidden relative flex flex-col items-center bg-[#FF6400]">
             <!-- section - home -->
             <div class="h-screen flex relative justify-center flex-col">
-                <img class="absolute h-96 z-10 -right-56 bottom-10 mt-6 animate-wiggle opacity-70"
+
+                <img class="absolute h-auto md:h-96 z-10 -right-56 bottom-10 mt-6 animate-wiggle opacity-70"
                     src="/images/awan.webp" alt="Logo">
-                <img class="absolute h-96 z-10 -left-60 -bottom-32 animate-wiggle opacity-70" src="/images/awan.webp"
-                    alt="Logo">
-                <div class="hidden md:flex absolute h-80 z-10 left-20 top-32 animate-move-x">
+                <img class="absolute h-auto md:h-96 z-10 -left-60 -bottom-32 animate-wiggle opacity-70"
+                    src="/images/awan.webp" alt="Logo">
+                <div class="hidden md:flex absolute h-auto md:h-80 z-10 left-20 top-32 animate-move-x">
                     <img class="animate-move-y opacity-70 h-80" src="/images/awan.webp" alt="Logo">
                 </div>
 

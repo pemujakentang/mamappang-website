@@ -22,7 +22,7 @@
                         <span class="block sm:inline">{{ session('error') }}</span>
                     </div>
                 @endif
-                <div class="w-full p-5 rounded-2xl bg-orange-300 flex-row flex gap-x-2 overflow-x-scroll">
+                <div class="w-full p-5 rounded-2xl bg-orange-300 flex-row flex gap-x-2 overflow-x-scroll  h-[26.5rem]">
                     @foreach ($preorders as $preorder)
                         <div>
                             <div
@@ -550,7 +550,7 @@
                 </div>
 
                 <p class="font-averialibre text-5xl text-orange-900 my-2 mt-6 pl-4">FRANCHISE STATUS</p>
-                <div class="w-full p-5 rounded-2xl bg-orange-300 flex-row flex gap-x-2 overflow-x-auto">
+                <div class="w-full p-5 rounded-2xl bg-orange-300 flex-row flex gap-x-2 overflow-x-auto h-[26.5rem]">
                     @foreach ($franchises as $franchise)
                         <!-- franchise 1 // pending -->
                         <div>

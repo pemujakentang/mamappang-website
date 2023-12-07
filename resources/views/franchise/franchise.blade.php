@@ -17,11 +17,11 @@
 
             <div class="h-screen relative">
 
-                <img class="absolute h-96 z-10 -right-56 bottom-10 mt-6 animate-wiggle opacity-70"
+                <img class="absolute h-auto md:h-96 z-10 -right-56 bottom-10 mt-6 animate-wiggle opacity-70"
                     src="/images/awan.webp" alt="Logo">
-                <img class="absolute h-96 z-10 -left-60 -bottom-32 animate-wiggle opacity-70" src="/images/awan.webp"
-                    alt="Logo">
-                <div class="hidden md:flex absolute h-80 z-10 left-20 top-32 animate-move-x">
+                <img class="absolute h-auto md:h-96 z-10 -left-60 -bottom-32 animate-wiggle opacity-70"
+                    src="/images/awan.webp" alt="Logo">
+                <div class="hidden md:flex absolute h-auto md:h-80 z-10 left-20 top-32 animate-move-x">
                     <img class="animate-move-y opacity-70 h-80" src="/images/awan.webp" alt="Logo">
                 </div>
 
@@ -75,35 +75,37 @@
 
                     @foreach ($packages as $package)
                         @if ($count++ % 2 == 0)
-                            <div class="flex flex-row md:gap-10 flex-wrap justify-center">
-                                <div
-                                    class="md:h-48 w-[90%] md:w-[50%] bg-orange-200 rounded-[15px] border-4 border-orange-600 flex flex-col p-4">
-                                    <div class="text-black text-[32px] font-normal font-averialibre">
+                            <div class="mx-5 md:mx-0 flex flex-row md:gap-10 flex-wrap justify-center bg-orange-200 md:bg-transparent rounded-[15px] border-4 md:border-none border-orange-600 p-3 md:p-0">
+
+                                <div class="md:h-48 w-full md:w-[50%] md:bg-orange-200 rounded-[15px] md:border-4 md:border-orange-600 flex flex-col p-0 py-2 md:py-0 md:p-4">
+                                    <div class="text-black text-[32px] font-normal font-averialibre mx-auto md:mx-0">
                                         {{ $package->title }}</div>
-                                    <div class="flex flex-wrap flex-row justify-between h-full">
-                                        <div class="flex flex-row">
+                                    <div class="flex flex-wrap flex-col md:flex-row justify-center md:justify-between h-full w-full">
+
+                                        <div class="flex flex-row items-center md:items-start w-[70%] mx-auto md:mx-0">
                                             <img class="w-[30%] md:w-[141px] h-20 object-cover  scale-x-[-1] "
                                                 src="/images/ikan.webp" />
-                                            <div
-                                                class="w-[50%] h-fit max-h-16 md:max-h-48 md:w-auto md:h-[60%] mx-4 text-black text-md font-normal font-averialibre overflow-hidden white text-ellipsis">
+                                            <div class="w-[50%] h-fit max-h-32 md:max-h-48 md:w-auto md:h-[60%] mx-4 text-black text-md font-normal font-averialibre overflow-scroll white text-ellipsis">
                                                 {!! $package->description !!}
                                             </div>
                                         </div>
-                                        <div class="hover:scale-[1.2] duration-75 w-[184px]">
+
+                                        <div class="w-44 md:w-[30%] md:max-w-[128px] my-2 md:my-0 mx-auto ">
                                             <div
                                                 class="h-[39px] bg-[#E16F25] rounded-[53.44px] border-2 border-orange-700">
                                                 <button id="open-btn"
-                                                    class="open-btn w-[183px] h-[34px] text-center text-white text-2xl font-normal font-averialibre"
+                                                    class="open-btn w-full h-[34px] text-center text-white text-xl font-normal font-averialibre"
                                                     x-data=""
                                                     x-on:click.prevent="$dispatch('open-modal', '{{ 'detail-modal' . $count }}')">
                                                     See Details
                                                 </button>
                                             </div>
                                         </div>
+
                                     </div>
                                 </div>
 
-                                <div class="flex-col relative w-80">
+                                <div class="flex-col relative w-96 md:w-80 md:order-last order-first">
                                     <p
                                         class="absolute font-averialibre text-white text-3xl z-10 right-0 bg-[#FF0000] px-5 py-1 rounded-tr-[15px] rounded-bl-[15px]">
                                         Rp {{ $package->price }}</p>
@@ -112,40 +114,44 @@
                                 </div>
                             </div>
                         @else
-                            <div class="flex flex-row md:gap-10 flex-wrap-reverse justify-center">
-                                <div class="flex-col relative w-80">
+                            <div class="mx-5 md:mx-0 flex flex-row md:gap-10 flex-wrap justify-center bg-orange-200 md:bg-transparent rounded-[15px] border-4 md:border-none border-orange-600 p-3 md:p-0">
+
+                                <div class="flex-col relative w-96 md:w-80">
                                     <p
                                         class="absolute font-averialibre text-white text-3xl z-10 right-0 bg-[#FF0000] px-5 py-1 rounded-tr-[15px] rounded-bl-[15px]">
                                         Rp {{ $package->price }}</p>
                                     <img class="w-full h-48 rounded-[15px] shadow border-4 border-orange-600 object-cover"
                                         src="{{ asset('storage/' . $package->image) }}" />
                                 </div>
-                                <div
-                                    class="md:h-48 w-[90%] md:w-[50%] bg-orange-200 rounded-[15px] border-4 border-orange-600 flex flex-col p-4">
-                                    <div class="text-black text-[32px] font-normal font-averialibre">
+                                
+                                <div class="md:h-48 w-full md:w-[50%] md:bg-orange-200 rounded-[15px] md:border-4 md:border-orange-600 flex flex-col p-0 py-2 md:py-0 md:p-4">
+                                    <div class="text-black text-[32px] font-normal font-averialibre mx-auto md:mx-0">
                                         {{ $package->title }}</div>
-                                    <div class="flex flex-wrap flex-row justify-between h-full">
-                                        <div class="flex flex-row">
+                                    <div class="flex flex-wrap flex-col md:flex-row justify-center md:justify-between h-full w-full">
+
+                                        <div class="flex flex-row items-center md:items-start w-[70%] mx-auto md:mx-0">
                                             <img class="w-[30%] md:w-[141px] h-20 object-cover  scale-x-[-1] "
                                                 src="/images/ikan.webp" />
-                                            <div
-                                                class="w-[50%] h-fit max-h-16 md:max-h-48 md:w-auto md:h-[60%] mx-4 text-black text-md font-normal font-averialibre overflow-hidden white text-ellipsis">
+                                            <div class="w-[50%] h-fit max-h-32 md:max-h-48 md:w-auto md:h-[60%] mx-4 text-black text-md font-normal font-averialibre overflow-scroll white text-ellipsis">
                                                 {!! $package->description !!}
                                             </div>
                                         </div>
-                                        <div class="hover:scale-[1.2] duration-75 w-[184px]">
+
+                                        <div class="w-44 md:w-[30%] md:max-w-[128px] my-2 md:my-0 mx-auto ">
                                             <div
                                                 class="h-[39px] bg-[#E16F25] rounded-[53.44px] border-2 border-orange-700">
                                                 <button id="open-btn"
-                                                    class="open-btn w-[183px] h-[34px] text-center text-white text-2xl font-normal font-averialibre"
+                                                    class="open-btn w-full h-[34px] text-center text-white text-xl font-normal font-averialibre"
                                                     x-data=""
                                                     x-on:click.prevent="$dispatch('open-modal', '{{ 'detail-modal' . $count }}')">
                                                     See Details
                                                 </button>
                                             </div>
                                         </div>
+
                                     </div>
                                 </div>
+
                             </div>
                         @endif
                         <x-modal name="{{ 'detail-modal' . $count }}" :show="$errors->isNotEmpty()" focusable class="z-50">
