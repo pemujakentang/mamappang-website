@@ -17,7 +17,7 @@
                 <div class="flex justify-center p-10 mt-10 mb-4">
                     <div
                         class="border-4 rounded-3xl w-full md:w-[50%] px-5 md:px-7 pt-7 pb-5 overflow-scroll bg-orange-500 border-orange-800 flex flex-col relative overflow-x-hidden z-30">
-                        <p class="text-orange-800 text-center font-averialibre text-3xl md:text-4xl mx-auto"
+                        <p class="text-orange-800 text-center font-averialibre text-3xl md:text-4xl mx-auto md:my-5"
                             style="text-shadow: 4px 4px 4px #FFFFFF, -4px -4px 4px #FFFFFF, 4px -4px 4px #FFFFFF, -4px 4px 4px #FFFFFF;">
                             FORM PEMESANAN BULK ORDER</p>
                         @foreach ($categories as $category)
