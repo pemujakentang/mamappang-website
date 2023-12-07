@@ -118,7 +118,7 @@
                 </div>
                 <a href="/bulk-order"
                     class="flex h-24 w-[90%] md:w-[50%] rounded-full border-2 border-yellow-800 bg-[#FF6400] items-center justify-center mx-4 mt-12 md:mt-3 mb-16 hover:scale-[1.1] duration-75">
-                    <p class="text-white font-averialibre text-4xl">PRE ORDER SEKARANG!</p>
+                    <p class="text-white font-averialibre text-3xl md:text-4xl">PRE ORDER SEKARANG!</p>
                 </a>
             </div>
 
@@ -157,7 +157,8 @@
             </div>
 
             <!-- footer -->
-            <div class="w-full flex flex-col z-10 px-5 md:px-3 md:pl-7 py-7 bg-[#FF6400]">
+            <div class="w-full flex flex-col z-10 px-5 md:px-3 md:pl-7 py-7"
+                style="background-image: url('/images/background-menu.webp');">
                 <p class="text-orange-800 font-averialibre text-3xl md:text-4xl mb-3">Mamappang - Best In Town</p>
                 <p class="text-orange-800 font-averialibre text-lg md:text-xl w-full md:w-[70%] text-justify mb-6">
                     mammapang is Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor

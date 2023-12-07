@@ -23,17 +23,21 @@
                         <div class="flex flex-col md:ml-16 md:flex-row w-[90%] mt-2 justify-center ">
 
                             <div class="w-full  md:w-[50%] flex flex-col justify-center md:mb-20">
-                                <p class="text-orange-800 font-averialibrebold text-5xl md:text-[6rem] mx-auto mb-6"
-                                    style="text-shadow: 4px 4px 4px #FFFFFF, -4px -4px 4px #FFFFFF, 4px -4px 4px #FFFFFF, -4px 4px 4px #FFFFFF;">
-                                    About Us</p>
+                                <p class="hidden md:flex text-yellow-900 text-[4rem] md:text-[6rem] font-black font-blackhansans tracking-tighter text-center w-full mb-4 justify-center"
+                                style="-webkit-text-stroke: 3.5px white;">
+                                About Us</p>
 
                                 <div
                                     class="w-full md:hidden flex items-center justify-center mx-auto my-10 scale-[1.2]">
                                     <img class="object-cover" src="/images/logo2.webp" alt="Logo">
                                 </div>
 
+                                <p class="flex md:hidden text-yellow-900 text-[4rem] md:text-[5rem] font-black font-blackhansans tracking-tighter text-center w-full justify-center"
+                                style="-webkit-text-stroke: 3.5px white;">
+                                About Us</p>
+
                                 <p class="text-orange-800 font-averialibrebold text-xl md:text-2xl text-justify mx-auto mt-5"
-                                    style="text-shadow: 4px 4px 4px #FFFFFF, -4px -4px 4px #FFFFFF, 4px -4px 4px #FFFFFF, -4px 4px 4px #FFFFFF;">
+                                    style="filter: drop-shadow(0 0 13px white); -webkit-text-stroke: 0.3px #FAC774;">
                                     "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
                                     incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
                                     exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute

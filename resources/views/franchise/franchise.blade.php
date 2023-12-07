@@ -21,7 +21,7 @@
                     src="/images/awan.webp" alt="Logo">
                 <img class="absolute h-96 z-10 -left-60 -bottom-32 animate-wiggle opacity-70" src="/images/awan.webp"
                     alt="Logo">
-                <div class="absolute h-80 z-10 left-20 top-32 animate-move-x">
+                <div class="hidden md:flex absolute h-80 z-10 left-20 top-32 animate-move-x">
                     <img class="animate-move-y opacity-70 h-80" src="/images/awan.webp" alt="Logo">
                 </div>
 
@@ -30,23 +30,23 @@
                     <!-------->
                     <div class="flex flex-col md:ml-28 md:flex-row w-[90%] mt-2 justify-center">
                         <div class="w-full md:-mx-20 md:w-[50%] flex flex-col justify-center">
-                            <p class="  text-yellow-900 text-[8rem] font-black font-blackhansans tracking-tighter text-center"
+                            <p class="  text-yellow-900 text-[5rem] md:text-[8rem] font-black font-blackhansans tracking-tighter text-center"
                                 style="-webkit-text-stroke: 3.5px white; line-height:1;">
                                 Join The Family!</p>
-                            <p class="mt-6 text-center text-orange-300 text-4xl font-black font-averialibre"
-                                style="-webkit-text-stroke:1px #ab5000;">Best
+                            <p class="mt-2 md:mt-6 mb-4 md:mb-0 text-center text-orange-700 md:text-orange-300 text-2xl md:text-4xl font-black font-averialibre"
+                                style="-webkit-text-stroke:0.6px #ab5000;">Best
                                 Bungeoppang in Town!</p>
                         </div>
-                        <div class="w-full md:w-[60%]">
+                        <div class="w-full md:w-[60%] mt-16 md:mt-0">
                             <div class="w-full flex items-center justify-center mx-auto mb-10 md:mb-4">
-                                <img class="object-cover" src="/images/logo2.webp" alt="Logo">
+                                <img class="object-cover md:scale-100 scale-[1.5]" src="/images/logo2.webp" alt="Logo">
                             </div>
                         </div>
                     </div>
                     <!---------->
                 </div>
 
-                <div class="flex bottom-5 md:bottom-10 absolute z-10 w-full items-center justify-center pb-5">
+                <div class="flex bottom-5 md:bottom-20 absolute z-10 w-full items-center justify-center pb-5">
                     <a href="#franchise-list" class="no-underline">
                         <button href=""
                             class="flex h-16 rounded-full border-2 border-yellow-800 bg-orange-300 items-center justify-center px-6 hover:scale-[1.2] duration-75">
@@ -61,7 +61,7 @@
             </div>
 
             <div class="w-full">
-                <div class="fixed w-screen z-0 scale-[1.7] lg:-mt-56 md:-mt-48">
+                <div class="hidden md:flex fixed w-screen z-0 scale-[1.7] lg:-mt-56 md:-mt-48">
                     <img class="object-cover animate-spin-slow" src="/images/cahaya.webp" alt="Logo">
                 </div>
             </div>
