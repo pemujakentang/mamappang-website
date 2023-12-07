@@ -9,10 +9,11 @@ use Illuminate\Mail\Mailables\Content;
 use Illuminate\Mail\Mailables\Envelope;
 use Illuminate\Queue\SerializesModels;
 
-class SendMail extends Mailable
+class RejectOrder extends Mailable
 {
     use Queueable, SerializesModels;
     public $data = [];
+
     /**
      * Create a new message instance.
      */
@@ -38,7 +39,7 @@ class SendMail extends Mailable
     public function content(): Content
     {
         return new Content(
-            view: $this->data['view'],
+            view: 'mail.reject-order',
         );
     }
 
@@ -49,8 +50,6 @@ class SendMail extends Mailable
      */
     public function attachments(): array
     {
-        return [
-
-        ];
+        return [];
     }
 }
