@@ -26,9 +26,9 @@
                 </div>
 
                 <!-- home -->
-                <div id="home" class="flex flex-col items-center relative z-10 h-full justify-center md:-mt-20">
+                <div id="home" class="flex flex-col items-center relative h-full justify-center md:-mt-20">
                     <!-------->
-                    <div class="flex flex-col md:ml-28 md:flex-row w-[90%] mt-2 justify-center">
+                    <div class="flex flex-col md:ml-28 md:flex-row w-[90%] mt-2 justify-center z-10">
                         <div class="w-full md:-mx-20 md:w-[50%] flex flex-col justify-center">
                             <p class="  text-yellow-900 text-[8rem] font-black font-blackhansans tracking-tighter text-center"
                                 style="-webkit-text-stroke: 3.5px white; line-height:1;">

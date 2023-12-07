@@ -34,7 +34,7 @@ $logout = function (Logout $logout) {
 
 <div>
     <div class="mb-4 text-sm text-gray-600 dark:text-gray-400">
-        {{ __('Thanks for signing up! Before getting started, could you verify your email address by clicking on the link we just emailed to you? If you didn\'t receive the email, we will gladly send you another.') }}
+        {{ __('Sebelum melanjutkan, bisakah Anda memverifikasi alamat email Anda dengan mengklik tautan yang baru saja kami kirimkan ke email Anda? Jika Anda tidak menerima email tersebut, kami akan dengan senang hati mengirimkan email baru kepada Anda. Apabila email tidak masuk ke inbox, silahkan dicek folder spam Anda. Terima kasih :).') }}
     </div>
 
     @if (session('status') == 'verification-link-sent')

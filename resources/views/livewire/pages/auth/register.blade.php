@@ -41,7 +41,7 @@ $register = function () {
 
     Auth::login($user);
 
-    $this->redirect(RouteServiceProvider::HOME, navigate: true);
+    $this->redirect('/verify-email');
 };
 
 ?>

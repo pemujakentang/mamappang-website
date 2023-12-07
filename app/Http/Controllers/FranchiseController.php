@@ -56,7 +56,7 @@ class FranchiseController extends Controller
 
             Franchise::create($validData);
 
-            return redirect('/franchise')->with('success', 'Berhasil Menambahkan Request Franchise');
+            return redirect('/my-dashboard')->with('success', 'Berhasil Menambahkan Request Franchise');
         } else {
             return redirect('/login');
         }

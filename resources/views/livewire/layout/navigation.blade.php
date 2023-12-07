@@ -47,7 +47,7 @@ $logout = function (Logout $logout) {
                     <x-dropdown align="top" class="">
                         <x-slot name="trigger">
                             <button
-                                class="hover:scale-[1.2] duration-75 flex ml-3 rounded-full border-2 border-yellow-800 bg-orange-300 items-center justify-center h-12 px-2">
+                                class="hover:scale-[1.05] duration-100 flex ml-3 rounded-full border-2 border-yellow-800 bg-orange-300 items-center justify-center h-12 px-2">
                                 <div class="w-8 flex items-center justify-center">
                                     <img class="object-cover invert" src="/images/avatar.webp" alt="Logo">
                                 </div>
@@ -70,7 +70,7 @@ $logout = function (Logout $logout) {
                             </button>
                         </x-slot>
 
-                        <x-slot name="content" class="rounded-sm bg-orange-800 text-white">
+                        <x-slot name="content" class="rounded-sm bg-orange-800 text-white z-50">
                             @auth
                                 <div class="">
                                     <a class="block w-full px-4 py-2 text-start text-sm leading-5 transition duration-150 ease-in-out hover:cursor-pointer"

@@ -55,13 +55,13 @@
                                     </div>
                                 </div>
                                 <button x-data=""
-                                    x-on:click.prevent="$dispatch('open-modal', '{{ 'detail-modal' . $preorder->id }}')"
+                                    x-on:click.prevent="$dispatch('open-modal', '{{ 'detail-modal-preorder' . $preorder->id }}')"
                                     class="border-2 mt-3 rounded-xl hover:bg-orange-400 hover:border-orange-800 border-orange-900 bg-orange-600 font-averialibre text-2xl px-2 w-full py-2 h-16 text-center hover:text-orange-700 text-orange-300">
                                     <p class=" font-averialibre text-4xl ">Lihat detail</p>
                                 </button>
                             </div>
                         </div>
-                        <x-modal name="{{ 'detail-modal' . $preorder->id }}" :show="$errors->isNotEmpty()" focusable class="z-50">
+                        <x-modal name="{{ 'detail-modal-preorder' . $preorder->id }}" :show="$errors->isNotEmpty()" focusable class="z-50">
                             <div
                                 class="border-4 rounded-3xl h-fit px-5 md:px-7 pb-5 pt-12 overflow-scroll bg-orange-800 border-orange-500 flex flex-col relative overflow-x-hidden justify-center">
 
@@ -116,83 +116,7 @@
                                 </div>
 
                                 <div class="flex flex-col rounded-xl bg-orange-200 p-1 gap-y-1">
-                                    <div class="px-4 py-2 flex-col flex bg-orange-700 rounded-xl">
-                                        <!-- pas shipping, ini diganti jadi detail driver -->
-                                        <div class="flex flex-row py-2">
-                                            <div class="w-auto">
-                                                <p class="font-averialibre text-lg md:text-2xl text-orange-300">
-                                                    Alamat Pengiriman</p>
-                                            </div>
-                                            <div class="w-auto">
-                                                <p class="font-averialibre text-lg md:text-2xl text-orange-300 mx-5">
-                                                    :</p>
-                                            </div>
-                                            <div class="w-auto">
-                                                <p class="font-averialibre text-lg md:text-2xl text-orange-400">Jl
-                                                    {{ $preorder->shipment_address }}
-                                                </p>
-                                            </div>
-                                        </div>
-                                        <div class="flex flex-row py-2">
-                                            <div class="w-auto">
-                                                <p class="font-averialibre text-lg md:text-2xl text-orange-300">
-                                                    Tanggal Kirim</p>
-                                            </div>
-                                            <div class="w-auto">
-                                                <p class="font-averialibre text-lg md:text-2xl text-orange-300 mx-5">
-                                                    :</p>
-                                            </div>
-                                            <div class="w-auto">
-                                                <p class="font-averialibre text-lg md:text-2xl text-orange-400">
-                                                    {{ $preorder->tanggal_pesanan }}</p>
-                                            </div>
-                                        </div>
-                                        <div class="flex flex-row py-2">
-                                            <div class="w-auto">
-                                                <p class="font-averialibre text-lg md:text-2xl text-orange-300">
-                                                    Tanggal Pesan</p>
-                                            </div>
-                                            <div class="w-auto">
-                                                <p class="font-averialibre text-lg md:text-2xl text-orange-300 mx-5">
-                                                    :</p>
-                                            </div>
-                                            <div class="w-auto">
-                                                <p
-                                                    class="font-averialibre text-lg md:text-2xl text-orange-400 max-h-40 overflow-scroll">
-                                                    {{ date_format($preorder->created_at, 'Y/m/d') }}</p>
-                                            </div>
-                                        </div>
-                                        <div class="flex flex-row py-2">
-                                            <div class="w-auto">
-                                                <p class="font-averialibre text-lg md:text-2xl text-orange-300">
-                                                    Harga Total</p>
-                                            </div>
-                                            <div class="w-auto">
-                                                <p class="font-averialibre text-lg md:text-2xl text-orange-300 mx-5">
-                                                    :</p>
-                                            </div>
-                                            <div class="w-auto">
-                                                <p
-                                                    class="font-averialibre text-lg md:text-2xl text-orange-400 max-h-40 overflow-scroll">
-                                                    Rp {{ $preorder->total_price }}</p>
-                                            </div>
-                                        </div>
-                                        <div class="flex flex-row py-2">
-                                            <div class="w-auto">
-                                                <p class="font-averialibre text-lg md:text-2xl text-orange-300">
-                                                    Jumlah Total</p>
-                                            </div>
-                                            <div class="w-auto">
-                                                <p class="font-averialibre text-lg md:text-2xl text-orange-300 mx-5">
-                                                    :</p>
-                                            </div>
-                                            <div class="w-auto">
-                                                <p
-                                                    class="font-averialibre text-lg md:text-2xl text-orange-400 max-h-40 overflow-scroll">
-                                                    {{ $preorder->total_qty }}</p>
-                                            </div>
-                                        </div>
-                                    </div>
+                                    
                                     <div class="px-4 py-2 flex-col flex bg-orange-700 rounded-xl">
                                         <!-- pas shipping, ini diganti jadi detail driver -->
                                         <div class="flex flex-row py-2">
@@ -310,7 +234,7 @@
                                         <div
                                             class="rounded-xl px-4 py-6 flex-col md:flex-row flex bg-orange-400 gap-y-3 md:gap-y-0 gap-x-2">
                                             <button x-data=""
-                                                x-on:click.prevent="$dispatch('open-modal', '{{ 'warning-modal' . $preorder->id }}')"
+                                                x-on:click.prevent="$dispatch('open-modal', '{{ 'warning-modal-preorder' . $preorder->id }}')"
                                                 class="border-2 rounded-xl hover:bg-orange-500 hover:border-orange-800 border-orange-900 bg-orange-800 font-averialibre text-2xl px-2 w-full py-2 h-16 text-center hover:text-orange-700 text-orange-300">
                                                 <p class=" font-averialibre text-2xl md:text-4xl ">Batalkan
                                                     Pengajuan
@@ -491,7 +415,7 @@
                                 </div>
                             </div>
                         </x-modal>
-                        <x-modal name="{{ 'warning-modal' . $preorder->id }}" :show="$errors->isNotEmpty()" focusable
+                        <x-modal name="{{ 'warning-modal-preorder' . $preorder->id }}" :show="$errors->isNotEmpty()" focusable
                             class="z-50">
                             <div
                                 class="border-4 rounded-3xl h-96 p-7 overflow-scroll bg-orange-700 border-orange-900 flex flex-col items-center justify-between overflow-x-hidden">
@@ -578,13 +502,13 @@
                                 <p class="font-averialibre text-lg text-orange-300 h-12 overflow-scroll text-ellipsis">
                                     Keterangan: {{ $franchise->keterangan }}</p>
                                 <button x-data=""
-                                    x-on:click.prevent="$dispatch('open-modal', '{{ 'detail-modal' . $franchise->id }}')"
+                                    x-on:click.prevent="$dispatch('open-modal', '{{ 'detail-modal-franchise' . $franchise->id }}')"
                                     class="border-2 mt-3 rounded-xl hover:bg-orange-400 hover:border-orange-800 border-orange-900 bg-orange-600 px-2 w-full py-2 h-16 text-center hover:text-orange-700 text-orange-300 font-averialibre text-4xl ">
                                     Lihat detail
                                 </button>
                             </div>
                         </div>
-                        <x-modal name="{{ 'detail-modal' . $franchise->id }}" :show="$errors->isNotEmpty()" focusable
+                        <x-modal name="{{ 'detail-modal-franchise' . $franchise->id }}" :show="$errors->isNotEmpty()" focusable
                             class="z-50">
                             <div
                                 class="border-4 rounded-3xl h-fit px-5 md:px-7 pb-5 pt-12 overflow-scroll bg-orange-800 border-orange-500 flex flex-col relative overflow-x-hidden justify-center">
@@ -686,7 +610,7 @@
                                         <div
                                             class="rounded-xl px-4 py-6 flex-col md:flex-row flex bg-orange-400 gap-y-3 md:gap-y-0 gap-x-2">
                                             <button x-data=""
-                                                x-on:click.prevent="$dispatch('open-modal', '{{ 'warning-modal' . $franchise->id }}')"
+                                                x-on:click.prevent="$dispatch('open-modal', '{{ 'warning-modal-franchise' . $franchise->id }}')"
                                                 class="border-2 rounded-xl hover:bg-orange-500 hover:border-orange-800 border-orange-900 bg-orange-800 font-averialibre text-2xl px-2 w-full py-2 h-16 text-center hover:text-orange-700 text-orange-300">
                                                 <p class=" font-averialibre text-2xl md:text-4xl ">Batalkan
                                                     Pengajuan
@@ -705,7 +629,7 @@
                                 </div>
                             </div>
                         </x-modal>
-                        <x-modal name="{{ 'warning-modal' . $franchise->id }}" :show="$errors->isNotEmpty()" focusable
+                        <x-modal name="{{ 'warning-modal-franchise' . $franchise->id }}" :show="$errors->isNotEmpty()" focusable
                             class="z-50">
                             <div
                                 class="border-4 rounded-3xl h-96 p-7 overflow-scroll bg-orange-700 border-orange-900 flex flex-col items-center justify-between overflow-x-hidden">

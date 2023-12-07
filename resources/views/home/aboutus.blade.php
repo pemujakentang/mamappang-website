@@ -16,11 +16,11 @@
                     <img class="animate-move-y opacity-70 h-80" src="/images/awan.webp" alt="Logo">
                 </div>
 
-                <div class="flex flex-col items-center relative md:justify-normal justify-center h-full z-10">
+                <div class="flex flex-col items-center relative md:justify-normal justify-center h-full">
 
-                    <div class="flex flex-col items-center relative justify-center h-full">
+                    <div class="flex flex-col items-center relative justify-center h-full ">
 
-                        <div class="flex flex-col md:ml-16 md:flex-row w-[90%] mt-2 justify-center ">
+                        <div class="flex flex-col md:ml-16 md:flex-row w-[90%] mt-2 justify-center z-10">
 
                             <div class="w-full  md:w-[50%] flex flex-col justify-center md:mb-20">
                                 <p class="text-orange-800 font-averialibrebold text-5xl md:text-[6rem] mx-auto mb-6"

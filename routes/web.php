@@ -34,7 +34,7 @@ Route::view('profile', 'profile')
 Route::controller(Controller::class)->group(
     function(){
         Route::get('/admin/dashboard', 'adminDashboard')->name('admin-dashboard')->middleware(['admin', 'auth']);
-        Route::get('/my-dashboard', 'userDashboard')->name('user-dashboard')->middleware(['auth']);
+        Route::get('/my-dashboard', 'userDashboard')->name('user-dashboard')->middleware(['auth','verified']);
     }
 )->middleware('auth');
 
@@ -65,12 +65,12 @@ Route::controller(FranchiseController::class)->group(
     function(){
         Route::get('/franchise', 'index')->name('franchise');
         Route::post('/franchise/{franchise:id}/cancel', 'cancel')->middleware('auth');
+        Route::post('/franchise/add', 'store')->middleware('auth');
     }
 );
 
 Route::controller(FranchiseController::class)->middleware(['admin', 'auth'])->group(
     function(){
-        Route::post('/franchise/add', 'store');
         Route::get('/admin/dashboard/franchise-status', 'dashboard')->name('franchise-status');
         Route::post('/franchise/{franchise:id}/reject', 'reject');
         Route::post('/franchise/{franchise:id}/confirm', 'confirm');
@@ -103,7 +103,7 @@ Route::controller(PreordersController::class)->middleware(['admin', 'auth'])->gr
     }
 );
 
-Route::controller(PreordersController::class)->middleware('auth')->group(
+Route::controller(PreordersController::class)->middleware(['auth', 'verified'])->group(
     function(){
         Route::get('/bulks', 'index')->name('bulk-index');
         Route::post('/bulk-order/order', 'store');
@@ -113,7 +113,7 @@ Route::controller(PreordersController::class)->middleware('auth')->group(
     }
 );
 
-Route::controller(CartController::class)->middleware('auth')->group(
+Route::controller(CartController::class)->middleware(['auth', 'verified'])->group(
     function(){
         Route::post('/cart/new', 'newCart');
     }
