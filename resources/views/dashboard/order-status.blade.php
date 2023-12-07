@@ -115,10 +115,10 @@
                                                                     <button
                                                                         class="font-averialibre text-orange-800 text-2xl flex items-center justify-center bg-[#f1a03c] text-[#b9480f] rounded-full h-[35px] w-[100px] border border-[#b9480f]">Terima</button>
                                                                 </a>
-                                                                <a href="/preorders/{{$preorder->id}}/rejectform">
-                                                                <button
-                                                                    class="font-averialibre text-orange-800 text-2xl flex items-center justify-center bg-[#fded87] text-[#b9480f] rounded-full h-[35px] w-[100px] border border-[#b9480f]">Tidak</button>
-                                                                    </a>
+                                                                <a href="/preorders/{{ $preorder->id }}/rejectform">
+                                                                    <button
+                                                                        class="font-averialibre text-orange-800 text-2xl flex items-center justify-center bg-[#fded87] text-[#b9480f] rounded-full h-[35px] w-[100px] border border-[#b9480f]">Tidak</button>
+                                                                </a>
                                                             </div>
                                                         </div>
                                                         <div id="{{ 'replacementContent' . $preorder->id }}"
@@ -163,6 +163,11 @@
                                                                 class="font-averialibre text-orange-800 text-2xl flex items-center justify-center bg-[#fded87] text-[#b9480f] rounded-full border border-[#b9480f] p-2">Konfirmasi
                                                                 Pembayaran</button>
                                                         </form>
+                                                        <a href="/preorders/{{ $preorder->id }}/rejectform">
+                                                            <button type="submit"
+                                                                class="font-averialibre text-orange-800 text-2xl flex items-center justify-center bg-[#fded87] text-[#b9480f] rounded-full border border-[#b9480f] p-2">Konfirmasi
+                                                                Pembayaran</button>
+                                                        </a>
                                                     </div>
                                                 @elseif ($preorder->status == 'CONFIRMED')
                                                     <div id="{{ 'greenSection' . $preorder->id }}"

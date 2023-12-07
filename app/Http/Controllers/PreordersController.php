@@ -7,6 +7,8 @@ use App\Http\Requests\StorePreordersRequest;
 use App\Http\Requests\UpdatePreordersRequest;
 use App\Mail\MailPreorder;
 use App\Mail\OrderPlaced;
+use App\Mail\RejectOrder;
+use App\Mail\SendMail;
 use App\Models\Bill;
 use App\Models\Category;
 use App\Models\Menu;
@@ -81,7 +83,8 @@ class PreordersController extends Controller
         //
     }
 
-    public function email($receiver_mail, $data){
+    public function email($receiver_mail, $data)
+    {
 
 
         try {
@@ -136,16 +139,15 @@ class PreordersController extends Controller
             $preorder_items = [];
 
             foreach ($carts as $cart) {
-                if ($cart->qty>0) {
+                if ($cart->qty > 0) {
                     PreorderDetails::create([
                         'preorders_id' => $preorder_id,
                         'menu_id' => $cart->menu_id,
                         'qty' => $cart->qty
                     ]);
-                    array_push($preorder_items, $cart->menu->name." ".$cart->qty);
-                    
+                    array_push($preorder_items, $cart->menu->name . " " . $cart->qty);
                 }
-                
+
                 $cart->delete();
             }
 
@@ -153,7 +155,7 @@ class PreordersController extends Controller
 
             $data = [
                 'subject' => '[Mamappang - Order Placed]',
-                'receiver' => $user->firstname.' '.$user->lastname,
+                'receiver' => $user->firstname . ' ' . $user->lastname,
                 'preorder_id' => $preorder->id,
                 'alamat' => $request->shipment_address,
                 'tanggal' => $request->tanggal_pesanan,
@@ -194,7 +196,8 @@ class PreordersController extends Controller
         }
     }
 
-    public function confirmView(Preorders $preorder){
+    public function confirmView(Preorders $preorder)
+    {
         if (Auth::check()) {
             // $user = auth()->user();
 
@@ -205,9 +208,8 @@ class PreordersController extends Controller
             // }
 
             return view('dashboard.billing', [
-                'preorder'=>$preorder
+                'preorder' => $preorder
             ]);
-            
         } else {
             return redirect('/login');
         }
@@ -238,8 +240,44 @@ class PreordersController extends Controller
             $preorder->update([
                 'status' => 'AWAITING PAYMENT'
             ]);
-
+            $user = $preorder->user;
             //send email
+            $data = [
+                'subject' => '[Mamappang - Order Confirmed]',
+                'view' => 'mail.accept-order',
+                'receiver' => $user->firstname . ' ' . $user->lastname,
+                'preorder_id' => $preorder->id,
+                'alamat' => $preorder->shipment_address,
+                'tanggal' => $preorder->tanggal_pesanan,
+                'quantity' => $preorder->total_qty,
+                'shipping' => $request->shipping,
+                'price' => $request->price,
+                'total_price' => $request->shipping + $request->price,
+            ];
+
+            // $this->email($user->email, $data);
+
+            try {
+                Mail::to($user->email)->send(new SendMail($data));
+                // return response()->json([
+                //     'status' => 'success',
+                //     'message' => 'Email sent successfully'
+                // ]);
+
+
+            } catch (\Throwable $th) {
+                $errorMessage = $th->getMessage(); // Get the error message
+                $errorCode = $th->getCode(); // Get the error code (if available)
+
+                // Additional handling or logging of the error information can be done here
+
+                return response()->json([
+                    'status' => 'error',
+                    'message' => 'Email failed to send',
+                    'error_message' => $errorMessage, // Return the error message in the JSON response
+                    'error_code' => $errorCode // Return the error code in the JSON response
+                ]);
+            }
 
             return redirect('/admin/dashboard/order-status')->with([
                 'success' => "ORDER " . $preorder->id . " CONFIRMED, AWAITING PAYMENT"
@@ -297,7 +335,50 @@ class PreordersController extends Controller
                 'status' => 'CONFIRMED'
             ]);
 
+            $preorder_items = [];
+            
+            foreach ($preorder->details as $detail) {
+                # code...
+                array_push($preorder_items, $detail->menu->name . " " . $detail->qty);
+            }
+
             //send email
+            $user = $preorder->user;
+            //send email
+            $data = [
+                'subject' => '[Mamappang - Payment Confirmed]',
+                'view' => 'mail.payment-confirmed',
+                'receiver' => $user->firstname . ' ' . $user->lastname,
+                'preorder_id' => $preorder->id,
+                'alamat' => $preorder->shipment_address,
+                'tanggal' => $preorder->tanggal_pesanan,
+                'quantity' => $preorder->total_qty,
+                'preorder_details' => join(',', $preorder_items)
+            ];
+
+            // $this->email($user->email, $data);
+
+            try {
+                Mail::to($user->email)->send(new SendMail($data));
+                // return response()->json([
+                //     'status' => 'success',
+                //     'message' => 'Email sent successfully'
+                // ]);
+
+
+            } catch (\Throwable $th) {
+                $errorMessage = $th->getMessage(); // Get the error message
+                $errorCode = $th->getCode(); // Get the error code (if available)
+
+                // Additional handling or logging of the error information can be done here
+
+                return response()->json([
+                    'status' => 'error',
+                    'message' => 'Email failed to send',
+                    'error_message' => $errorMessage, // Return the error message in the JSON response
+                    'error_code' => $errorCode // Return the error code in the JSON response
+                ]);
+            }
 
             return redirect('/admin/dashboard/order-status')->with([
                 'success' => "PAYMENT FOR " . $preorder->id . " CONFIRMED"
@@ -318,7 +399,7 @@ class PreordersController extends Controller
             //     return redirect('/');
             // }
 
-            
+
 
             $shippingData = $request->validate([
                 'service_provider' => 'required',
@@ -339,6 +420,42 @@ class PreordersController extends Controller
             ]);
 
             //send email
+            $user = $preorder->user;
+            //send email
+            $data = [
+                'subject' => '[Mamappang - Shipping]',
+                'view' => 'mail.shipping',
+                'receiver' => $user->firstname . ' ' . $user->lastname,
+                'preorder_id' => $preorder->id,
+                'alamat' => $preorder->shipment_address,
+                'tanggal' => $preorder->tanggal_pesanan,
+                'quantity' => $preorder->total_qty,
+                'shippingData' => $shippingData
+            ];
+
+            // $this->email($user->email, $data);
+
+            try {
+                Mail::to($user->email)->send(new SendMail($data));
+                // return response()->json([
+                //     'status' => 'success',
+                //     'message' => 'Email sent successfully'
+                // ]);
+
+
+            } catch (\Throwable $th) {
+                $errorMessage = $th->getMessage(); // Get the error message
+                $errorCode = $th->getCode(); // Get the error code (if available)
+
+                // Additional handling or logging of the error information can be done here
+
+                return response()->json([
+                    'status' => 'error',
+                    'message' => 'Email failed to send',
+                    'error_message' => $errorMessage, // Return the error message in the JSON response
+                    'error_code' => $errorCode // Return the error code in the JSON response
+                ]);
+            }
 
             return redirect('/admin/dashboard/order-status')->with([
                 'success' => "ORDER " . $preorder->id . " SHIPPED"
@@ -392,7 +509,41 @@ class PreordersController extends Controller
                 'status' => 'FINISHED'
             ]);
 
+            $user = $preorder->user;
             //send email
+            $data = [
+                'subject' => '[Mamappang - Order Finished]',
+                'view' => 'mail.finished',
+                'receiver' => $user->firstname . ' ' . $user->lastname,
+                'preorder_id' => $preorder->id,
+                'alamat' => $preorder->shipment_address,
+                'tanggal' => $preorder->tanggal_pesanan,
+                'quantity' => $preorder->total_qty,
+            ];
+
+            // $this->email($user->email, $data);
+
+            try {
+                Mail::to($user->email)->send(new SendMail($data));
+                // return response()->json([
+                //     'status' => 'success',
+                //     'message' => 'Email sent successfully'
+                // ]);
+
+
+            } catch (\Throwable $th) {
+                $errorMessage = $th->getMessage(); // Get the error message
+                $errorCode = $th->getCode(); // Get the error code (if available)
+
+                // Additional handling or logging of the error information can be done here
+
+                return response()->json([
+                    'status' => 'error',
+                    'message' => 'Email failed to send',
+                    'error_message' => $errorMessage, // Return the error message in the JSON response
+                    'error_code' => $errorCode // Return the error code in the JSON response
+                ]);
+            }
 
             return redirect('/admin/dashboard/order-status')->with([
                 'success' => "ORDER " . $preorder->id . " FINISHED"
@@ -438,10 +589,47 @@ class PreordersController extends Controller
     public function reject(Preorders $preorder, Request $request)
     {
         if (Auth::check()) {
+            $user = $preorder->user;
             $preorder->update([
                 'status' => 'REJECTED',
                 'message' => $request->message
             ]);
+
+            $data = [
+                'subject' => '[Mamappang - Order Rejected]',
+                'receiver' => $user->firstname . ' ' . $user->lastname,
+                'preorder_id' => $preorder->id,
+                'alamat' => $preorder->shipment_address,
+                'tanggal' => $preorder->tanggal_pesanan,
+                'quantity' => $preorder->total_qty,
+                'total_price' => $preorder->total_price,
+                'message' => $request->message
+            ];
+
+            // $this->email($user->email, $data);
+
+            try {
+                Mail::to($user->email)->send(new RejectOrder($data));
+                // return response()->json([
+                //     'status' => 'success',
+                //     'message' => 'Email sent successfully'
+                // ]);
+
+
+            } catch (\Throwable $th) {
+                $errorMessage = $th->getMessage(); // Get the error message
+                $errorCode = $th->getCode(); // Get the error code (if available)
+
+                // Additional handling or logging of the error information can be done here
+
+                return response()->json([
+                    'status' => 'error',
+                    'message' => 'Email failed to send',
+                    'error_message' => $errorMessage, // Return the error message in the JSON response
+                    'error_code' => $errorCode // Return the error code in the JSON response
+                ]);
+            }
+
             return redirect('/admin/dashboard/order-status')->with(array(
                 'success' => "Order Rejected " . $preorder->id
             ));

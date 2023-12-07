@@ -5,10 +5,12 @@ namespace App\Http\Controllers;
 use App\Models\Franchise;
 use App\Http\Requests\StoreFranchiseRequest;
 use App\Http\Requests\UpdateFranchiseRequest;
+use App\Mail\SendMail;
 use App\Models\Package;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Storage;
 
@@ -54,7 +56,43 @@ class FranchiseController extends Controller
             $validData['user_id'] = $user->id;
             $validData['status'] = 'PENDING';
 
-            Franchise::create($validData);
+            $franchise = Franchise::create($validData);
+
+            //send email
+            $data = [
+                'subject' => '[Mamappang - Franchise Application Sent]',
+                'view' => 'mail.franchise-sent',
+                'receiver' => $user->firstname . ' ' . $user->lastname,
+                'franchise_id' => $franchise->id,
+                'domisili' => $franchise->domisili,
+                'nama_bisnis' => $franchise->nama_bisnis,
+                'address' => $franchise->address,
+                'keterangan' => $franchise->keterangan,
+            ];
+
+            // $this->email($user->email, $data);
+
+            try {
+                Mail::to($user->email)->send(new SendMail($data));
+                // return response()->json([
+                //     'status' => 'success',
+                //     'message' => 'Email sent successfully'
+                // ]);
+
+
+            } catch (\Throwable $th) {
+                $errorMessage = $th->getMessage(); // Get the error message
+                $errorCode = $th->getCode(); // Get the error code (if available)
+
+                // Additional handling or logging of the error information can be done here
+
+                return response()->json([
+                    'status' => 'error',
+                    'message' => 'Email failed to send',
+                    'error_message' => $errorMessage, // Return the error message in the JSON response
+                    'error_code' => $errorCode // Return the error code in the JSON response
+                ]);
+            }
 
             return redirect('/my-dashboard')->with('success', 'Berhasil Menambahkan Request Franchise');
         } else {
@@ -157,6 +195,44 @@ class FranchiseController extends Controller
                 'status' => 'REJECTED',
                 'message' => $request->message
             ]);
+            
+            $user = $franchise->user;
+            $data = [
+                'subject' => '[Mamappang - Franchise Application Rejected]',
+                'view' => 'mail.franchise-reject',
+                'receiver' => $user->firstname . ' ' . $user->lastname,
+                'franchise_id' => $franchise->id,
+                'domisili' => $franchise->domisili,
+                'nama_bisnis' => $franchise->nama_bisnis,
+                'address' => $franchise->address,
+                'keterangan' => $franchise->keterangan,
+                'alasan' => $request->message,
+            ];
+
+            // $this->email($user->email, $data);
+
+            try {
+                Mail::to($user->email)->send(new SendMail($data));
+                // return response()->json([
+                //     'status' => 'success',
+                //     'message' => 'Email sent successfully'
+                // ]);
+
+
+            } catch (\Throwable $th) {
+                $errorMessage = $th->getMessage(); // Get the error message
+                $errorCode = $th->getCode(); // Get the error code (if available)
+
+                // Additional handling or logging of the error information can be done here
+
+                return response()->json([
+                    'status' => 'error',
+                    'message' => 'Email failed to send',
+                    'error_message' => $errorMessage, // Return the error message in the JSON response
+                    'error_code' => $errorCode // Return the error code in the JSON response
+                ]);
+            }
+
             return redirect('/admin/dashboard/franchise-status')->with(array(
                 'success' => "Franchise Application Rejected ".$franchise->id
             ));
@@ -182,6 +258,41 @@ class FranchiseController extends Controller
             ]);
 
             //send email
+            $user = $franchise->user;
+            $data = [
+                'subject' => '[Mamappang - Franchise Application Confirmed]',
+                'view' => 'mail.franchise-confirm',
+                'receiver' => $user->firstname . ' ' . $user->lastname,
+                'franchise_id' => $franchise->id,
+                'domisili' => $franchise->domisili,
+                'nama_bisnis' => $franchise->nama_bisnis,
+                'address' => $franchise->address,
+                'keterangan' => $franchise->keterangan,
+            ];
+
+            // $this->email($user->email, $data);
+
+            try {
+                Mail::to($user->email)->send(new SendMail($data));
+                // return response()->json([
+                //     'status' => 'success',
+                //     'message' => 'Email sent successfully'
+                // ]);
+
+
+            } catch (\Throwable $th) {
+                $errorMessage = $th->getMessage(); // Get the error message
+                $errorCode = $th->getCode(); // Get the error code (if available)
+
+                // Additional handling or logging of the error information can be done here
+
+                return response()->json([
+                    'status' => 'error',
+                    'message' => 'Email failed to send',
+                    'error_message' => $errorMessage, // Return the error message in the JSON response
+                    'error_code' => $errorCode // Return the error code in the JSON response
+                ]);
+            }
 
             return redirect('/admin/dashboard/franchise-status')->with(array(
                 'success' => "Franchise Application Confirmed"
