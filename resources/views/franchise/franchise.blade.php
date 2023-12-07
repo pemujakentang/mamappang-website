@@ -351,10 +351,17 @@
                     </script>
                 @endif
 
-                <button onclick="openForm()" href=""
+                <button onclick="redirectToSendMail()"
                     class="mx-auto mb-20 flex h-16 w-[90%] md:w-72 rounded-full border-2 border-yellow-800 bg-orange-400 items-center justify-center mt-3 hover:scale-[1.2] duration-75">
                     <p class="text-white font-averialibre text-3xl mx-5">Contact Us</p>
                 </button>
+
+                <script>
+                    function redirectToSendMail() {
+                        window.location.href = "{{ route('sendMail') }}";
+                    }
+                </script>
+
 
                 <!-- footer -->
                 <div class="w-full flex flex-col -mb-12 z-10 px-5 md:px-3 md:pl-7 py-7"

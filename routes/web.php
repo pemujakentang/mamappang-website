@@ -9,6 +9,8 @@ use App\Http\Controllers\PreordersController;
 use App\Livewire\Counter;
 use App\Livewire\QtyForm;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\SendMailController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -140,5 +142,7 @@ Route::get('/about-us', function(){
 // Route::get('/counter', Counter::class);
 
 require __DIR__.'/auth.php';
+
+Route::get('/sendMail',[SendMailController::class,'index'])->name("sendMail");
 
 
