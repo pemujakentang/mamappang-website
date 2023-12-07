@@ -14,6 +14,6 @@ class SendMailController extends Controller
             'body'=>'Testing Mailing',
 
         ];
-        Mail::to('xooos110@gmail.com')->send(new SendMail($mailData));
+        Mail::to('bonifasiusmartin@gmail.com')->send(new SendMail($mailData));
     }
 }

@@ -42,7 +42,7 @@
         <div class="flex flex-col md:flex-row justify-between mb-7">
             <p class="text-orange-200 font-averialibre text-2xl my-auto ml-2 w-full md:w-[40%]">TANGGAL
                 PENGIRIMAN</p>
-            <input type="date" name="tanggal_pesanan"
+            <input type="date" name="tanggal_pesanan" min="{{date("Y-m-d")}}"
                 class="bg-orange-300 border-orange-800 text-orange-700 border-2 outline-none text-xl rounded-xl max-h-28 h-16 p-3 font-averialibre w-full md:w-[60%]">
         </div>
         @error('tanggal_pesanan')

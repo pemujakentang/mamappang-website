@@ -154,7 +154,7 @@ class PreordersController extends Controller
             $data = [
                 'subject' => '[Mamappang - Order Placed]',
                 'receiver' => $user->firstname.' '.$user->lastname,
-                'order_id' => $preorder->id,
+                'preorder_id' => $preorder->id,
                 'alamat' => $request->shipment_address,
                 'tanggal' => $request->tanggal_pesanan,
                 'quantity' => $request->total_qty,
@@ -163,6 +163,28 @@ class PreordersController extends Controller
             ];
 
             $this->email($user->email, $data);
+
+            // try {
+            //     Mail::to($user->email)->send(new OrderPlaced($data));
+            //     // return response()->json([
+            //     //     'status' => 'success',
+            //     //     'message' => 'Email sent successfully'
+            //     // ]);
+
+
+            // } catch (\Throwable $th) {
+            //     $errorMessage = $th->getMessage(); // Get the error message
+            //     $errorCode = $th->getCode(); // Get the error code (if available)
+
+            //     // Additional handling or logging of the error information can be done here
+
+            //     return response()->json([
+            //         'status' => 'error',
+            //         'message' => 'Email failed to send',
+            //         'error_message' => $errorMessage, // Return the error message in the JSON response
+            //         'error_code' => $errorCode // Return the error code in the JSON response
+            //     ]);
+            // }
 
             return redirect('/my-dashboard')->with(array(
                 'success' => "Order Placed"
