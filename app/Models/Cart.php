@@ -17,7 +17,7 @@ class Cart extends Model
         return $this->belongsTo(User::class);
     }
 
-    public function menu():HasOne{
-        return $this->hasOne(Menu::class);
+    public function menu():BelongsTo{
+        return $this->belongsTo(Menu::class);
     }
 }

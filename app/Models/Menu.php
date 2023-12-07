@@ -22,4 +22,8 @@ class Menu extends Model
     public function preorder_details(): HasMany{
         return $this->hasMany(PreorderDetails::class);
     }
+
+    public function carts(): HasMany{
+        return $this->hasMany(Cart::class);
+    }
 }

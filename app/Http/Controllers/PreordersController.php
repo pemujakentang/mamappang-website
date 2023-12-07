@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Preorders;
 use App\Http\Requests\StorePreordersRequest;
 use App\Http\Requests\UpdatePreordersRequest;
+use App\Mail\MailPreorder;
+use App\Mail\OrderPlaced;
 use App\Models\Bill;
 use App\Models\Category;
 use App\Models\Menu;
@@ -12,7 +14,9 @@ use App\Models\Payment;
 use App\Models\PreorderDetails;
 use App\Models\Shipment;
 use Illuminate\Http\Request;
+use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Session;
 
@@ -77,6 +81,25 @@ class PreordersController extends Controller
         //
     }
 
+    public function email($receiver_mail, $data){
+
+
+        try {
+            Mail::to($receiver_mail)->send(new OrderPlaced($data));
+            // return response()->json([
+            //     'status' => 'success',
+            //     'message' => 'Email sent successfully'
+            // ]);
+
+
+        } catch (\Throwable $th) {
+            return response()->json([
+                'status' => 'error',
+                'message' => 'Email failed to send'
+            ]);
+        }
+    }
+
     /**
      * Store a newly created resource in storage.
      */
@@ -110,6 +133,8 @@ class PreordersController extends Controller
 
             $preorder_id = $preorder->id;
 
+            $preorder_items = [];
+
             foreach ($carts as $cart) {
                 if ($cart->qty>0) {
                     PreorderDetails::create([
@@ -117,10 +142,27 @@ class PreordersController extends Controller
                         'menu_id' => $cart->menu_id,
                         'qty' => $cart->qty
                     ]);
+                    array_push($preorder_items, $cart->menu->name." ".$cart->qty);
+                    
                 }
                 
                 $cart->delete();
             }
+
+            // dd($preorder_items);
+
+            $data = [
+                'subject' => '[Mamappang - Order Placed]',
+                'receiver' => $user->firstname.' '.$user->lastname,
+                'order_id' => $preorder->id,
+                'alamat' => $request->shipment_address,
+                'tanggal' => $request->tanggal_pesanan,
+                'quantity' => $request->total_qty,
+                'preorder_detail' => join(',', $preorder_items),
+                'total_price' => $request->total_price
+            ];
+
+            $this->email($user->email, $data);
 
             return redirect('/my-dashboard')->with(array(
                 'success' => "Order Placed"

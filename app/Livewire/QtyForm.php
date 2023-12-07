@@ -51,7 +51,7 @@ class QtyForm extends Component
         //     ]);
         // }
 
-        $this->quantity = 1;
+        // $this->quantity = 1;
     }
 
     public function render()

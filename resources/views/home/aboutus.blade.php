@@ -37,7 +37,7 @@
                                 About Us</p>
 
                                 <p class="text-orange-800 font-averialibrebold text-xl md:text-2xl text-justify mx-auto mt-5"
-                                    style="filter: drop-shadow(0 0 13px white); -webkit-text-stroke: 0.3px #FAC774;">
+                                    style="filter: drop-shadow(0 0 13px white); -webkit-text-stroke: 0.1px #FAC774;">
                                     "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
                                     incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
                                     exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
