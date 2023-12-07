@@ -13,8 +13,8 @@ return new class extends Migration
     {
         Schema::create('preorder_details', function (Blueprint $table) {
             $table->id();
-            $table->integer('preorder_id');
-            $table->integer('item_id');
+            $table->integer('preorders_id');
+            $table->integer('menu_id');
             $table->integer('qty');
             $table->timestamps();
         });

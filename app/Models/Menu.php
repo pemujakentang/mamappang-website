@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Menu extends Model
 {
@@ -12,10 +13,17 @@ class Menu extends Model
     protected $fillable = [
         'name',
         'description',
-        'image',
         'price',
-        'category'
+        'category_id'
     ];
 
     protected $guarded = ['id'];
+
+    public function preorder_details(): HasMany{
+        return $this->hasMany(PreorderDetails::class);
+    }
+
+    public function carts(): HasMany{
+        return $this->hasMany(Cart::class);
+    }
 }

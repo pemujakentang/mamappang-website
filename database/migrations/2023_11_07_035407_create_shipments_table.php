@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('shipments', function (Blueprint $table) {
             $table->id();
-            $table->integer('preorder_id');
+            $table->integer('preorders_id');
             $table->string('service_provider');
             $table->string('driver')->nullable();
             $table->string('plat')->nullable();

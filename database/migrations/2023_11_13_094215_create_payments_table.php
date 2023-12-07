@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('payments', function (Blueprint $table) {
             $table->id();
             $table->string('user_id');
-            $table->string('preorder_id');
+            $table->string('preorders_id');
             $table->text('keterangan')->nullable();
             $table->text('image');
             $table->string('status');
