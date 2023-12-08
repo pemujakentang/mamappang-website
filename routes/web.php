@@ -89,6 +89,7 @@ Route::controller(PackageController::class)->middleware(['auth', 'admin'])->grou
         })->name('franchise-create');
         Route::post('/admin/package/add', 'store');
         Route::delete('/admin/package/{package:id}/delete', 'destroy');
+        Route::post('/admin/upload', 'upload');
     }
 );
 
