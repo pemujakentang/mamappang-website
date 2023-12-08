@@ -7,7 +7,7 @@
             <!-- button whatsapp -->
             <div id="button1"
                 class="fixed bottom-12 end-4 md:bottom-8 md:end-20 flex justify-center items-center z-20 animate-move-y-fast ">
-                <a href="" class="no-underline hover:scale-[1.1] duration-100">
+                <a href="https://wa.me/6285161610765" target="_" class="no-underline hover:scale-[1.1] duration-100">
                     <button
                         class="rounded-[100%] h-[5.5rem] md:h-28 aspect-square bg-orange-300 border-orange-700 p-6 font-bold border-4">
                         <img class="object-cover" src="/images/whatsapp.webp" alt="Logo">

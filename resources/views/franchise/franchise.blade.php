@@ -7,7 +7,7 @@
             <!--Whatsapp button-->
             <div id="button1"
                 class="fixed bottom-12 end-4 md:bottom-8 md:end-20 flex justify-center items-center z-20 animate-move-y-fast ">
-                <a href="" class="no-underline hover:scale-[1.1] duration-1">
+                <a href="https://wa.me/6285161610765" target="_" class="no-underline hover:scale-[1.1] duration-1">
                     <button
                         class="rounded-[100%] h-[5.5rem] md:h-28 aspect-square bg-orange-300 border-orange-700 p-6 font-bold border-4">
                         <img class="object-cover" src="/images/whatsapp.webp" alt="Logo">
@@ -39,7 +39,8 @@
                         </div>
                         <div class="w-full md:w-[60%] mt-16 md:mt-0">
                             <div class="w-full flex items-center justify-center mx-auto mb-10 md:mb-4">
-                                <img class="object-cover md:scale-100 scale-[1.5]" src="/images/logo2.webp" alt="Logo">
+                                <img class="object-cover md:scale-100 scale-[1.5]" src="/images/logo2.webp"
+                                    alt="Logo">
                             </div>
                         </div>
                     </div>
@@ -75,17 +76,21 @@
 
                     @foreach ($packages as $package)
                         @if ($count++ % 2 == 0)
-                            <div class="mx-5 md:mx-0 flex flex-row md:gap-10 flex-wrap justify-center bg-orange-200 md:bg-transparent rounded-[15px] border-4 md:border-none border-orange-600 p-3 md:p-0">
+                            <div
+                                class="mx-5 md:mx-0 flex flex-row md:gap-10 flex-wrap justify-center bg-orange-200 md:bg-transparent rounded-[15px] border-4 md:border-none border-orange-600 p-3 md:p-0">
 
-                                <div class="md:h-48 w-full md:w-[50%] md:bg-orange-200 rounded-[15px] md:border-4 md:border-orange-600 flex flex-col p-0 py-2 md:py-0 md:p-4">
+                                <div
+                                    class="md:h-48 w-full md:w-[50%] md:bg-orange-200 rounded-[15px] md:border-4 md:border-orange-600 flex flex-col p-0 py-2 md:py-0 md:p-4">
                                     <div class="text-black text-[32px] font-normal font-averialibre mx-auto md:mx-0">
                                         {{ $package->title }}</div>
-                                    <div class="flex flex-wrap flex-col md:flex-row justify-center md:justify-between h-full w-full">
+                                    <div
+                                        class="flex flex-wrap flex-col md:flex-row justify-center md:justify-between h-full w-full">
 
                                         <div class="flex flex-row items-center md:items-start w-[70%] mx-auto md:mx-0">
                                             <img class="w-[30%] md:w-[141px] h-20 object-cover  scale-x-[-1] "
                                                 src="/images/ikan.webp" />
-                                            <div class="w-[50%] h-fit max-h-32 md:max-h-48 md:w-auto md:h-[60%] mx-4 text-black text-md font-normal font-averialibre overflow-scroll white text-ellipsis">
+                                            <div
+                                                class="w-[50%] h-fit max-h-32 md:max-h-48 md:w-auto md:h-[60%] mx-4 text-black text-md font-normal font-averialibre overflow-scroll white text-ellipsis">
                                                 {!! $package->description !!}
                                             </div>
                                         </div>
@@ -114,7 +119,8 @@
                                 </div>
                             </div>
                         @else
-                            <div class="mx-5 md:mx-0 flex flex-row md:gap-10 flex-wrap justify-center bg-orange-200 md:bg-transparent rounded-[15px] border-4 md:border-none border-orange-600 p-3 md:p-0">
+                            <div
+                                class="mx-5 md:mx-0 flex flex-row md:gap-10 flex-wrap justify-center bg-orange-200 md:bg-transparent rounded-[15px] border-4 md:border-none border-orange-600 p-3 md:p-0">
 
                                 <div class="flex-col relative w-96 md:w-80">
                                     <p
@@ -123,16 +129,19 @@
                                     <img class="w-full h-48 rounded-[15px] shadow border-4 border-orange-600 object-cover"
                                         src="{{ asset('storage/' . $package->image) }}" />
                                 </div>
-                                
-                                <div class="md:h-48 w-full md:w-[50%] md:bg-orange-200 rounded-[15px] md:border-4 md:border-orange-600 flex flex-col p-0 py-2 md:py-0 md:p-4">
+
+                                <div
+                                    class="md:h-48 w-full md:w-[50%] md:bg-orange-200 rounded-[15px] md:border-4 md:border-orange-600 flex flex-col p-0 py-2 md:py-0 md:p-4">
                                     <div class="text-black text-[32px] font-normal font-averialibre mx-auto md:mx-0">
                                         {{ $package->title }}</div>
-                                    <div class="flex flex-wrap flex-col md:flex-row justify-center md:justify-between h-full w-full">
+                                    <div
+                                        class="flex flex-wrap flex-col md:flex-row justify-center md:justify-between h-full w-full">
 
                                         <div class="flex flex-row items-center md:items-start w-[70%] mx-auto md:mx-0">
                                             <img class="w-[30%] md:w-[141px] h-20 object-cover  scale-x-[-1] "
                                                 src="/images/ikan.webp" />
-                                            <div class="w-[50%] h-fit max-h-32 md:max-h-48 md:w-auto md:h-[60%] mx-4 text-black text-md font-normal font-averialibre overflow-scroll white text-ellipsis">
+                                            <div
+                                                class="w-[50%] h-fit max-h-32 md:max-h-48 md:w-auto md:h-[60%] mx-4 text-black text-md font-normal font-averialibre overflow-scroll white text-ellipsis">
                                                 {!! $package->description !!}
                                             </div>
                                         </div>
@@ -169,11 +178,11 @@
                                     <div
                                         class="flex flex-col md:flex-row w-full justify-center md:items-start items-center md:justify-between my-3 md:my-5 ">
                                         <div
-                                            class="flex-col font-averialibre text-white text-md font-black md:w-[50%] w-full gap-y-2">
+                                            class="flex-col font-averialibre text-white text-md font-black md:w-[50%] w-full mx-2 gap-y-2">
                                             {!! $package->description !!}
                                         </div>
                                         <div class="flex-col md:order-last order-first md:w-[50%] w-full">
-                                            <img class="rounded-2xl border-4 border-orange-700 w-[80%] md:w-auto md:max-h-96 mx-auto object-cover"
+                                            <img class="rounded-2xl border-4 border-orange-700 w-[80%] md:w-auto md:max-h-96 mx-2 object-cover mb-4"
                                                 src="{{ asset('storage/' . $package->image) }}" alt="">
                                         </div>
                                     </div>
@@ -186,13 +195,13 @@
                                         class="mt-4 flex justify-center items-center flex-col md:flex-row w-full gap-2">
                                         <button id="franchise-btn" x-data=""
                                             x-on:click.prevent="$dispatch('close'); $dispatch('open-modal', '{{ 'form-modal' }}')"
-                                            class="h-16 w-full md:w-[60%] text-white font-averialibre text-2xl rounded-full border-2 border-yellow-800 bg-orange-400 items-center justify-center hover:scale-[1.125] duration-75 p-2">
+                                            class="h-16 w-full md:w-[60%] text-white font-averialibre text-2xl rounded-full border-2 border-yellow-800 bg-orange-400 items-center justify-center hover:scale-[1.05] duration-75 p-2">
                                             Daftar Jadi Franchise
                                         </button>
-                                        <button id="contact-btn"
-                                            class="md:order-last order-first h-16 w-full md:w-[40%] text-white font-averialibre text-2xl rounded-full border-2 border-yellow-800 bg-orange-400 items-center justify-center hover:scale-[1.125] duration-75 p-2">
+                                        <a id="contact-btn" href="https://wa.me/6285161610765" target="_"
+                                            class="md:order-last order-first h-16 w-full md:w-[40%] text-white font-averialibre text-2xl rounded-full border-2 border-yellow-800 bg-orange-400 hover:scale-[1.05] duration-75 p-2 text-center flex justify-center items-center align-middle">
                                             Contact Us
-                                        </button>
+                                        </a>
                                     </div>
                                 </div>
                             </div>
@@ -351,17 +360,12 @@
                     </script>
                 @endif
 
-                <button onclick="redirectToSendMail()"
-                    class="mx-auto mb-20 flex h-16 w-[90%] md:w-72 rounded-full border-2 border-yellow-800 bg-orange-400 items-center justify-center mt-3 hover:scale-[1.2] duration-75">
-                    <p class="text-white font-averialibre text-3xl mx-5">Contact Us</p>
-                </button>
-
-                <script>
-                    function redirectToSendMail() {
-                        window.location.href = "{{ route('sendMail') }}";
-                    }
-                </script>
-
+                <a href="https://wa.me/6285161610765" target="_">
+                    <button
+                        class="mx-auto mb-20 flex h-16 w-[90%] md:w-72 rounded-full border-2 border-yellow-800 bg-orange-400 items-center justify-center mt-3 hover:scale-[1.2] duration-75">
+                        <p class="text-white font-averialibre text-3xl mx-5">Contact Us</p>
+                    </button>
+                </a>
 
                 <!-- footer -->
                 <div class="w-full flex flex-col -mb-12 z-10 px-5 md:px-3 md:pl-7 py-7"
@@ -391,5 +395,16 @@
             </div>
 
         </div>
+        <style>
+            .attachment img {
+                height: 200px;
+                width: auto;
+            }
+
+            .attachment {
+                display: flex;
+                justify-content: center;
+            }
+        </style>
     </x-app-layout>
 </body>
