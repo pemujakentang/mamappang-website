@@ -137,8 +137,8 @@
                 </div>
                 
                 <a  href="/bulks"
-                    class="flex h-20 w-[90%] md:w-[35%] rounded-full border-2 border-yellow-800 bg-orange-400 items-center justify-center mt-3 hover:scale-[1.2] duration-75">
-                    <p class="text-white font-averialibre text-3xl md:text-4xl mx-6">ORDER SEKARANG!</p>
+                    class="flex md:h-20 h-16 w-[70%] md:w-[35%] rounded-full border-2 border-yellow-800 bg-orange-400 items-center justify-center mt-3 hover:scale-[1.125] duration-[50ms] md:hover:scale-[1.2] md:duration-75">
+                    <p class="text-white font-averialibre text-2xl md:text-4xl mx-6">ORDER SEKARANG!</p>
                 </a>
             </div>
 

@@ -45,17 +45,17 @@
                         <div class="flex mt-20 md:mt-0 md:pt-6 z-10 md:flex-row flex-col w-full md:w-auto md:h-[35%]">
                             <a href="#menu" class="no-underline w-full flex justify-center">
                                 <button href="#menu"
-                                    class="flex h-16 md:h-14 md:w-56 w-[85%] rounded-full border-2 border-yellow-800 bg-orange-300 items-center justify-center mx-4 hover:scale-[1.2] duration-75">
-                                    <p class="text-orange-800 font-averialibre text-2xl">See Our Menu</p>
+                                    class="flex h-16 md:h-14 md:w-56 w-[60%] rounded-full border-2 border-yellow-800 bg-orange-300 items-center justify-center mx-4 hover:scale-[1.125] first-letter:duration-[50] md:hover:scale-[1.2] md:first-letter:duration-75">
+                                    <p class="text-orange-800 font-averialibre md:text-2xl text-xl">See Our Menu</p>
                                     <div class="w-8 flex items-center justify-center ml-1">
-                                        <img class="object-cover" src="/images/play.webp" alt="Logo">
+                                        <img class="object-cover w-4" src="/images/play.webp" alt="Logo">
                                     </div>
                                 </button>
                             </a>
                             <a href="#franchise" class="no-underline w-full flex justify-center">
-                                <button href=""
-                                    class="flex h-16 md:h-14 md:w-56 w-[85%]  rounded-full border-2 border-yellow-800 bg-orange-300 items-center justify-center mx-4 hover:scale-[1.2] duration-75 mt-4 md:mt-0">
-                                    <p class="text-orange-800 font-averialibre text-2xl">Franchise Info ⓘ</p>
+                                <button href="#franchise"
+                                    class="flex h-16 md:h-14 md:w-56 w-[60%]  rounded-full border-2 border-yellow-800 bg-orange-300 items-center justify-center mx-4 hover:scale-[1.125] first-letter:duration-[50] md:hover:scale-[1.2] md:first-letter:duration-75 mt-4 md:mt-0">
+                                    <p class="text-orange-800 font-averialibre md:text-2xl text-xl">Franchise Info ⓘ</p>
                                 </button>
                             </a>
                         </div>
@@ -117,8 +117,8 @@
                     </div>
                 </div>
                 <a href="/bulk-order"
-                    class="flex h-24 w-[90%] md:w-[50%] rounded-full border-2 border-yellow-800 bg-[#FF6400] items-center justify-center mx-4 mt-12 md:mt-3 mb-16 hover:scale-[1.1] duration-75">
-                    <p class="text-white font-averialibre text-3xl md:text-4xl">PRE ORDER SEKARANG!</p>
+                    class="flex h-16 w-[70%] md:w-[50%] rounded-full border-2 border-yellow-800 bg-[#FF6400] items-center justify-center mx-4 mt-12 md:mt-3 mb-16 hover:scale-[1.125] duration-[50ms] md:hover:scale-[1.2] md:duration-75">
+                    <p class="text-white font-averialibre text-2xl md:text-4xl">PRE ORDER SEKARANG!</p>
                 </a>
             </div>
 
@@ -147,8 +147,8 @@
                             kami</p>
                         <a href="" class="no-underline">
                             <a href="/franchise"
-                                class="flex md:h-24 h-20 w-full md:w-[90%] rounded-full border-2 border-yellow-800 bg-[#FF6400] items-center justify-center my-10 md:my-16 mx-auto hover:scale-[1.2] duration-75">
-                                <p class="text-white font-averialibre text-3xl md:text-4xl ">Gabung bersama kami</p>
+                                class="flex h-16 md:h-24 w-[70%] md:w-[90%] rounded-full border-2 border-yellow-800 bg-[#FF6400] items-center justify-center my-10 md:my-16 mx-auto hover:scale-[1.125] duration-[50ms] md:hover:scale-[1.2] md:duration-75">
+                                <p class="text-white font-averialibre text-2xl md:text-4xl ">Gabung bersama kami</p>
                             </a>
                         </a>
                     </div>

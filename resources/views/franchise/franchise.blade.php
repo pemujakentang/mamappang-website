@@ -37,10 +37,11 @@
                                 style="-webkit-text-stroke:0.6px #ab5000;">Best
                                 Bungeoppang in Town!</p>
                         </div>
-                        <div class="w-full md:w-[60%] mt-16 md:mt-0">
-                            <div class="w-full flex items-center justify-center mx-auto mb-10 md:mb-4">
-                                <img class="object-cover md:scale-100 scale-[1.5]" src="/images/logo2.webp"
-                                    alt="Logo">
+                        <div class="w-full md:w-[75%] flex items-center justify-center z-10 md:h-[65%] mt-20 md:mt-10">
+                            <img class="object-cover scale-[1.4] md:scale-100 z-10 md:h-full" src="/images/logo2.webp"
+                                alt="Logo">
+                            <div class="absolute w-screen z-0 opacity-75 scale-[1.2] flex md:hidden">
+                                <img class="object-cover animate-spin-slow" src="/images/cahaya.webp" alt="Logo">
                             </div>
                         </div>
                     </div>
@@ -50,8 +51,8 @@
                 <div class="flex bottom-5 md:bottom-20 absolute z-10 w-full items-center justify-center pb-5">
                     <a href="#franchise-list" class="no-underline">
                         <button href=""
-                            class="flex h-16 rounded-full border-2 border-yellow-800 bg-orange-300 items-center justify-center px-6 hover:scale-[1.2] duration-75">
-                            <p class="text-orange-800 font-averialibre text-2xl mr-2 ml-3">View Franchise Packages</p>
+                            class="flex h-16 rounded-full border-2 border-yellow-800 bg-orange-300 items-center justify-center px-6 hover:scale-[1.125] duration-[50ms] md:hover:scale-[1.2] md:duration-75">
+                            <p class="text-orange-800 font-averialibre text-xl md:text-2xl mr-2 ml-3">View Franchise Packages</p>
                             <div class="w-8 flex items-center justify-center">
                                 <img class="object-cover h-3" src="/images/arrow.webp" alt="Logo">
                             </div>
@@ -362,8 +363,8 @@
 
                 <a href="https://wa.me/6285161610765" target="_">
                     <button
-                        class="mx-auto mb-20 flex h-16 w-[90%] md:w-72 rounded-full border-2 border-yellow-800 bg-orange-400 items-center justify-center mt-3 hover:scale-[1.2] duration-75">
-                        <p class="text-white font-averialibre text-3xl mx-5">Contact Us</p>
+                        class="mx-auto mb-20 flex h-14 w-[50%] md:w-72 rounded-full border-2 border-yellow-800 bg-orange-400 items-center justify-center mt-3 hover:scale-[1.125] duration-[50ms] md:hover:scale-[1.2] md:duration-75">
+                        <p class="text-white font-averialibre text-2xl md:text-3xl mx-5">Contact Us</p>
                     </button>
                 </a>
 
