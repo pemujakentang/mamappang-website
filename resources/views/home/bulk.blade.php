@@ -37,7 +37,7 @@
                                             class="rounded-xl bg-orange-300 text-orange-700 w-16 h-12 py-1 border-2 border-orange-800 flex items-center justify-center">
                                             <div class="w-6">
                                                 <img id="{{ 'arrow' . $category->name }}"
-                                                    class="-rotate-90 object-cover duration-75" src="/images/arrow.webp"
+                                                    class="rotate-0 object-cover duration-75" src="/images/arrow.webp"
                                                     alt="Logo">
                                             </div>
                                         </button>
@@ -48,12 +48,12 @@
                                                 var {{ 'dropContent' . $category->name }} = document.getElementById("{{ 'dropContent' . $category->name }}");
                                                 var {{ 'series' . $category->name }} = document.getElementById("{{ 'series' . $category->name }}");
 
-                                                if ({{ 'arrow' . $category->name }}.classList.contains('rotate-0')) {
-                                                    {{ 'arrow' . $category->name }}.classList.remove('rotate-0');
-                                                    {{ 'arrow' . $category->name }}.classList.add('-rotate-90');
-                                                } else {
+                                                if ({{ 'arrow' . $category->name }}.classList.contains('-rotate-90')) {
                                                     {{ 'arrow' . $category->name }}.classList.remove('-rotate-90');
                                                     {{ 'arrow' . $category->name }}.classList.add('rotate-0');
+                                                } else {
+                                                    {{ 'arrow' . $category->name }}.classList.remove('rotate-0');
+                                                    {{ 'arrow' . $category->name }}.classList.add('-rotate-90');
                                                 }
 
                                                 if ({{ 'dropContent' . $category->name }}.classList.contains('hidden')) {
@@ -73,12 +73,12 @@
                                 </div>
 
                                 <div id="{{ 'dropContent' . $category->name }}"
-                                    class="hidden duration-75 flex-col rounded-b-2xl py-2 bg-orange-300">
+                                    class="flex duration-75 flex-col rounded-b-2xl py-2 bg-orange-300">
                                     <!-- menu -->
 
                                     @foreach ($category->menus as $menu)
                                         <div class="flex justify-between flex-row  py-2 pr-4 md:md:pl-8 pl-4">
-                                            <p class="text-orange-700 font-averialibre text-lg md:text-2xl my-auto">
+                                            <p class="text-orange-700 font-averialibre md:text-2xl my-auto">
                                                 {{ $menu->name }}
                                             </p>
                                             @if (auth()->user()->carts->where('menu_id', $menu->id)->count() == 0)
@@ -88,7 +88,7 @@
                                                     <input hidden type="number" name="menu_id" id=""
                                                         value="{{ $menu->id }}">
                                                     <button type="submit"
-                                                        class="rounded-xl bg-orange-300 hover:bg-orange-800 hover:text-orange-300 text-orange-700 py-1 px-2 border-2 border-orange-800 flex items-center justify-center">ADD
+                                                        class="rounded-xl h-8 w-32 bg-orange-300 hover:bg-orange-800 hover:text-orange-300 text-orange-700 py-1 px-2 border-2 border-orange-800 flex items-center justify-center">ADD
                                                         TO CART</button>
                                                 </form>
                                             @else

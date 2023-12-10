@@ -65,7 +65,7 @@
 
         <button type="submit"
             class="border-2 rounded-xl hover:bg-orange-400 hover:border-orange-800 border-orange-900 bg-orange-700 font-averialibre text-2xl px-2   w-full py-2 h-16 text-center hover:text-orange-700 text-orange-300">
-            <p class=" font-averialibre text-4xl ">Pesan Sekarang</p>
+            <p class=" font-averialibre md:text-4xl ">Pesan Sekarang</p>
         </button>
     </form>
 </div>

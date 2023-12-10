@@ -1,18 +1,18 @@
 <body>
     <x-app-layout>
         <div class="mx-auto my-auto overflow-hidden relative flex flex-col items-center bg-[#FF6400]">
-            <!--Whatsapp button-->
+            <!-- button whatsapp -->
             <div id="button1"
                 class="fixed bottom-12 end-4 md:bottom-8 md:end-20 flex justify-center items-center z-20 animate-move-y-fast ">
-                <a href="https://wa.me/6285161610765" target="_" class="no-underline hover:scale-[1.1] duration-1">
+                <a href="https://wa.me/6285161610765" target="_" class="no-underline hover:scale-[1.1] duration-100">
                     <button
-                        class="rounded-[100%] h-[5.5rem] md:h-28 aspect-square bg-orange-300 border-orange-700 p-6 font-bold border-4">
+                        class="rounded-[100%] h-[4rem] md:h-28 aspect-square bg-orange-300 border-orange-700 p-2 md:p-6 font-bold border-4">
                         <img class="object-cover" src="/images/whatsapp.webp" alt="Logo">
                     </button>
                 </a>
             </div>
             <!-- section - home -->
-            <div class="h-screen flex relative justify-center flex-col">
+            <div class="md:h-screen flex relative justify-center flex-col">
 
                 <img class="absolute h-auto md:h-96 z-10 -right-56 bottom-10 mt-6 animate-wiggle opacity-70"
                     src="/images/awan.webp" alt="Logo">
@@ -25,12 +25,13 @@
                 <livewire:layout.navigation />
 
                 <!-- home -->
-                <div class="flex flex-col items-center relative md:justify-normal justify-center h-full ">
+                <div
+                    class="flex flex-col items-center relative md:justify-normal justify-center md:h-full pt-24 md:pt-0">
 
                     <div class="flex flex-col md:flex-row w-[90%] mt-2 justify-center md:items-center md:h-[80%]">
 
                         <div class="w-full md:w-[50%]">
-                            <div class="w-full md:w-[85%] flex items-center justify-center mx-auto mb-10 md:mb-4">
+                            <div class="w-[80%] md:w-[85%] flex items-center justify-center mx-auto mb-10 md:mb-4">
                                 <img class="object-cover z-10" src="/images/logo3.webp" alt="Logo">
                                 <div class="absolute w-screen z-0 translate-y-4 flex md:hidden scale-[1.1]">
                                     <img class="object-cover animate-spin-slow" src="/images/cahaya.webp"
@@ -41,14 +42,12 @@
 
                         <div class="w-full md:w-[50%] flex flex-col justify-center md:pr-7 z-10">
                             <!-- SERIES #1 -->
-                            <p class="  text-yellow-900 text-[4rem] md:text-[6rem] font-black font-blackhansans tracking-tighter text-center w-full mb-4"
-                                style="-webkit-text-stroke: 3.5px white; line-height:1;">
+                            <p class="  text-yellow-900 text-[3rem] md:text-[6rem] font-black font-blackhansans tracking-tighter text-center w-full mb-4"
+                                style="-webkit-text-stroke: 2px white; line-height:1;">
                                 Bulk Order</p>
-                            <p class="text-orange-800 font-averialibrebold text-xl md:text-2xl text-justify mx-auto "
+                            <p class="text-orange-800 font-averialibrebold text-xl md:text-2xl text-justify mx-auto leading-tight"
                                 style="filter: drop-shadow(0 0 13px white);">
-                                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ab, cupiditate adipisci,
-                                inventore et necessitatibus nemo nesciunt repellat debitis, officia laborum temporibus
-                                tempore soluta ut dolore. Ullam quidem magni nisi. Ab!</p>
+                                Kami menerima pesanan dalam partai besar dengan harga grosir.</p>
                         </div>
 
                     </div>
@@ -57,7 +56,7 @@
 
                 </div>
 
-                <div class="flex bottom-5 md:bottom-10 absolute z-10 w-full items-center justify-center pb-5">
+                <div class="flex z-10 w-full items-center justify-center pb-5">
                     <a href="#menu-bulk" class="no-underline">
                         <button href=""
                             class="flex h-16 rounded-full border-2 border-yellow-800 bg-orange-300 items-center justify-center px-6 hover:scale-[1.2] duration-75">
@@ -135,10 +134,10 @@
                         </div>
                     </div>
                 </div>
-                
-                <a  href="/bulks"
-                    class="flex h-20 w-[90%] md:w-[35%] rounded-full border-2 border-yellow-800 bg-orange-400 items-center justify-center mt-3 hover:scale-[1.2] duration-75">
-                    <p class="text-white font-averialibre text-3xl md:text-4xl mx-6">ORDER SEKARANG!</p>
+
+                <a href="/bulks"
+                    class="flex h-14 md:h-20 w-[80%] md:w-[35%] rounded-full border-2 border-yellow-800 bg-orange-400 items-center justify-center mt-3 hover:scale-[1.2] duration-75">
+                    <p class="text-white font-averialibre text-2xl md:text-4xl mx-6">ORDER SEKARANG!</p>
                 </a>
             </div>
 
@@ -149,10 +148,14 @@
                 style="background-image: url('/images/background-menu.webp');">
                 <p class="text-orange-800 font-averialibre text-3xl md:text-4xl mb-3">Mamappang - Best In Town</p>
                 <p class="text-orange-800 font-averialibre text-lg md:text-xl w-full md:w-[70%] text-justify mb-6">
-                    mammapang is Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                    incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                    ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
-                    voluptate velit esse cillum dolore eu fugiat nulla pariatur. </p>
+                    Contact us
+                    <br>
+                    mamappang.bungeoppang@gmail.com
+                    <br>
+                    0851-6161-0765
+                    <br>
+                    Tangerang Selatan
+                </p>
                 <p class="text-orange-800 font-averialibrebold text-xl md:text-2xl mb-1">In collaboration with :</p>
                 <div class="flex">
                     <div class="w-28 md:w-42 flex items-center justify-center">

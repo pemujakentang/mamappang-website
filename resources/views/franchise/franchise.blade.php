@@ -4,12 +4,12 @@
         <div
             class="mx-auto my-auto overflow-y-hidden relative overflow-x-hidden flex flex-col items-center bg-[#FF6400]">
 
-            <!--Whatsapp button-->
+            <!-- button whatsapp -->
             <div id="button1"
                 class="fixed bottom-12 end-4 md:bottom-8 md:end-20 flex justify-center items-center z-20 animate-move-y-fast ">
-                <a href="https://wa.me/6285161610765" target="_" class="no-underline hover:scale-[1.1] duration-1">
+                <a href="https://wa.me/6285161610765" target="_" class="no-underline hover:scale-[1.1] duration-100">
                     <button
-                        class="rounded-[100%] h-[5.5rem] md:h-28 aspect-square bg-orange-300 border-orange-700 p-6 font-bold border-4">
+                        class="rounded-[100%] h-[4rem] md:h-28 aspect-square bg-orange-300 border-orange-700 p-2 md:p-6 font-bold border-4">
                         <img class="object-cover" src="/images/whatsapp.webp" alt="Logo">
                     </button>
                 </a>
@@ -50,8 +50,9 @@
                 <div class="flex bottom-5 md:bottom-20 absolute z-10 w-full items-center justify-center pb-5">
                     <a href="#franchise-list" class="no-underline">
                         <button href=""
-                            class="flex h-16 rounded-full border-2 border-yellow-800 bg-orange-300 items-center justify-center px-6 hover:scale-[1.2] duration-75">
-                            <p class="text-orange-800 font-averialibre text-2xl mr-2 ml-3">View Franchise Packages</p>
+                            class="flex h-12 md:h-16 rounded-full border-2 border-yellow-800 bg-orange-300 items-center justify-center px-6 hover:scale-[1.2] duration-75">
+                            <p class="text-orange-800 font-averialibre text-xl md:text-2xl mr-2 ml-3">View Franchise
+                                Packages</p>
                             <div class="w-8 flex items-center justify-center">
                                 <img class="object-cover h-3" src="/images/arrow.webp" alt="Logo">
                             </div>
@@ -163,7 +164,7 @@
 
                             </div>
                         @endif
-                        <x-modal name="{{ 'detail-modal' . $count }}" :show="$errors->isNotEmpty()" focusable class="z-50">
+                        <x-modal name="{{ 'detail-modal' . $count }}" :show="$errors->isNotEmpty()" focusable class="z-20">
                             <div
                                 class="border-4 w-full h-full md:h-fit px-5 md:px-7 pt-7 pb-5 overflow-scroll bg-orange-500 border-orange-800 flex flex-col relative overflow-x-hidden mx-auto md:justify-center md:items-center ">
                                 <button x-on:click="$dispatch('close')"
@@ -187,19 +188,18 @@
                                         </div>
                                     </div>
 
-                                    <p
-                                        class="font-averialibre text-orange-800 w-full flex justify-end items-end pr-8 -mb-4 mt-6 md:mt-10">
+                                    <p class="font-averialibre text-orange-800 w-full mt-6 md:mt-10">
                                         ingin tahu lebih lanjut?</p>
 
                                     <div
                                         class="mt-4 flex justify-center items-center flex-col md:flex-row w-full gap-2">
                                         <button id="franchise-btn" x-data=""
                                             x-on:click.prevent="$dispatch('close'); $dispatch('open-modal', '{{ 'form-modal' }}')"
-                                            class="h-16 w-full md:w-[60%] text-white font-averialibre text-2xl rounded-full border-2 border-yellow-800 bg-orange-400 items-center justify-center hover:scale-[1.05] duration-75 p-2">
+                                            class="h-12 w-full md:w-[60%] text-white font-averialibre text-xl md:text-2xl rounded-full border-2 border-yellow-800 bg-orange-400 items-center justify-center hover:scale-[1.05] duration-75 p-2">
                                             Daftar Jadi Franchise
                                         </button>
                                         <a id="contact-btn" href="https://wa.me/6285161610765" target="_"
-                                            class="md:order-last order-first h-16 w-full md:w-[40%] text-white font-averialibre text-2xl rounded-full border-2 border-yellow-800 bg-orange-400 hover:scale-[1.05] duration-75 p-2 text-center flex justify-center items-center align-middle">
+                                            class="md:order-last order-first h-12 w-full md:w-[40%] text-white font-averialibre text-xl md:text-2xl rounded-full border-2 border-yellow-800 bg-orange-400 hover:scale-[1.05] duration-75 p-2 text-center flex justify-center items-center align-middle">
                                             Contact Us
                                         </a>
                                     </div>
@@ -227,7 +227,7 @@
                                 <label for="" class="block  text-2xl font-averialibre text-[#992300]">Pilih
                                     Paket</label>
                                 <select id="package_id" name="package_id"
-                                    class="@error('package_id') border-red-500 @enderror w-[56%] mt-1  bg-[#FAC774] rounded-2xl border-solid border-2 border-[#992300]">
+                                    class="@error('package_id') border-red-500 @enderror md:w-[56%] mt-1  bg-[#FAC774] rounded-2xl border-solid border-2 border-[#992300]">
                                     @foreach ($packages as $package)
                                         <option value="{{ $package->id }}">{{ $package->title }}</option>
                                     @endforeach
@@ -242,7 +242,7 @@
                                 <label for=""
                                     class="block  text-2xl font-averialibre text-[#992300]">Alamat</br>(Pribadi)</label>
                                 <input type="text" id="domisili" name="domisili"
-                                    class="@error('domisili') border-red-500 @enderror w-[56%] mt-1  bg-[#FAC774] rounded-2xl border-solid border-2 border-[#992300]">
+                                    class="@error('domisili') border-red-500 @enderror md:w-[56%] mt-1  bg-[#FAC774] rounded-2xl border-solid border-2 border-[#992300]">
 
                             </div>
                             @error('domisili')
@@ -253,7 +253,7 @@
                                 <label for="nama_bisnis" class="text-2xl font-averialibre text-[#992300]">Nama
                                     Bisnis</label>
                                 <input type="text" id="nama_bisnis" name="nama_bisnis"
-                                    class="@error('nama_bisnis') border-red-500 @enderror w-[56%]  mt-1 bg-[#FAC774] rounded-2xl border-solid border-2 border-[#992300]">
+                                    class="@error('nama_bisnis') border-red-500 @enderror md:w-[56%]  mt-1 bg-[#FAC774] rounded-2xl border-solid border-2 border-[#992300]">
 
                             </div>
                             @error('nama_bisnis')
@@ -264,7 +264,7 @@
                                 <label for="address"
                                     class="text-2xl font-averialibre text-[#992300]">Alamat</br>(Franchise)</label>
                                 <input type="text" id="address" name="address"
-                                    class="@error('address') border-red-500 @enderror w-[56%]  mt-1 bg-[#FAC774] rounded-2xl border-solid border-2 border-[#992300]">
+                                    class="@error('address') border-red-500 @enderror md:w-[56%]  mt-1 bg-[#FAC774] rounded-2xl border-solid border-2 border-[#992300]">
 
                             </div>
                             @error('address')
@@ -275,7 +275,7 @@
                                 <label for="keterangan"
                                     class=" mr-1 text-2xl font-averialibre text-[#992300]">Keterangan</label>
                                 <textarea type="text" id="keterangan" name="keterangan"
-                                    class="@error('keterangan') border-red-500 @enderror md:w-[56%] mt-1 bg-[#FAC774] rounded-2xl border-solid border-2 border-[#992300] h-14"> </textarea>
+                                    class="@error('keterangan') border-red-500 @enderror md:md:w-[56%] mt-1 bg-[#FAC774] rounded-2xl border-solid border-2 border-[#992300] h-14"> </textarea>
 
                             </div>
                             @error('keterangan')
@@ -283,7 +283,7 @@
                             @enderror
 
                             <button id="book-franchise"
-                                class="mx-12 mt-6 w-[85%] h-14 bg-[#f1a03c] text-[#992300] font-black font-averialibre text-2xl rounded-2xl border-2 border-orange-700 hover:scale-[1.1] duration-75"
+                                class="md:mx-12 mt-6 w-full md:w-[85%] h-14 bg-[#f1a03c] text-[#992300] font-black font-averialibre text-2xl rounded-2xl border-2 border-orange-700 hover:scale-[1.1] duration-75"
                                 x-data=""
                                 x-on:click.prevent="$dispatch('open-modal', '{{ 'confirm-modal' }}')">
                                 Book Franchise
@@ -293,7 +293,7 @@
                     <!-- Modal Reminder Notification -->
                     <x-modal class="bg-none" name="{{ 'confirm-modal' }}" :show="$errors->isNotEmpty()" focusable>
                         <div
-                            class="w-[450px] h-[335px] mx-auto my-60 relative bg-[#b9480f] border-[2px] border-solid border-[#5C3623] rounded-[10px] shadow">
+                            class="md:w-[450px] h-[335px] mx-auto my-32 md:my-60 relative bg-[#b9480f] border-[2px] border-solid border-[#5C3623] rounded-[10px] shadow">
                             <button x-on:click="$dispatch('close')" type="button"
                                 class="absolute top-4 right-8 text-white text-4xl font-bold focus:outline-none">
                                 &times;
@@ -321,7 +321,7 @@
                     <div class="fixed h-full z-10 inset-0 bg-gray-600 bg-opacity-50 w-full" id="notification"
                         class="z-50">
                         <div
-                            class="w-[450px] h-[335px] mx-auto my-60 relative bg-[#b9480f] border-[2px] border-solid border-[#5C3623] rounded-[10px] shadow">
+                            class="h-[335px] mx-auto my-32 md:my-60 relative bg-[#b9480f] border-[2px] border-solid border-[#5C3623] rounded-[10px] shadow">
                             <button type="button" id="closenotif"
                                 class="absolute top-4 right-8 text-white text-4xl font-bold focus:outline-none">
                                 &times;
@@ -362,7 +362,7 @@
 
                 <a href="https://wa.me/6285161610765" target="_">
                     <button
-                        class="mx-auto mb-20 flex h-16 w-[90%] md:w-72 rounded-full border-2 border-yellow-800 bg-orange-400 items-center justify-center mt-3 hover:scale-[1.2] duration-75">
+                        class="mx-auto mb-20 flex h-12 md:h-16 w-[80%] md:w-72 rounded-full border-2 border-yellow-800 bg-orange-400 items-center justify-center mt-3 hover:scale-[1.2] duration-75">
                         <p class="text-white font-averialibre text-3xl mx-5">Contact Us</p>
                     </button>
                 </a>
@@ -372,14 +372,14 @@
                     style="background-image: url('/images/background-menu.webp');">
                     <p class="text-orange-800 font-averialibre text-3xl md:text-4xl mb-3">Mamappang - Best In Town</p>
                     <p class="text-orange-800 font-averialibre text-lg md:text-xl w-full md:w-[70%] text-justify mb-6">
-                        mammapang is Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                        incididunt
-                        ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                        laboris
-                        nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-                        velit
-                        esse
-                        cillum dolore eu fugiat nulla pariatur. </p>
+                        Contact us
+                        <br>
+                        mamappang.bungeoppang@gmail.com
+                        <br>
+                        0851-6161-0765
+                        <br>
+                        Tangerang Selatan
+                    </p>
                     <p class="text-orange-800 font-averialibrebold text-xl md:text-2xl mb-1">In collaboration with :
                     </p>
                     <div class="flex">

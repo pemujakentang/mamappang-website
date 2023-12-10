@@ -9,7 +9,7 @@
                 class="fixed bottom-12 end-4 md:bottom-8 md:end-20 flex justify-center items-center z-20 animate-move-y-fast ">
                 <a href="https://wa.me/6285161610765" target="_" class="no-underline hover:scale-[1.1] duration-100">
                     <button
-                        class="rounded-[100%] h-[5.5rem] md:h-28 aspect-square bg-orange-300 border-orange-700 p-6 font-bold border-4">
+                        class="rounded-[100%] h-[4rem] md:h-28 aspect-square bg-orange-300 border-orange-700 p-2 md:p-6 font-bold border-4">
                         <img class="object-cover" src="/images/whatsapp.webp" alt="Logo">
                     </button>
                 </a>
@@ -117,8 +117,8 @@
                     </div>
                 </div>
                 <a href="/bulk-order"
-                    class="flex h-24 w-[90%] md:w-[50%] rounded-full border-2 border-yellow-800 bg-[#FF6400] items-center justify-center mx-4 mt-12 md:mt-3 mb-16 hover:scale-[1.1] duration-75">
-                    <p class="text-white font-averialibre text-3xl md:text-4xl">PRE ORDER SEKARANG!</p>
+                    class="flex h-16 md:h-24 w-[90%] md:w-[50%] rounded-full border-2 border-yellow-800 bg-[#FF6400] items-center justify-center mx-4 mt-12 md:mt-3 mb-16 hover:scale-[1.1] duration-75">
+                    <p class="text-white font-averialibre text-2xl md:text-4xl">PRE ORDER SEKARANG!</p>
                 </a>
             </div>
 
@@ -147,8 +147,8 @@
                             kami</p>
                         <a href="" class="no-underline">
                             <a href="/franchise"
-                                class="flex md:h-24 h-20 w-full md:w-[90%] rounded-full border-2 border-yellow-800 bg-[#FF6400] items-center justify-center my-10 md:my-16 mx-auto hover:scale-[1.2] duration-75">
-                                <p class="text-white font-averialibre text-3xl md:text-4xl ">Gabung bersama kami</p>
+                                class="flex md:h-24 h-16 w-full md:w-[90%] rounded-full border-2 border-yellow-800 bg-[#FF6400] items-center justify-center my-10 md:my-16 mx-auto hover:scale-[1.2] duration-75">
+                                <p class="text-white font-averialibre text-2xl md:text-4xl ">Gabung bersama kami</p>
                             </a>
                         </a>
                     </div>
@@ -161,10 +161,13 @@
                 style="background-image: url('/images/background-menu.webp');">
                 <p class="text-orange-800 font-averialibre text-3xl md:text-4xl mb-3">Mamappang - Best In Town</p>
                 <p class="text-orange-800 font-averialibre text-lg md:text-xl w-full md:w-[70%] text-justify mb-6">
-                    mammapang is Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                    incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                    ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
-                    voluptate velit esse cillum dolore eu fugiat nulla pariatur. </p>
+                    Contact us
+                    <br>
+                    mamappang.bungeoppang@gmail.com
+                    <br>
+                    0851-6161-0765
+                    <br>
+                    Tangerang Selatan </p>
                 <p class="text-orange-800 font-averialibrebold text-xl md:text-2xl mb-1">In collaboration with :</p>
                 <div class="flex">
                     <div class="w-28 md:w-42 flex items-center justify-center">
@@ -175,9 +178,6 @@
                     </div>
                 </div>
             </div>
-
-
-
         </div>
     </x-app-layout>
 </body>

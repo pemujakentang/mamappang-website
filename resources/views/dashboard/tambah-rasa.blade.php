@@ -17,11 +17,11 @@
                         <div class="m-4">
                             <div class="mt-1 flex items-center">
                                 <label for="name"
-                                    class="block text-2xl w-[20%] font-averialibre text-orange-800 md:ml-4">Nama
+                                    class="block text-2xl font-averialibre text-orange-800 md:ml-4">Nama
                                     Menu</label>
                                 <div class="flex pt-4 w-full">
                                     <input type="text" id="name" name="name"
-                                        class="p-2 w-[30%] bg-[#FDED87] rounded-2xl border-solid border-2 border-[#945E3D] md:ml-10 font-averialibre placeholder-orange-700">
+                                        class="p-2 bg-[#FDED87] rounded-2xl border-solid border-2 border-[#945E3D] md:ml-10 font-averialibre placeholder-orange-700">
                                 </div>
 
                             </div>
@@ -29,12 +29,12 @@
                         <div class="m-4">
                             <div class="mt-1 flex items-center">
                                 <label for="category_id"
-                                    class="block text-2xl w-[20%] font-averialibre text-orange-800 md:ml-4">Nama
+                                    class="block text-2xl font-averialibre text-orange-800 md:ml-4">Nama
                                     Series</label>
 
                                 <div class="flex pt-4 w-full">
                                     <select name="category_id" id=""
-                                        class="w-[30%] p-2 bg-[#FDED87] rounded-2xl border-solid border-2 border-[#945E3D] md:ml-10 font-averialibre">
+                                        class="w-48 p-2 bg-[#FDED87] rounded-2xl border-solid border-2 border-[#945E3D] md:ml-10 font-averialibre">
                                         @foreach ($categories as $category)
                                             <option value="{{ $category->id }}"
                                                 class="block px-4 py-2 text-orange-800 hover:bg-[#FDED87] hover:text-orange-600">
