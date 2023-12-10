@@ -125,8 +125,11 @@ $logout = function (Logout $logout) {
         <div :class="{ 'block': open, 'hidden': !open }"
             class="hidden left-0 w-[97%] px-3 pt-10 bg-orange-300 rounded-b-xl">
             <div class="pt-2 pb-3">
-                <x-responsive-nav-link :href="route('admin-dashboard')" :active="request()->routeIs('admin-dashboard')" wire:navigate>
+                <x-responsive-nav-link :href="route('home')" :active="request()->routeIs('home')" wire:navigate>
                     {{ __('Home') }}
+                </x-responsive-nav-link>
+                <x-responsive-nav-link :href="route('admin-dashboard')" :active="request()->routeIs('admin-dashboard')" wire:navigate>
+                    {{ __('Dashboard') }}
                 </x-responsive-nav-link>
                 <x-responsive-nav-link :href="route('order-status')" :active="request()->routeIs('order-status')" wire:navigate>
                     {{ __('Order Status') }}

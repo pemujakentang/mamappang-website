@@ -1,5 +1,5 @@
 <div>
-        <div class="flex items-center justify-center gap-2">
+        <div class="flex flex-wrap items-center justify-center gap-2">
             {{-- Be like water. --}}
             {{-- <button type="button"
         class="rounded-xl bg-orange-300 hover:bg-orange-800 hover:text-orange-300 text-orange-700 w-10 h-10 py-1 border-2 border-orange-800 flex items-center justify-center text-3xl font-averialibre">

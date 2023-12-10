@@ -92,8 +92,8 @@ $logout = function (Logout $logout) {
                                     </a>
 
                                     <!-- Authentication -->
-                                    <a
-                                        class="block w-full px-4 py-2 text-start text-sm leading-5 transition duration-150 ease-in-out" href="/register">
+                                    <a class="block w-full px-4 py-2 text-start text-sm leading-5 transition duration-150 ease-in-out"
+                                        href="/register">
                                         {{ __('Register') }}
                                     </a>
                                 </div>
@@ -172,11 +172,9 @@ $logout = function (Logout $logout) {
                         </x-responsive-nav-link>
 
                         <!-- Authentication -->
-                        <a href="/register" class="w-full text-start">
-                            <x-responsive-nav-link>
-                                {{ __('Log Out') }}
-                            </x-responsive-nav-link>
-                        </a>
+                        <x-responsive-nav-link :href="route('register')" wire:navigate>
+                            {{ __('Register') }}
+                        </x-responsive-nav-link>
                     </div>
                 @endauth
             </div>

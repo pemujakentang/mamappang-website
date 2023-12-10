@@ -11,10 +11,7 @@ layout('layouts.guest');
 
 $sendVerification = function () {
     if (Auth::user()->hasVerifiedEmail()) {
-        $this->redirect(
-            session('url.intended', RouteServiceProvider::HOME),
-            navigate: true
-        );
+        $this->redirect(session('url.intended', RouteServiceProvider::HOME), navigate: true);
 
         return;
     }
@@ -33,7 +30,7 @@ $logout = function (Logout $logout) {
 ?>
 
 <div>
-    <div class="mb-4 text-sm text-gray-600 dark:text-gray-400">
+    <div class="mb-4 text-sm text-black">
         {{ __('Sebelum melanjutkan, bisakah Anda memverifikasi alamat email Anda dengan mengklik tautan yang baru saja kami kirimkan ke email Anda? Jika Anda tidak menerima email tersebut, kami akan dengan senang hati mengirimkan email baru kepada Anda. Apabila email tidak masuk ke inbox, silahkan dicek folder spam Anda. Terima kasih :).') }}
     </div>
 
@@ -48,8 +45,13 @@ $logout = function (Logout $logout) {
             {{ __('Resend Verification Email') }}
         </x-primary-button>
 
-        <button wire:click="logout" type="submit" class="underline text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 dark:focus:ring-offset-gray-800">
-            {{ __('Log Out') }}
-        </button>
+        <div class="flex flex-wrap gap-2 justify-center">
+            <button wire:click="logout" type="submit"
+                class="underline text-sm text-gray-700 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                {{ __('Log Out') }}
+            </button>
+            <a href="/"
+                class="underline text-sm text-gray-700 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Home</a>
+        </div>
     </div>
 </div>

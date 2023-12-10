@@ -13,7 +13,7 @@
                             Edit
                         </p>
                         <div
-                            class="mt-4 flex-col md:flex-row gap-3 md:justify-normal justify-center items-center grid grid-cols-2 md:grid-cols-4">
+                            class="mt-4 flex-col md:flex-row gap-3 md:justify-normal justify-center items-center flex flex-wrap">
                             {{-- <div class="w-full md:w-auto">
                                 <button
                                     class="bg-[#FDED87] rounded-2xl border-solid border-4 border-[#F1A03C] w-full md:w-35 py-2 md:h-full h-20">
@@ -24,9 +24,9 @@
                             </div> --}}
                             <div class="w-full md:w-auto">
                                 <a href="/admin/dashboard/add-series"
-                                    class="ml-4 mr-4 font-averialibre text-orange-800 text-xl md:text-2xl">
+                                    class="font-averialibre text-orange-800 text-xl md:text-2xl">
                                     <button
-                                        class="bg-[#FDED87] rounded-2xl border-solid border-4 border-[#F1A03C] w-full md:w-35 py-2 md:h-full h-20 ml-4 mr-4 font-averialibre text-orange-800 text-xl md:text-2xl">
+                                        class="bg-[#FDED87] rounded-2xl border-solid border-4 border-[#F1A03C] px-4 py-2 w-full py-2 font-averialibre text-orange-800 text-xl md:text-2xl">
                                         Tambah
                                         Series
                                     </button>
@@ -34,9 +34,9 @@
                             </div>
                             <div class="w-full md:w-auto">
                                 <a href="/admin/dashboard/add-menu"
-                                    class="ml-4 mr-4 font-averialibre text-orange-800 text-xl md:text-2xl">
+                                    class="font-averialibre text-orange-800 text-xl md:text-2xl">
                                     <button
-                                        class="bg-[#FDED87] rounded-2xl border-solid border-4 border-[#F1A03C] w-full md:w-35 py-2 md:h-full h-20 ml-4 mr-4 font-averialibre text-orange-800 text-xl md:text-2xl">
+                                        class="bg-[#FDED87] rounded-2xl border-solid border-4 border-[#F1A03C] px-4 py-2 w-full py-2 font-averialibre text-orange-800 text-xl md:text-2xl">
                                         Tambah
                                         Rasa
                                     </button>
@@ -45,9 +45,9 @@
                             <!-- blm dikasih path -->
                             <div class="w-full md:w-auto">
                                 <a href="{{ route('franchise-create') }}"
-                                    class="mx-3 font-averialibre text-orange-800 text-xl md:text-2xl text-center">
+                                    class="font-averialibre text-orange-800 text-xl md:text-2xl text-center">
                                     <button
-                                        class="bg-[#FDED87] rounded-2xl border-solid border-4 border-[#F1A03C] w-full md:w-35 py-2 md:h-full h-20 ml-4 mr-4 font-averialibre text-orange-800 text-xl md:text-2xl">
+                                        class="bg-[#FDED87] rounded-2xl border-solid border-4 border-[#F1A03C] px-4 py-2 w-full py-2 font-averialibre text-orange-800 text-xl md:text-2xl">
                                         Tambah
                                         Franchise
                                     </button>
@@ -76,7 +76,7 @@
                         <div
                             class="w-full md:w-[50%] rounded-2xl border-solid border-4 border-[#F1A03C] mt-6 mb-6 md:mb-0 bg-[#FAC774] mr-2 simplebar overflow-hidden">
                             <p
-                                class="w-full flex justify-center m-4 col-span-1 text-4xl tracking-wide truncate font-averialibre text-orange-800">
+                                class="w-full flex justify-center mt-4 mb-4 col-span-1 text-4xl tracking-wide truncate font-averialibre text-orange-800">
                                 Edit Menu
                             </p>
                             <ul class="mt-4 mb-4 ml-4 mr-4 space-y-2">
@@ -141,7 +141,7 @@
                             class="w-full md:w-[50%] rounded-2xl border-solid border-4 border-[#F1A03C] mt-6 bg-[#FAC774] simplebar order-first md:order-last">
                             <ul class="mt-4 mb-4 ml-4 mr-4 space-y-2">
                                 <p
-                                    class="w-full flex justify-center m-4 col-span-1 text-4xl tracking-wide truncate font-averialibre text-orange-800">
+                                    class="w-full flex justify-center mt-4 mb-4 col-span-1 text-4xl tracking-wide truncate font-averialibre text-orange-800">
                                     Edit Franchise
                                 </p>
                                 <!-- Dummy data, replace with dynamic data in a real application -->
