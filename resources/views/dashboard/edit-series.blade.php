@@ -8,16 +8,15 @@
 
         <div class="flex-auto min-h-screen bg-[#FFDBA3] md:pt-0 pt-20 flex md:justify-start justify-center items-center md:items-stretch flex-col">
             <!-- Dummy Content on the Right Sidebar -->
-            <div class="ml-0 md:ml-64 p-3 md:p-8 ">
+            <div class="ml-0 md:ml-64 md:p-8 ">
                 <div class="flex">
-                    <p class="text-5xl font-averialibre text-orange-800">Tambah Series</p>
+                    <p class="text-5xl font-averialibre text-orange-800">Edit Series</p>
                 </div>
 
                 <form action="/admin/series/{{$category->id}}/update" method="POST" enctype="multipart/form-data" class="rounded-2xl border-solid border-4 border-[#F1A03C] my-6 bg-[#FAC774] overflow-y-auto">
                     @csrf
                     @method('put')
                     <div class="p-3 md:p-8">
-
                         <!-- Add more items as needed -->
                         <div class="rounded-2xl my-6 bg-[#FAC774] overflow-y-auto py-4">
                             <div class="px-2 flex items-center">

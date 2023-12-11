@@ -4,7 +4,7 @@
             class="mx-auto my-auto overflow-y-hidden relative overflow-x-hidden flex flex-col items-center bg-[#FF6400]">
 
             <!-- section - home -->
-            <div class="h-screen relative overflow-scroll pb-10">
+            <div class="h-screen relative pb-10">
                 <div class="z-50"><livewire:layout.navigation /></div>
                 
 

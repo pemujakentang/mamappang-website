@@ -117,11 +117,13 @@
                 style="background-image: url('/images/background-menu.webp');">
                 <p class="text-orange-800 font-averialibre text-3xl md:text-4xl mb-3">Mamappang - Best In Town</p>
                 <p class="text-orange-800 font-averialibre text-lg md:text-xl w-full md:w-[70%] text-justify mb-6">
-                    mammapang is Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                    incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                    ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit
-                    in
-                    voluptate velit esse cillum dolore eu fugiat nulla pariatur. </p>
+                    Contact us
+                    <br>
+                    mamappang.bungeoppang@gmail.com
+                    <br>
+                    0851-6161-0765
+                    <br>
+                    Tangerang Selatan </p>
                 <p class="text-orange-800 font-averialibrebold text-xl md:text-2xl mb-1">In collaboration with :</p>
                 <div class="flex">
                     <div class="w-28 md:w-42 flex items-center justify-center">

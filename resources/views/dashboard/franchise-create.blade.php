@@ -8,10 +8,10 @@
         <!-- component -->
         <div class="min-h-screen flex flex-col flex-auto flex-shrink-0 antialiased bg-gray-50 text-gray-800">
             <div
-                class="flex-auto bg-[#FFDBA3] md:pt-0 pt-8 flex md:justify-start justify-center items-center md:items-stretch flex-col">
+                class="flex-auto bg-[#FFDBA3] md:pt-0 pt-8 flex justify-center items-center md:pl-48">
 
-                <div class="md:ml-64 md:p-8 justify-center flex w-full">
-                    {{-- <p class="text-4xl md:text-5xl font-averialibre text-orange-800">New Franchise Package</p> --}}
+                <div class="justify-center flex w-full flex-wrap mt-8">
+                    <p class="text-4xl md:text-5xl font-averialibre text-orange-800">New Franchise Package</p>
                     <form action="/admin/package/add"
                         class="rounded-2xl border-solid border-4 border-[#F1A03C] my-6 bg-[#FAC774] md:p-4 w-[90%] md:w-[75%] p-4"
                         enctype="multipart/form-data" method="post">

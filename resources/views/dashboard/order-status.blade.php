@@ -28,12 +28,12 @@
                                 <div class="flex justify-between items-center mb-8 lg:mb-16">
                                     <div class="flex items-center">
                                         <span
-                                            class="ml-2 font-averialibre text-orange-800 text-4xl lg:text-5xl uppercase"
-                                            style="-webkit-text-stroke: 1px rgba(255,255,255,0.8);">ODR
+                                            class="ml-2 font-averialibre text-orange-800 text-3xl lg:text-5xl uppercase"
+                                            style="-webkit-text-stroke: 0.5px rgba(255,255,255,0.8);">ODR
                                             {{ $preorder->id }}</span>
                                     </div>
-                                    <span class="ml-2 font-averialibre text-orange-800 text-4xl lg:text-5xl uppercase"
-                                        style="-webkit-text-stroke: 1px rgba(255,255,255,0.8);">{{ $preorder->status }}</span>
+                                    <span class="ml-2 font-averialibre text-orange-800 text-3xl lg:text-5xl uppercase"
+                                        style="-webkit-text-stroke: 0.5px rgba(255,255,255,0.8);">{{ $preorder->status }}</span>
                                 </div>
 
                                 <!-- Item 2 -->
@@ -54,7 +54,7 @@
                             <!-- Modal container using plain JavaScript -->
                             <div id="{{ 'modal' . $preorder->id }}"
                                 class="fixed top-0 left-0 w-full h-full bg-black bg-opacity-50 hidden overflow-y-scroll flex justify-center items-center ">
-                                <div class="h-full overflow-scroll py-4">
+                                <div class="h-full overflow-scroll py-4 flex justify-center pt-10 md:pt-0">
                                     <div
                                         class="bg-[#b9480f] text-orange-800 p-4 rounded-2xl border border-solid border-[#F1A03C] max-w-[90%] lg:max-w-[500px]">
                                         <div class="flex justify-between items-center mb-4">
@@ -163,9 +163,9 @@
                                                                 class="font-averialibre text-orange-800 text-2xl flex items-center justify-center bg-[#fded87] text-[#b9480f] rounded-full border border-[#b9480f] p-2">Konfirmasi
                                                                 Pembayaran</button>
                                                         </form>
-                                                        <a href="/preorders/{{ $preorder->id }}/rejectform">
-                                                            <button type="submit"
-                                                                class="font-averialibre text-orange-800 text-2xl flex items-center justify-center bg-[#fded87] text-[#b9480f] rounded-full border border-[#b9480f] p-2">Konfirmasi
+                                                        <a class="flex justify-center" href="/preorders/{{ $preorder->id }}/rejectform">
+                                                            <button 
+                                                                class="font-averialibre text-orange-800 text-2xl flex items-center justify-center bg-[#fded87] text-[#b9480f] rounded-full border border-[#b9480f] p-2">Tolak
                                                                 Pembayaran</button>
                                                         </a>
                                                     </div>

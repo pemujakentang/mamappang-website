@@ -177,7 +177,7 @@ class FranchiseController extends Controller
         if (Auth::check()) {
             $franchise->update([
                 'message' => $request->message,
-                'status' => 'CANCELLED'
+                'status' => 'CANCELED'
             ]);
             return redirect('/my-dashboard')->with(array(
                 'success' => "Franchise Application Canceled"

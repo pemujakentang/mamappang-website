@@ -87,11 +87,11 @@
                                     <div
                                         class="flex flex-wrap flex-col md:flex-row justify-center md:justify-between h-full w-full">
 
-                                        <div class="flex flex-row items-center md:items-start w-[70%] mx-auto md:mx-0">
+                                        <div class="flex flex-row items-center md:items-start w-full md:w-[70%] mx-auto md:mx-0">
                                             <img class="w-[30%] md:w-[141px] h-20 object-cover  scale-x-[-1] "
                                                 src="/images/ikan.webp" />
                                             <div
-                                                class="w-[50%] h-fit max-h-32 md:max-h-48 md:w-auto md:h-[60%] mx-4 text-black text-md font-normal font-averialibre overflow-scroll white text-ellipsis">
+                                                class="w-[60%] h-fit max-h-32 md:max-h-48 md:w-auto md:h-[60%] mx-4 text-black text-md font-normal font-averialibre overflow-scroll white text-ellipsis">
                                                 {!! $package->description !!}
                                             </div>
                                         </div>
@@ -115,7 +115,7 @@
                                     <p
                                         class="absolute font-averialibre text-white text-3xl z-10 right-0 bg-[#FF0000] px-5 py-1 rounded-tr-[15px] rounded-bl-[15px]">
                                         Rp {{ $package->price }}</p>
-                                    <img class="w-full h-48 rounded-[15px] shadow border-4 border-orange-600 object-cover"
+                                    <img class="w-full h-48 rounded-[15px] shadow border-4 border-orange-600 object-contain"
                                         src="{{ asset('storage/' . $package->image) }}" />
                                 </div>
                             </div>
@@ -127,7 +127,7 @@
                                     <p
                                         class="absolute font-averialibre text-white text-3xl z-10 right-0 bg-[#FF0000] px-5 py-1 rounded-tr-[15px] rounded-bl-[15px]">
                                         Rp {{ $package->price }}</p>
-                                    <img class="w-full h-48 rounded-[15px] shadow border-4 border-orange-600 object-cover"
+                                    <img class="w-full h-48 rounded-[15px] shadow border-4 border-orange-600 object-contain"
                                         src="{{ asset('storage/' . $package->image) }}" />
                                 </div>
 
@@ -138,11 +138,11 @@
                                     <div
                                         class="flex flex-wrap flex-col md:flex-row justify-center md:justify-between h-full w-full">
 
-                                        <div class="flex flex-row items-center md:items-start w-[70%] mx-auto md:mx-0">
+                                        <div class="flex flex-row items-center md:items-start w-full md:w-[70%] mx-auto md:mx-0">
                                             <img class="w-[30%] md:w-[141px] h-20 object-cover  scale-x-[-1] "
                                                 src="/images/ikan.webp" />
                                             <div
-                                                class="w-[50%] h-fit max-h-32 md:max-h-48 md:w-auto md:h-[60%] mx-4 text-black text-md font-normal font-averialibre overflow-scroll white text-ellipsis">
+                                                class="w-[60%] h-fit max-h-32 md:max-h-48 md:w-auto md:h-[60%] mx-4 text-black text-md font-normal font-averialibre overflow-scroll white text-ellipsis">
                                                 {!! $package->description !!}
                                             </div>
                                         </div>
@@ -166,7 +166,7 @@
                         @endif
                         <x-modal name="{{ 'detail-modal' . $count }}" :show="$errors->isNotEmpty()" focusable class="z-20">
                             <div
-                                class="border-4 w-full h-full md:h-fit px-5 md:px-7 pt-7 pb-5 overflow-scroll bg-orange-500 border-orange-800 flex flex-col relative overflow-x-hidden mx-auto md:justify-center md:items-center ">
+                                class="border-4 w-full h-fit px-5 md:px-7 pt-7 pb-5 mt-10 overflow-scroll bg-orange-500 border-orange-800 flex flex-col relative overflow-x-hidden mx-auto md:justify-center md:items-center ">
                                 <button x-on:click="$dispatch('close')"
                                     class="flex absolute cursor-pointer rotate-45 right-5 top-2 font-averialibrebold text-5xl scale-[1.3] text-orange-800 hover:text-orange-950">+</button>
 
@@ -188,11 +188,11 @@
                                         </div>
                                     </div>
 
-                                    <p class="font-averialibre text-orange-800 w-full mt-6 md:mt-10">
-                                        ingin tahu lebih lanjut?</p>
+                                    <p class="font-averialibre text-lg text-orange-800 w-full mt-6 md:mt-10 md:text-end md:pr-8">
+                                        Ingin tahu lebih lanjut?</p>
 
                                     <div
-                                        class="mt-4 flex justify-center items-center flex-col md:flex-row w-full gap-2">
+                                        class="mt-2 flex justify-center items-center flex-col md:flex-row w-full gap-2">
                                         <button id="franchise-btn" x-data=""
                                             x-on:click.prevent="$dispatch('close'); $dispatch('open-modal', '{{ 'form-modal' }}')"
                                             class="h-12 w-full md:w-[60%] text-white font-averialibre text-xl md:text-2xl rounded-full border-2 border-yellow-800 bg-orange-400 items-center justify-center hover:scale-[1.05] duration-75 p-2">
@@ -211,7 +211,7 @@
 
                 <form action="/franchise/add" method="post" enctype="multipart/form-data" class="z-50">
                     @csrf
-                    <x-modal name="{{ 'form-modal' }}" :show="$errors->isNotEmpty()" focusable>
+                    <x-modal name="{{ 'form-modal' }}" :show="$errors->isNotEmpty()" focusable class="mt-10">
                         <div class="bg-[#FFDBA3] shadow p-4">
 
                             <button x-on:click="$dispatch('close')" type="button"
@@ -321,12 +321,12 @@
                     <div class="fixed h-full z-10 inset-0 bg-gray-600 bg-opacity-50 w-full" id="notification"
                         class="z-50">
                         <div
-                            class="h-[335px] mx-auto my-32 md:my-60 relative bg-[#b9480f] border-[2px] border-solid border-[#5C3623] rounded-[10px] shadow">
+                            class="w-[500px] h-fit mx-auto my-32 md:my-60 relative bg-[#b9480f] border-[2px] border-solid border-[#5C3623] rounded-[10px] shadow">
                             <button type="button" id="closenotif"
                                 class="absolute top-4 right-8 text-white text-4xl font-bold focus:outline-none">
                                 &times;
                             </button>
-                            <div class="w-[12%] mx-[12.4rem] mt-6 ">
+                            <div class="w-full flex justify-center h-12 mt-6 ">
                                 <img src="/images/done.webp" alt="">
                             </div>
                             <div class="mx-8 mt-3 text-xl text-white text-center font-averialibre">

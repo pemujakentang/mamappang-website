@@ -9,15 +9,13 @@
             <livewire:layout.admin-nav />
 
             <div
-                class="flex-auto bg-[#FFDBA3] md:pt-0 pt-20 flex md:justify-start justify-center items-center md:items-stretch flex-col w-full">
+                class="flex-auto bg-[#FFDBA3] md:pt-0 pt-8 flex justify-center items-center md:pl-48">
 
-                <div class="ml-0 md:ml-64 md:p-8 md:justify-center md:items-center md:flex md:flex-col">
+                <div class="justify-center flex w-full flex-wrap mt-8">
 
-                    <div class="flex">
-                        <p class="text-5xl font-averialibre text-orange-800">Edit Franchise Package</p>
-                    </div>
+                        <p class="text-4xl md:text-5xl font-averialibre text-orange-800">Edit Franchise Package</p>
                     <form action="/admin/package/{{ $package->id }}/update"
-                        class="rounded-2xl border-solid border-4 border-[#F1A03C] my-6 bg-[#FAC774] p-4 md:w-[75%] "
+                        class="rounded-2xl border-solid border-4 border-[#F1A03C] my-6 bg-[#FAC774] p-4 w-[90%] md:w-[75%] "
                         enctype="multipart/form-data" method="post">
                         @csrf
                         @method('put')
