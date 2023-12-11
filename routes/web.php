@@ -126,9 +126,9 @@ Route::get('/about-us', function(){
     return view('home.aboutus');
 })->name('about-us');
 
-Route::get('/{any}', function () {
-    return redirect('/');
-})->where('any', '.*');
+// Route::get('/{any}', function () {
+//     return redirect('/');
+// })->where('any', '.*');
 
 // Route::get('/dashboard/order-status', function () {
 //     return view('dashboard.order-status');
