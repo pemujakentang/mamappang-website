@@ -102,7 +102,7 @@
                                             class="block text-2xl w-[50%] font-averialibre text-orange-800 md:ml-4">Estimasi
                                             Harga</label>
                                         <div class="flex pt-4 w-full">
-                                            <input disabled type="text" value="{{ $preorder->total_price }}"
+                                            <input disabled type="text" value="Rp. {{ number_format($preorder->total_price, 0, ',', '.') }}"
                                                 class="p-2 w-[90%] bg-[#FDED87] rounded-2xl border-solid border-2 border-[#945E3D] md:ml-10 font-averialibre placeholder-orange-700">
                                         </div>
                                     </div>

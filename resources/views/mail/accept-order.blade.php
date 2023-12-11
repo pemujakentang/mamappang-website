@@ -19,10 +19,11 @@
     <p>Tanggal Kirim: {{$data['tanggal']}}</p>
     <p>Jumlah Pesanan: {{$data['quantity']}}</p>
     <p>Ongkir: {{$data['shipping']}}</p>
-    <p>Harga Pesanan: {{$data['price']}}</p>
-    <p>Grand Total: {{$data['total_price']}}</p>
+    <p>Harga Pesanan: Rp. {{ number_format($data['price'], 0, ',', '.') }}</p>
+    <p>Grand Total: Rp. {{ number_format($data['total_price'], 0, ',', '.') }}</p>
 
-    <h4>Harap melakukan pembayaran sebesar {{$data['total_price']}} ke rekening BCA ... a/n ... paling lambat 48 jam setelah email ini diterima.</h4>
+
+    <h4>Harap melakukan pembayaran sebesar Rp. {{ number_format($data['total_price'], 0, ',', '.') }} ke rekening BCA ... a/n ... paling lambat 48 jam setelah email ini diterima.</h4>
 
     <p>Untuk informasi lebih lanjut silahkan menghubungi kami melalui email maupun melalui nomor Whatsapp berikut ...
     </p>
