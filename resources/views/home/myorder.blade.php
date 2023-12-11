@@ -159,7 +159,7 @@
                                     @elseif ($preorder->status == 'FINISHED')
                                         <p class="font-averialibre text-lg md:text-2xl text-orange-400">Pesanan selesai
                                         </p>
-                                    @elseif ($preorder->status == 'CANCELLED')
+                                    @elseif ($preorder->status == 'CANCELED')
                                         <p class="font-averialibre text-lg md:text-2xl text-orange-400">Pengajuan
                                             dibatalkan</p>
                                     @elseif ($preorder->status == 'REJECTED')

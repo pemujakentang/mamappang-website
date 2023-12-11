@@ -1,6 +1,8 @@
 <body>
     <x-app-layout>
+
         <div class="mx-auto my-auto overflow-hidden relative flex flex-col items-center bg-[#FF6400]">
+
             <!-- button whatsapp -->
             <div id="button1"
                 class="fixed bottom-12 end-4 md:bottom-8 md:end-20 flex justify-center items-center z-20 animate-move-y-fast ">
@@ -12,35 +14,37 @@
                 </a>
             </div>
             <!-- section - home -->
-            <div class="md:h-screen flex relative justify-center flex-col">
-
-                <img class="absolute h-auto md:h-96 z-10 -right-56 bottom-10 mt-6 animate-wiggle opacity-70"
-                    src="/images/awan.webp" alt="Logo">
-                <img class="absolute h-auto md:h-96 z-10 -left-60 -bottom-32 animate-wiggle opacity-70"
-                    src="/images/awan.webp" alt="Logo">
-                <div class="hidden md:flex absolute h-auto md:h-80 z-10 left-20 top-32 animate-move-x">
-                    <img class="animate-move-y opacity-70 h-80" src="/images/awan.webp" alt="Logo">
-                </div>
-
+            <div class="h-screen flex relative md:justify-center flex-col">
                 <livewire:layout.navigation />
+
+                
+                    <img class="absolute h-auto md:h-96 z-10 -right-56 bottom-10 mt-6 animate-wiggle opacity-70"
+                        src="/images/awan.webp" alt="Logo">
+                    <img class="absolute h-auto md:h-96 z-10 -left-60 -bottom-32 animate-wiggle opacity-70"
+                        src="/images/awan.webp" alt="Logo">
+                    <div class="hidden md:flex absolute h-auto md:h-80 z-10 left-20 top-32 animate-move-x">
+                        <img class="animate-move-y opacity-70 h-80" src="/images/awan.webp" alt="Logo">
+                    </div>
 
                 <!-- home -->
                 <div
-                    class="flex flex-col items-center relative md:justify-normal justify-center md:h-full pt-24 md:pt-0">
+                    class="flex flex-col items-center relative md:justify-normal justify-center md:h-full pt-48 md:pt-0">
 
                     <div class="flex flex-col md:flex-row w-[90%] mt-2 justify-center md:items-center md:h-[80%]">
 
                         <div class="w-full md:w-[50%]">
                             <div class="w-[80%] md:w-[85%] flex items-center justify-center mx-auto mb-10 md:mb-4">
-                                <img class="object-cover z-10" src="/images/logo3.webp" alt="Logo">
-                                <div class="absolute w-screen z-0 translate-y-4 flex md:hidden scale-[1.1]">
+                                <img class="object-cover z-10 scale-[1.25] md:scale-100" src="/images/logo3.webp"
+                                    alt="Logo">
+                                <div
+                                    class="absolute w-screen z-0 translate-y-4 flex md:hidden scale-[1.5] md:scale-[1.1]">
                                     <img class="object-cover animate-spin-slow" src="/images/cahaya.webp"
                                         alt="Logo">
                                 </div>
                             </div>
                         </div>
 
-                        <div class="w-full md:w-[50%] flex flex-col justify-center md:pr-7 z-10">
+                        <div class="w-full md:w-[50%] flex flex-col justify-center md:pr-7 z-10 my-10">
                             <!-- SERIES #1 -->
                             <p class="  text-yellow-900 text-[3rem] md:text-[6rem] font-black font-blackhansans tracking-tighter text-center w-full mb-4"
                                 style="-webkit-text-stroke: 2px white; line-height:1;">

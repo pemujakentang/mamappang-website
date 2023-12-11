@@ -37,9 +37,15 @@ $logout = function (Logout $logout) {
                     <x-nav-link :href="route('about-us')" :active="request()->routeIs('about-us')" wire:navigate>
                         {{ __('About Us') }}
                     </x-nav-link>
-                    <x-nav-link :href="route('user-dashboard')" :active="request()->routeIs('user-dashboard')" wire:navigate>
-                        {{ __('My Dashboard') }}
-                    </x-nav-link>
+                    @if (auth()->user() && auth()->user()->role == 0)
+                        <x-nav-link :href="route('admin-dashboard')" :active="request()->routeIs('admin-dashboard')" wire:navigate>
+                            {{ __('Admin Dashboard') }}
+                        </x-nav-link>
+                    @else
+                        <x-nav-link :href="route('user-dashboard')" :active="request()->routeIs('user-dashboard')" wire:navigate>
+                            {{ __('My Dashboard') }}
+                        </x-nav-link>
+                    @endif
                 </div>
 
                 <!-- Settings Dropdown -->
