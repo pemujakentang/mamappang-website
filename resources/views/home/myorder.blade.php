@@ -96,8 +96,7 @@
                                             {{ date_format($preorder->created_at, 'Y/m/d') }}</p>
                                         <p class="font-averialibre text-2xl text-orange-300">Shipment Date:
                                             {{ $preorder->tanggal_pesanan }}</p>
-                                        <p class="font-averialibre text-2xl text-orange-300">Total price: Rp.
-                                            {{ $preorder->total_price }}</p>
+                                        <p class="font-averialibre text-2xl text-orange-300">Total price: Rp. {{ number_format($preorder->total_price, 0, ',', '.') }}</p>
                                     </div>
                                     {{-- <div class="w-auto">
                                         <p class="font-averialibre text-2xl text-orange-300">:</p>
@@ -109,8 +108,7 @@
                                             {{ date_format($preorder->created_at, 'Y/m/d') }}</p>
                                         <p class="font-averialibre text-2xl text-orange-300">
                                             {{ $preorder->tanggal_pesanan }}</p>
-                                        <p class="font-averialibre text-2xl text-orange-300">Rp.
-                                            {{ $preorder->total_price }}</p>
+                                        <p class="font-averialibre text-2xl text-orange-300">Rp. {{ number_format($preorder->total_price, 0, ',', '.') }}</p>
                                     </div> --}}
                                 </div>
                                 <button x-data=""
@@ -234,8 +232,7 @@
                                             </div>
                                             <div class="w-auto">
                                                 <p
-                                                    class="font-averialibre text-lg md:text-2xl text-orange-400 max-h-40 overflow-scroll">
-                                                    Rp {{ $preorder->total_price }}</p>
+                                                    class="font-averialibre text-lg md:text-2xl text-orange-400 max-h-40 overflow-scroll">Rp. {{ number_format($preorder->total_price, 0, ',', '.') }}</p>
                                             </div>
                                         </div>
                                         <div class="flex flex-row py-2">
