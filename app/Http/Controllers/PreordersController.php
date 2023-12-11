@@ -303,7 +303,7 @@ class PreordersController extends Controller
             }
 
             $validData['user_id'] = $user->id;
-            $validData['status'] = 'PENDING';
+            $validData['status'] = 'PENDING PAYMENT';
             $validData['preorders_id'] = $bill->preorders_id;
 
             Payment::create($validData);

@@ -5,7 +5,6 @@
             class="mx-auto my-auto overflow-y-hidden relative overflow-x-hidden flex flex-col items-center bg-[#FF6400] mt-10 md:mt-0">
 
             <div class="w-[90%]">
-                <p class="font-averialibre text-5xl text-orange-900 my-2 mt-6 pl-4">ORDER STATUS</p>
                 @if (session()->has('success'))
                     {{-- <div class="text-sm text-green-500" role="alert">{{ session('success') }}</div> --}}
                     <div class="bg-green-100 border border-green-400 text-green-700 px-4 py-3 mt-4 rounded relative w-fit"
@@ -22,25 +21,85 @@
                         <span class="block sm:inline">{{ session('error') }}</span>
                     </div>
                 @endif
-                <div class="w-full p-5 rounded-2xl bg-orange-300 flex-row flex gap-x-2 overflow-x-scroll  h-[26.5rem]">
+                <p class="font-averialibre text-5xl text-orange-900 my-2 mt-6 pl-4">ORDER STATUS</p>
+                <form action="/my-dashboard" id="filterFormOrder" method="POST">
+                    @csrf
+                    <select name="filterOrder" id="" onchange="submitFormOrder()"
+                        class="w-32 p-2 bg-[#FDED87] rounded-2xl border-solid border-2 border-[#945E3D] mx-1 font-averialibre">
+                        <option disabled selected value>Filter</option>
+                        <option @if (session('filterOrder') == 'ALL') selected @endif
+                            class="block px-4 py-2 text-orange-800 hover:bg-[#FDED87] hover:text-orange-600"
+                            value="ALL">ALL</option>
+                        <option @if (session('filterOrder') == 'PENDING') selected @endif
+                            class="block px-4 py-2 text-orange-800 hover:bg-[#FDED87] hover:text-orange-600"
+                            value="PENDING">PENDING</option>
+                        <option @if (session('filterOrder') == 'AWAITING PAYMENT') selected @endif
+                            class="block px-4 py-2 text-orange-800 hover:bg-[#FDED87] hover:text-orange-600"
+                            value="AWAITING PAYMENT">AWAITING PAYMENT</option>
+                        <option @if (session('filterOrder') == 'PENDING PAYMENT') selected @endif
+                            class="block px-4 py-2 text-orange-800 hover:bg-[#FDED87] hover:text-orange-600"
+                            value="PENDING PAYMENT">PENDING PAYMENT</option>
+                        <option @if (session('filterOrder') == 'CONFIRMED') selected @endif
+                            class="block px-4 py-2 text-orange-800 hover:bg-[#FDED87] hover:text-orange-600"
+                            value="CONFIRMED">CONFIRMED</option>
+                        <option @if (session('filterOrder') == 'SHIPPING') selected @endif
+                            class="block px-4 py-2 text-orange-800 hover:bg-[#FDED87] hover:text-orange-600"
+                            value="SHIPPING">SHIPPING</option>
+                        <option @if (session('filterOrder') == 'ARRIVED') selected @endif
+                            class="block px-4 py-2 text-orange-800 hover:bg-[#FDED87] hover:text-orange-600"
+                            value="ARRIVED">ARRIVED</option>
+                        <option @if (session('filterOrder') == 'FINISHED') selected @endif
+                            class="block px-4 py-2 text-orange-800 hover:bg-[#FDED87] hover:text-orange-600"
+                            value="FINISHED">FINISHED</option>
+                        <option @if (session('filterOrder') == 'CANCELED') selected @endif
+                            class="block px-4 py-2 text-orange-800 hover:bg-[#FDED87] hover:text-orange-600"
+                            value="CANCELED">CANCELED</option>
+                        <option @if (session('filterOrder') == 'REJECTED') selected @endif
+                            class="block px-4 py-2 text-orange-800 hover:bg-[#FDED87] hover:text-orange-600"
+                            value="REJECTED">REJECTED</option>
+                    </select>
+                    <select name="sortOrder" id="" onchange="submitFormOrder()"
+                        class="w-32 p-2 bg-[#FDED87] rounded-2xl border-solid border-2 border-[#945E3D] mx-1 font-averialibre">
+                        <option disabled selected value>Sort</option>
+                        <option @if (session('sortOrder') == 'OLDEST') selected @endif
+                            class="block px-4 py-2 text-orange-800 hover:bg-[#FDED87] hover:text-orange-600"
+                            value="OLDEST">OLDEST</option>
+                        <option @if (session('sortOrder') == 'NEWEST') selected @endif
+                            class="block px-4 py-2 text-orange-800 hover:bg-[#FDED87] hover:text-orange-600"
+                            value="NEWEST">NEWEST</option>
+                    </select>
+                    <button hidden type="submit"></button>
+                </form>
+                <script>
+                    function submitFormOrder() {
+                        document.getElementById("filterFormOrder").submit();
+                    }
+                </script>
+                <div
+                    class="w-full p-5 rounded-2xl bg-orange-300 flex-row flex gap-x-2 overflow-x-scroll  md:h-[26.5rem]">
                     @foreach ($preorders as $preorder)
                         <div>
                             <div
-                                class="w-96 h-96 bg-orange-800 rounded-2xl  p-4 justify-between flex flex-col border-4 border-orange-500">
+                                class="w-full h-full md:w-96 md:h-96 bg-orange-800 rounded-2xl  p-4 justify-between flex flex-col border-4 border-orange-500">
                                 <div class="flex flex-row justify-between items-center">
-                                    <p class="font-averialibre text-5xl text-orange-300">ORD {{ $preorder->id }}</p>
+                                    <p class="w-1/2 font-averialibre text-4xl md:text-5xl text-orange-300">ORD
+                                        {{ $preorder->id }}</p>
                                     <!-- status -->
-                                    <p class="font-averialibre text-2xl text-orange-300">{{ $preorder->status }}</p>
+                                    <p class="font-averialibre text-2xl text-orange-300 text-end">
+                                        {{ $preorder->status }}</p>
                                 </div>
                                 <p class="font-averialibre text-orange-300 text-4xl my-6">{{ $preorder->total_qty }}
                                     Bungeoppang</p>
                                 <div class="flex flex-row gap-x-2 items-center">
                                     <div class="w-auto">
-                                        <p class="font-averialibre text-2xl text-orange-300">Order Placed</p>
-                                        <p class="font-averialibre text-2xl text-orange-300">Shipment Date</p>
-                                        <p class="font-averialibre text-2xl text-orange-300">Total price</p>
+                                        <p class="font-averialibre text-2xl text-orange-300">Order Placed:
+                                            {{ date_format($preorder->created_at, 'Y/m/d') }}</p>
+                                        <p class="font-averialibre text-2xl text-orange-300">Shipment Date:
+                                            {{ $preorder->tanggal_pesanan }}</p>
+                                        <p class="font-averialibre text-2xl text-orange-300">Total price: Rp.
+                                            {{ $preorder->total_price }}</p>
                                     </div>
-                                    <div class="w-auto">
+                                    {{-- <div class="w-auto">
                                         <p class="font-averialibre text-2xl text-orange-300">:</p>
                                         <p class="font-averialibre text-2xl text-orange-300">:</p>
                                         <p class="font-averialibre text-2xl text-orange-300">:</p>
@@ -52,7 +111,7 @@
                                             {{ $preorder->tanggal_pesanan }}</p>
                                         <p class="font-averialibre text-2xl text-orange-300">Rp.
                                             {{ $preorder->total_price }}</p>
-                                    </div>
+                                    </div> --}}
                                 </div>
                                 <button x-data=""
                                     x-on:click.prevent="$dispatch('open-modal', '{{ 'detail-modal-preorder' . $preorder->id }}')"
@@ -61,7 +120,8 @@
                                 </button>
                             </div>
                         </div>
-                        <x-modal name="{{ 'detail-modal-preorder' . $preorder->id }}" :show="$errors->isNotEmpty()" focusable class="z-50">
+                        <x-modal name="{{ 'detail-modal-preorder' . $preorder->id }}" :show="$errors->isNotEmpty()" focusable
+                            class="z-50">
                             <div
                                 class="border-4 rounded-3xl h-fit px-5 md:px-7 pb-5 pt-12 overflow-scroll bg-orange-800 border-orange-500 flex flex-col relative overflow-x-hidden justify-center">
 
@@ -116,7 +176,7 @@
                                 </div>
 
                                 <div class="flex flex-col rounded-xl bg-orange-200 p-1 gap-y-1">
-                                    
+
                                     <div class="px-4 py-2 flex-col flex bg-orange-700 rounded-xl">
                                         <!-- pas shipping, ini diganti jadi detail driver -->
                                         <div class="flex flex-row py-2">
@@ -256,8 +316,7 @@
                                                     class="border-2 rounded-xl my-2 hover:bg-orange-500 hover:border-orange-800 border-orange-900 bg-orange-800 font-averialibre text-2xl px-2 w-full py-2 h-16 text-center hover:text-orange-700 text-orange-300">
                                                     <p class=" font-averialibre text-4xl ">Bayar</p>
                                                 </button>
-                                                <img id="imagePreview" class="w-48 object-contain object-center"
-                                                    src="/images/placeholder-image.webp">
+                                                <img id="imagePreview" class="w-48 object-contain object-center">
                                             </div>
                                         </form>
                                         <script>
@@ -406,10 +465,10 @@
                                     @else
                                         <div
                                             class="rounded-xl px-4 py-6 flex-col md:flex-row flex bg-orange-400 gap-y-3 md:gap-y-0 gap-x-2">
-                                            <button onclick="BUKA WA"
-                                                class="border-2 rounded-xl hover:bg-orange-500 hover:border-orange-800 border-orange-900 bg-orange-800 font-averialibre text-2xl px-2 w-full py-2 h-16 text-center hover:text-orange-700 text-orange-300">
-                                                <p class=" font-averialibre text-4xl ">Hubungi via whatsapp</p>
-                                            </button>
+                                            <a href="https://wa.me/6285161610765" target="_"
+                                                class="border-2 rounded-xl hover:bg-orange-500 hover:border-orange-800 border-orange-900 bg-orange-800 font-averialibre text-xl px-2 w-full py-2 h-16 text-center hover:text-orange-700 text-orange-300">
+                                                <p class="font-averialibre md:text-4xl ">Hubungi via Whatsapp</p>
+                                            </a>
                                         </div>
                                     @endif
                                 </div>
@@ -474,26 +533,64 @@
                 </div>
 
                 <p class="font-averialibre text-5xl text-orange-900 my-2 mt-6 pl-4">FRANCHISE STATUS</p>
+                <form action="/my-dashboard" id="filterFormFranchise" method="POST">
+                    @csrf
+                    <select name="filterFranchise" id="" onchange="submitFormFranchise()"
+                        class="w-32 p-2 bg-[#FDED87] rounded-2xl border-solid border-2 border-[#945E3D] mx-1 font-averialibre">
+                        <option disabled selected value>Filter</option>
+                        <option @if (session('filterFranchise') == 'ALL') selected @endif
+                            class="block px-4 py-2 text-orange-800 hover:bg-[#FDED87] hover:text-orange-600"
+                            value="ALL">ALL</option>
+                        <option @if (session('filterFranchise') == 'PENDING') selected @endif
+                            class="block px-4 py-2 text-orange-800 hover:bg-[#FDED87] hover:text-orange-600"
+                            value="PENDING">PENDING</option>
+                        <option @if (session('filterFranchise') == 'CONFIRMED') selected @endif
+                            class="block px-4 py-2 text-orange-800 hover:bg-[#FDED87] hover:text-orange-600"
+                            value="CONFIRMED">CONFIRMED</option>
+                        <option @if (session('filterFranchise') == 'CANCELED') selected @endif
+                            class="block px-4 py-2 text-orange-800 hover:bg-[#FDED87] hover:text-orange-600"
+                            value="CANCELED">CANCELED</option>
+                        <option @if (session('filterFranchise') == 'REJECTED') selected @endif
+                            class="block px-4 py-2 text-orange-800 hover:bg-[#FDED87] hover:text-orange-600"
+                            value="REJECTED">REJECTED</option>
+                    </select>
+                    <select name="sortFranchise" id="" onchange="submitFormFranchise()"
+                        class="w-32 p-2 bg-[#FDED87] rounded-2xl border-solid border-2 border-[#945E3D] mx-1 font-averialibre">
+                        <option disabled selected value>Sort</option>
+                        <option @if (session('sortFranchise') == 'OLDEST') selected @endif
+                            class="block px-4 py-2 text-orange-800 hover:bg-[#FDED87] hover:text-orange-600"
+                            value="OLDEST">OLDEST</option>
+                        <option @if (session('sortFranchise') == 'NEWEST') selected @endif
+                            class="block px-4 py-2 text-orange-800 hover:bg-[#FDED87] hover:text-orange-600"
+                            value="NEWEST">NEWEST</option>
+                    </select>
+                    <button hidden type="submit"></button>
+                </form>
+                <script>
+                    function submitFormFranchise() {
+                        document.getElementById("filterFormFranchise").submit();
+                    }
+                </script>
                 <div class="w-full p-5 rounded-2xl bg-orange-300 flex-row flex gap-x-2 overflow-x-auto h-[26.5rem]">
                     @foreach ($franchises as $franchise)
                         <!-- franchise 1 // pending -->
                         <div>
                             <div
-                                class="w-96 h-96 bg-orange-800 rounded-2xl  p-4 justify-between flex flex-col border-4 border-orange-500">
+                                class="w-72 h-[400px] md:w-96 md:h-96 bg-orange-800 rounded-2xl  p-4 justify-between flex flex-col border-4 border-orange-500">
                                 <div class="flex flex-row justify-between items-center">
-                                    <p class="font-averialibre text-5xl text-orange-300">FRC {{ $franchise->id }}</p>
+                                    <p class="font-averialibre text-3xl md:text-5xl text-orange-300">FRC {{ $franchise->id }}</p>
                                     <!-- status -->
                                     <p class="font-averialibre text-2xl text-orange-300">{{ $franchise->status }}</p>
                                 </div>
                                 <p class="font-averialibre text-orange-300 text-4xl my-6">
                                     {{ $franchise->package->title }}</p>
                                 <div class="flex gap-x-2 flex-wrap items-center">
-                                    <div class="w-full flex flex-row">
+                                    <div class="w-full flex flex-wrap md:flex-row">
                                         <p class="font-averialibre text-2xl text-orange-300">Tanggal: </p>
                                         <p class="text-white font-averialibre text-2xl">
                                             {{ date_format($franchise->created_at, 'Y/m/d') }}</p>
                                     </div>
-                                    <div class="w-full flex flex-row">
+                                    <div class="w-full flex flex-wrap md:flex-row">
                                         <p class="font-averialibre text-2xl text-orange-300">Nama Bisnis: </p>
                                         <p class="text-white font-averialibre text-2xl">{{ $franchise->nama_bisnis }}
                                         </p>
@@ -620,10 +717,10 @@
                                     @else
                                         <div
                                             class="rounded-xl px-4 py-6 flex-col md:flex-row flex bg-orange-400 gap-y-3 md:gap-y-0 gap-x-2">
-                                            <button onclick="BUKA WA"
-                                                class="border-2 rounded-xl hover:bg-orange-500 hover:border-orange-800 border-orange-900 bg-orange-800 font-averialibre text-2xl px-2 w-full py-2 h-16 text-center hover:text-orange-700 text-orange-300">
-                                                <p class=" font-averialibre text-4xl ">Hubungi via whatsapp</p>
-                                            </button>
+                                            <a href="https://wa.me/6285161610765" target="_"
+                                                class="border-2 rounded-xl hover:bg-orange-500 hover:border-orange-800 border-orange-900 bg-orange-800 font-averialibre text-xl px-2 w-full py-2 h-16 text-center hover:text-orange-700 text-orange-300">
+                                                <p class="font-averialibre md:text-4xl ">Hubungi via Whatsapp</p>
+                                            </a>
                                         </div>
                                     @endif
                                 </div>
@@ -659,12 +756,12 @@
                 <div class="fixed h-full z-10 inset-0 bg-gray-600 bg-opacity-50 w-full" id="notification"
                     class="z-50">
                     <div
-                        class="h-[335px] mx-auto my-32 md:my-60 relative bg-[#b9480f] border-[2px] border-solid border-[#5C3623] rounded-[10px] shadow">
+                        class="md:w-[500px] h-fit mx-auto my-32 py-4 md:my-60 relative bg-[#b9480f] border-[2px] border-solid border-[#5C3623] rounded-[10px] shadow">
                         <button type="button" id="closenotif"
                             class="absolute top-4 right-8 text-white text-4xl font-bold focus:outline-none">
                             &times;
                         </button>
-                        <div class="w-[12%] mx-[12.4rem] mt-6 ">
+                        <div class="w-full flex justify-center h-12 mt-6 ">
                             <img src="/images/done.webp" alt="">
                         </div>
                         <div class="mx-8 mt-3 text-xl text-white text-center font-averialibre">
@@ -694,7 +791,8 @@
             @endif
 
             <!-- footer -->
-            <div class="w-full flex flex-col z-10 px-5 md:px-3 md:pl-7 py-7 bg-[#FF6400]">
+            <div class="w-full flex flex-col z-10 px-5 md:px-3 md:pl-7 py-7 mt-10"
+                style="background-image: url('/images/background-menu.webp');">
                 <p class="text-orange-800 font-averialibre text-3xl md:text-4xl mb-3">Mamappang - Best In Town</p>
                 <p class="text-orange-800 font-averialibre text-lg md:text-xl w-full md:w-[70%] text-justify mb-6">
                     Contact us
@@ -703,7 +801,8 @@
                     <br>
                     0851-6161-0765
                     <br>
-                    Tangerang Selatan </p>
+                    Tangerang Selatan
+                </p>
                 <p class="text-orange-800 font-averialibrebold text-xl md:text-2xl mb-1">In collaboration with :</p>
                 <div class="flex">
                     <div class="w-28 md:w-42 flex items-center justify-center">

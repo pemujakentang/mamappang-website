@@ -30,11 +30,11 @@
                                 <div class="flex justify-between items-center mb-8 lg:mb-16">
                                     <div class="flex items-center">
                                         <span
-                                            class="ml-2 font-averialibre text-white text-4xl lg:text-5xl uppercase">FRC
+                                            class="ml-2 font-averialibre text-white text-3xl lg:text-5xl uppercase">FRC
                                             {{ $franchise->id }}</span>
                                     </div>
                                     <span
-                                        class="ml-2 font-averialibre text-orange-800 text-4xl lg:text-5xl uppercase">{{ $franchise->status }}</span>
+                                        class="ml-2 font-averialibre text-orange-800 text-3xl lg:text-5xl uppercase">{{ $franchise->status }}</span>
                                 </div>
 
                                 <!-- Item 2 -->

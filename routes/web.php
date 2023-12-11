@@ -25,9 +25,9 @@ use App\Http\Controllers\SendMailController;
 
 // Route::view('/', 'welcome');
 
-Route::view('dashboard', 'dashboard')
-    ->middleware(['auth', 'verified'])
-    ->name('dashboard');
+// Route::view('dashboard', 'dashboard')
+//     ->middleware(['auth', 'verified'])
+//     ->name('dashboard');
 
 Route::view('profile', 'profile')
     ->middleware(['auth'])
@@ -36,7 +36,7 @@ Route::view('profile', 'profile')
 Route::controller(Controller::class)->group(
     function(){
         Route::get('/admin/dashboard', 'adminDashboard')->name('admin-dashboard')->middleware(['admin', 'auth']);
-        Route::get('/my-dashboard', 'userDashboard')->name('user-dashboard')->middleware(['auth','verified']);
+        Route::match(['get', 'post'], '/my-dashboard', 'userDashboard')->name('user-dashboard')->middleware(['auth','verified']);
     }
 )->middleware('auth');
 
@@ -125,6 +125,10 @@ Route::controller(CartController::class)->middleware(['auth', 'verified'])->grou
 Route::get('/about-us', function(){
     return view('home.aboutus');
 })->name('about-us');
+
+Route::get('/{any}', function () {
+    return redirect('/');
+})->where('any', '.*');
 
 // Route::get('/dashboard/order-status', function () {
 //     return view('dashboard.order-status');

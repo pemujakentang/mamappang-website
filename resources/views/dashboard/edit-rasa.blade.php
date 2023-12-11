@@ -12,7 +12,7 @@
                     @csrf
                     @method('put')
                     <div class="flex">
-                        <p class="text-5xl font-averialibre text-orange-800">Tambah Rasa</p>
+                        <p class="text-5xl font-averialibre text-orange-800">Edit Rasa</p>
                     </div>
                     <div class="rounded-2xl border-solid border-4 border-[#F1A03C] my-6 bg-[#FAC774] overflow-y-auto">
                         <div class="m-4">

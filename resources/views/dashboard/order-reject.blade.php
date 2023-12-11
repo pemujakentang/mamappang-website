@@ -14,7 +14,7 @@
                     </div>
                     <div class="rounded-2xl border-solid border-4 border-[#F1A03C] my-6 bg-[#FAC774] overflow-y-auto">
                         <div class="flex flex-wrap">
-                            <div class="w-[47%]">
+                            <div class="md:w-[47%]">
                                 <div class="m-4">
                                     <div class="mt-1 flex items-center">
                                         <label
@@ -83,7 +83,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="w-[47%] m-4">
+                            <div class="md:w-[47%] m-4">
                                 <div class="w-full h-auto bg-[#5c3623] rounded-lg flex m-4">
                                     <div class="font-averialibre text-[#fac774] text-left p-2 m-4">
                                         <p class="text-xl font-bold pb-3">{{ $preorder->total_qty }} Bungeoppang
@@ -113,7 +113,7 @@
                             enctype="multipart/form-data" method="post">
                             @csrf
                             <div class="w-full flex justify-center">
-                                <div class="mt-1 flex items-center w-1/2">
+                                <div class="mt-1 flex items-center md:w-1/2 gap-2">
                                     <label for=""
                                         class="block text-2xl font-averialibre text-orange-800 md:ml-4 w-[40%]">Alasan
                                         Penolakan</label>
