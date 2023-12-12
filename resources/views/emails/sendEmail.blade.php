@@ -18,7 +18,7 @@
     <p>Tanggal Kirim: {{$data['tanggal']}}</p>
     <p>Jumlah Pesanan: {{$data['quantity']}}</p>
     <p>Detail Item: {{$data['quantity']}}</p>
-    <p>Estimasi Harga: {{$data['total_price']}}</p>
+    <p>Estimasi Harga: Rp {{ number_format($data['total_price'], 0, ',', '.') }}</p>
 
 
     <p>Untuk informasi lebih lanjut silahkan menghubungi kami melalui email maupun melalui nomor Whatsapp berikut ...

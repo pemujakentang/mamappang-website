@@ -96,7 +96,7 @@
                                                 <p class="ml-4 mr-4 font-averialibre text-orange-800 text-2xl">Edit</p>
                                             </a>
                                             <form class="my-auto" action="/admin/series/{{ $category->id }}/delete"
-                                                method="POST" enctype="multipart/form-data">
+                                                method="POST" enctype="multipart/form-data" onsubmit="return confirm('Yakin menghapus series {{$category->name}}?');">
                                                 @csrf
                                                 @method('delete')
                                                 <button type="submit" class="text-red-500">
@@ -121,7 +121,7 @@
                                                     </p>
                                                 </a>
                                                 <form action="/admin/menu/{{ $menu->id }}/delete" method="POST"
-                                                    enctype="multipart/form-data">
+                                                    enctype="multipart/form-data" onsubmit="return confirm('Yakin menghapus menu {{$menu->name}}?');">
                                                     @csrf
                                                     @method('delete')
                                                     <button type="submit" class="text-red-500">
@@ -159,7 +159,7 @@
                                             <a href="/admin/package/{{ $package->id }}/edit"
                                                 class="ml-4 mr-4 font-averialibre text-orange-800 text-3xl">Edit
                                             </a>
-                                            <form action="/admin/package/{{ $package->id }}/delete" method="post">
+                                            <form action="/admin/package/{{ $package->id }}/delete" method="post" onsubmit="return confirm('Yakin menghapus paket {{$package->title}}?');">
                                                 @method('delete')
                                                 @csrf
                                                 <button type="submit"

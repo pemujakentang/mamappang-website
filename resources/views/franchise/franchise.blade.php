@@ -114,7 +114,7 @@
                                 <div class="flex-col relative w-96 md:w-80 md:order-last order-first">
                                     <p
                                         class="absolute font-averialibre text-white text-3xl z-10 right-0 bg-[#FF0000] px-5 py-1 rounded-tr-[15px] rounded-bl-[15px]">
-                                        Rp {{ $package->price }}</p>
+                                        Rp. {{ number_format($package->price, 0, ',', '.') }}</p>
                                     <img class="w-full h-48 rounded-[15px] shadow border-4 border-orange-600 object-contain"
                                         src="{{ asset('storage/' . $package->image) }}" />
                                 </div>
@@ -126,7 +126,7 @@
                                 <div class="flex-col relative w-96 md:w-80">
                                     <p
                                         class="absolute font-averialibre text-white text-3xl z-10 right-0 bg-[#FF0000] px-5 py-1 rounded-tr-[15px] rounded-bl-[15px]">
-                                        Rp {{ $package->price }}</p>
+                                        Rp. {{ number_format($package->price, 0, ',', '.') }}</p>
                                     <img class="w-full h-48 rounded-[15px] shadow border-4 border-orange-600 object-contain"
                                         src="{{ asset('storage/' . $package->image) }}" />
                                 </div>
@@ -175,7 +175,7 @@
                                         {{ $package->title }}
                                     </p>
                                     <p class="text-yellow-800 text-3xl mt-2 font-black font-averialibre">
-                                        Rp. {{ $package->price }}</p>
+                                    Rp. {{ number_format($package->price, 0, ',', '.') }}</p>
                                     <div
                                         class="flex flex-col md:flex-row w-full justify-center md:items-start items-center md:justify-between my-3 md:my-5 ">
                                         <div

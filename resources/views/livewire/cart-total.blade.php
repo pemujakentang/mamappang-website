@@ -10,7 +10,7 @@
             <div class="flex items-center md:justify-center gap-2 h-16">
 
                 <div id="grandpcs"
-                    class="border-2 rounded-xl bg-orange-300 border-orange-800 focus:outline-none font-averialibre text-2xl px-4 text-orange-700 py-1 h-12 text-center">
+                    class="border-2 rounded-xl bg-orange-300 border-orange-800 focus:outline-none font-averialibre text-xl px-4 text-orange-700 py-1 h-12 text-center items-center justify-center">
                     {{ $totalQty }} Pcs</div>
                 @php
                     if ($totalQty < 21) {
@@ -23,8 +23,8 @@
                     // $totalPrice = $totalQty * 12000;
                 @endphp
                 <div id="grandtotal"
-                    class="w-36 border-2 rounded-xl bg-orange-300 border-orange-800 focus:outline-none font-averialibre text-2xl px-4 text-orange-700 py-1 h-12 text-center">
-                    {{ $totalPrice }}</div>
+                    class="w-44 border-2 rounded-xl bg-orange-300 border-orange-800 focus:outline-none font-averialibre text-xl px-4 text-orange-700 py-1 h-12 text-center items-center justify-center">
+                    Rp. {{ number_format($totalPrice, 0, ',', '.') }}</div>
             </div>
         </div>
     </div>
@@ -60,7 +60,7 @@
             <p class="text-orange-200 font-averialibre text-2xl my-auto ml-2 w-full md:w-[40%]">TOTAL PRICE</p>
             <input type="number" name="total_price"
                 class="bg-orange-300 border-orange-800 text-orange-700 border-2 outline-none text-xl rounded-xl max-h-28 h-16 p-3 font-averialibre w-full md:w-[60%]"
-                value="{{ $totalPrice }}">
+                value="{{$totalPrice}}">
         </div>
 
         <button type="submit"

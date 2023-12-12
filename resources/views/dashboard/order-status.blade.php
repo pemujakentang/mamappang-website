@@ -96,7 +96,7 @@
                                                         <p><span class="font-bold">Tanggal Kirim: </span>
                                                             {{ $preorder->tanggal_pesanan }}</p>
                                                         <p><span class="font-bold">Harga Sementara:</span>
-                                                            {{ $preorder->total_price }}</p>
+                                                            Rp. {{ number_format($preorder->total_price, 0, ',', '.') }}</p>
                                                     </div>
                                                 </div>
                                                 @if ($preorder->status == 'PENDING')

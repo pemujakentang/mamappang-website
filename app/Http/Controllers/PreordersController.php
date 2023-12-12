@@ -557,7 +557,7 @@ class PreordersController extends Controller
     {
         if (Auth::check()) {
             $preorder->update([
-                'status' => 'CANCELLED'
+                'status' => 'CANCELED'
             ]);
             return redirect('/my-dashboard')->with(array(
                 'success' => "Order Canceled"
