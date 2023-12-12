@@ -17,6 +17,7 @@ class DatabaseSeeder extends Seeder
         // \App\Models\User::factory(10)->create();
         $this->call(CategorySeeder::class);
         $this->call(MenuSeeder::class);
+        $this->call(PriceSeeder::class);
         User::create([
             'firstname' => 'admin',
             'lastname' => 'admin',
