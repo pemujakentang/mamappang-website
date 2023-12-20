@@ -16,6 +16,6 @@ class Payment extends Model
     protected $guarded = ['id'];
 
     public function preorder(): BelongsTo{
-        return $this->belongsTo(Preorders::class, 'preorder_id');
+        return $this->belongsTo(Preorders::class);
     }
 }
