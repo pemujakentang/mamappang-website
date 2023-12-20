@@ -6,6 +6,7 @@ use App\Http\Controllers\FranchiseController;
 use App\Http\Controllers\MenuController;
 use App\Http\Controllers\PackageController;
 use App\Http\Controllers\PreordersController;
+use App\Http\Controllers\PriceController;
 use App\Livewire\Counter;
 use App\Livewire\QtyForm;
 use Illuminate\Support\Facades\Route;
@@ -119,6 +120,13 @@ Route::controller(PreordersController::class)->middleware(['auth', 'verified'])-
 Route::controller(CartController::class)->middleware(['auth', 'verified'])->group(
     function(){
         Route::post('/cart/new', 'newCart');
+    }
+);
+
+Route::controller(PriceController::class)->middleware('admin')->group(
+    function(){
+        Route::get('/admin/dashboard/edit-price', 'index');
+        Route::put('/admin/price/{price:id}/update', 'update');
     }
 );
 

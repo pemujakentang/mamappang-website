@@ -94,6 +94,39 @@ class FranchiseController extends Controller
                 ]);
             }
 
+            $data_admin = [
+                'subject' => '[Mamappang - Franchise Application Received]',
+                'view' => 'mail.admin-franchise',
+                'receiver' => $user->firstname . ' ' . $user->lastname,
+                'franchise_id' => $franchise->id,
+                'domisili' => $franchise->domisili,
+                'nama_bisnis' => $franchise->nama_bisnis,
+                'address' => $franchise->address,
+                'keterangan' => $franchise->keterangan,
+            ];
+
+            try {
+                Mail::to('mamappang.bungeoppang@gmail.com')->send(new SendMail($data_admin));
+                // return response()->json([
+                //     'status' => 'success',
+                //     'message' => 'Email sent successfully'
+                // ]);
+
+
+            } catch (\Throwable $th) {
+                $errorMessage = $th->getMessage(); // Get the error message
+                $errorCode = $th->getCode(); // Get the error code (if available)
+
+                // Additional handling or logging of the error information can be done here
+
+                return response()->json([
+                    'status' => 'error',
+                    'message' => 'Email failed to send',
+                    'error_message' => $errorMessage, // Return the error message in the JSON response
+                    'error_code' => $errorCode // Return the error code in the JSON response
+                ]);
+            }
+
             return redirect('/my-dashboard')->with('success', 'Berhasil Menambahkan Request Franchise');
         } else {
             return redirect('/login');
@@ -179,6 +212,39 @@ class FranchiseController extends Controller
                 'message' => $request->message,
                 'status' => 'CANCELED'
             ]);
+            $user = $franchise->user;
+            $data_admin = [
+                'subject' => '[Mamappang - Franchise Application Canceled]',
+                'view' => 'mail.admin-franchise-cancel',
+                'receiver' => $user->firstname . ' ' . $user->lastname,
+                'franchise_id' => $franchise->id,
+                'domisili' => $franchise->domisili,
+                'nama_bisnis' => $franchise->nama_bisnis,
+                'address' => $franchise->address,
+                'keterangan' => $franchise->keterangan,
+            ];
+
+            try {
+                Mail::to('mamappang.bungeoppang@gmail.com')->send(new SendMail($data_admin));
+                // return response()->json([
+                //     'status' => 'success',
+                //     'message' => 'Email sent successfully'
+                // ]);
+
+
+            } catch (\Throwable $th) {
+                $errorMessage = $th->getMessage(); // Get the error message
+                $errorCode = $th->getCode(); // Get the error code (if available)
+
+                // Additional handling or logging of the error information can be done here
+
+                return response()->json([
+                    'status' => 'error',
+                    'message' => 'Email failed to send',
+                    'error_message' => $errorMessage, // Return the error message in the JSON response
+                    'error_code' => $errorCode // Return the error code in the JSON response
+                ]);
+            }
             return redirect('/my-dashboard')->with(array(
                 'success' => "Franchise Application Canceled"
             ));

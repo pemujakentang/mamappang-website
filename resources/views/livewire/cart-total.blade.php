@@ -14,11 +14,14 @@
                     {{ $totalQty }} Pcs</div>
                 @php
                     if ($totalQty < 21) {
-                        $totalPrice = $totalQty * 12000;
+                        $price = $prices->where('name', 'under20')->first()->price;
+                        $totalPrice = $totalQty * $price;
                     } elseif ($totalQty < 51) {
-                        $totalPrice = $totalQty * 11000;
+                        $price = $prices->where('name', 'under50')->first()->price;
+                        $totalPrice = $totalQty * $price;
                     } else {
-                        $totalPrice = $totalQty * 10000;
+                        $price = $prices->where('name', 'over50')->first()->price;
+                        $totalPrice = $totalQty * $price;
                     }
                     // $totalPrice = $totalQty * 12000;
                 @endphp

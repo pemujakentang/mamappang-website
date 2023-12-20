@@ -2,7 +2,7 @@
 
 namespace App\Livewire;
 
-
+use App\Models\Price;
 use Livewire\Component;
 use Illuminate\Support\Facades\Auth;
 use Livewire\Attributes\On;
@@ -38,6 +38,9 @@ class CartTotal extends Component
 
     public function render()
     {
-        return view('livewire.cart-total');
+        $prices = Price::all();
+        return view('livewire.cart-total', [
+            'prices' => $prices
+        ]);
     }
 }

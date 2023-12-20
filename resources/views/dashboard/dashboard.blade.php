@@ -14,14 +14,14 @@
                         </p>
                         <div
                             class="mt-4 flex-col md:flex-row gap-3 md:justify-normal justify-center items-center flex flex-wrap">
-                            {{-- <div class="w-full md:w-auto">
+                            <div class="w-full md:w-auto">
                                 <button
                                     class="bg-[#FDED87] rounded-2xl border-solid border-4 border-[#F1A03C] w-full md:w-35 py-2 md:h-full h-20">
-                                    <a href=""
+                                    <a href="/admin/dashboard/edit-price"
                                         class="ml-4 mr-4 font-averialibre text-orange-800 text-xl md:text-2xl text-center">Edit
                                         Harga Bulk</a>
                                 </button>
-                            </div> --}}
+                            </div>
                             <div class="w-full md:w-auto">
                                 <a href="/admin/dashboard/add-series"
                                     class="font-averialibre text-orange-800 text-xl md:text-2xl">
