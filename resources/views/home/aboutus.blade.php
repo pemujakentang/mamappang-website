@@ -16,7 +16,7 @@
                     <img class="animate-move-y opacity-70 h-80" src="/images/awan.webp" alt="Logo">
                 </div>
 
-                <div class="flex flex-col items-center relative md:justify-normal justify-center mt-12 md:mt-0">
+                <div class="flex flex-col items-center relative md:justify-normal justify-center mt-12 md:mt-0 h-full">
 
                     <div class="flex flex-col items-center relative justify-center h-full">
 
